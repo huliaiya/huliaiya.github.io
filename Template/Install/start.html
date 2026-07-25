@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>预备安装</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="install,安装,API管理系统" />
+    <meta name="description" content="API管理系统安装页面" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./assets/css/mdui.min.css"/>
+    <link rel="stylesheet" href="./assets/css/mdclub.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+</head>
+<body class="mdui-theme-primary-blue mdui-theme-accent-blue mdui-appbar-with-toolbar" style="padding-bottom: 40px;">
+
+	<div class="mdui-appbar mdui-appbar-fixed">
+  		<div class="mdui-toolbar mdui-color-white">
+    		<a class="mdui-typo-headline">安装前须知</a>
+    		<div class="mdui-toolbar-spacer"></div>
+  		</div>
+  		<div class="mdui-progress">
+			<div class="mdui-progress-determinate" style="width: 0%;"></div>
+		</div>
+	</div>
+	
+    <div class="mdui-container mdui-p-x-2" style="max-width:640px;margin:0 auto;">
+    	<div class="mdui-card mdui-m-y-2">
+    		<div class="mdui-card-primary">
+    			<div class="mdui-card-primary-title">安装前须知</div>
+    			<div class="mdui-card-primary-subtitle">请仔细阅读以下条款</div>
+    		</div>
+    		<div class="mdui-card-content mdui-typo" style="max-height:50vh;overflow-y:auto;padding:16px 20px;border:1px solid rgba(0,0,0,0.08);border-radius:8px;background:rgba(0,0,0,0.02);">
+    			<h4>免责声明</h4>
+    			<p>欢迎使用狐狸API管理系统（以下简称"本系统"）。在使用本系统之前，请您仔细阅读并充分理解以下声明：</p>
+    			<ol>
+    				<li><strong>使用风险：</strong>本系统按"现状"提供，不附有任何形式的明示或暗示担保。使用者须自行承担使用本系统的全部风险，包括但不限于数据丢失、服务中断、安全漏洞等。</li>
+    				<li><strong>数据安全：</strong>系统作者不对因使用本系统而导致的任何数据丢失、泄露或损坏承担责任。建议您定期备份数据库和重要文件。</li>
+    				<li><strong>第三方服务：</strong>本系统可能涉及第三方接口或服务，作者不保证这些第三方服务的可用性、准确性和合法性。</li>
+    				<li><strong>法律合规：</strong>使用者须确保使用本系统的行为符合所在国家/地区的法律法规，不得利用本系统从事任何违法违规活动。</li>
+    			</ol>
+    			<h4>授权协议</h4>
+    			<ol>
+    				<li><strong>非商业用途：</strong>本系统仅供个人学习、研究和非商业用途免费使用。</li>
+    				<li><strong>禁止商用：</strong>未经作者书面授权，禁止将本系统用于任何商业目的，包括但不限于销售、租赁、提供商业服务等直接或间接盈利行为。</li>
+    				<li><strong>禁止二次分发：</strong>未经作者许可，禁止以任何形式重新分发、转售或包装本系统。</li>
+    				<li><strong>保留权利：</strong>作者保留对本系统的所有权利，包括但不限于修改、更新、终止服务的权利。</li>
+    			</ol>
+    			<p style="color:#d32f2f;font-weight:bold;">若您不同意以上条款，请立即停止安装并删除本系统相关文件。</p>
+    		</div>
+    		<div class="mdui-card-actions" style="padding:16px 20px 20px;">
+			<form action="./Core/install.php" method="post" style="display:inline;">
+				<label class="mdui-checkbox">
+					<input type="checkbox" name="agree" value="1" id="agreeTerms" onchange="document.getElementById('startBtn').disabled = !this.checked;"/>
+					<i class="mdui-checkbox-icon"></i>
+					我已阅读并同意上述免责声明与授权协议
+				</label>
+				<div class="mdui-m-t-2">
+					<input type="hidden" name="step" value="0" />
+					<button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" id="startBtn" type="submit" onclick="if(!document.getElementById('agreeTerms').checked){mdui&&mdui.alert?mdui.alert('请先阅读并同意免责声明与授权协议'):alert('请先阅读并同意免责声明与授权协议');return false;}">同意并继续</button>
+				</div>
+			</form>
+		</div>
+    	</div>
+	</div>
+
+
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/mdui.min.js"></script>
+<script src="./assets/js/vue.js"></script>
+</body>
+</html>
