@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><?php echo e($result['name'])." - ".e($config['title']);?></title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="<?php echo e($config['keywords']);?>" />
+    <meta name="description" content="<?php echo e($result['desc'] ?? '');?>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./assets/css/mdui.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/mdclub.css"/>
+    <link rel="stylesheet" href="./assets/css/highlight.min.css">
+	<script src="./assets/js/highlight.min.js"></script>
+<script>
+/* 阻止 highlight.js 自动初始化，避免与 Vue 冲突 */
+if(typeof hljs !== 'undefined' && hljs.initHighlightingOnLoad){
+	hljs.initHighlightingOnLoad = function(){};
+}
+if(typeof hljs !== 'undefined' && hljs.highlightAll){
+	hljs.highlightAll = function(){};
+}
+</script>
+</head>
+
+<?php require "header.html";?>
+   
+  		<div class="mdui-m-b-2" id="doc" v-cloak style="padding-bottom:40px;">
+  			<div v-if="loading" class="mdui-card mdui-m-y-2 mdui-p-a-3 mdui-text-center">
+  				<div class="mdui-spinner mdui-spinner-colorful" style="width:40px;height:40px;"></div>
+  				<div class="mdui-typo-title mdui-m-t-1" style="color:rgba(0,0,0,0.54);">正在加载接口文档...</div>
+  			</div>
+  			<div v-if="loadError" class="mdui-card mdui-m-y-2 mdui-p-a-3 mdui-text-center">
+  				<i class="mdui-icon material-icons" style="font-size:48px;color:#f44336;">error_outline</i>
+  				<div class="mdui-typo-title mdui-m-t-1">{{ loadError }}</div>
+  				<button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-m-t-2" onclick="location.reload()">刷新重试</button>
+  			</div>
+  			<template v-if="!loading && !loadError">
+  			<div v-if="!info.name" class="mdui-card mdui-m-y-2 mdui-p-a-3 mdui-text-center">
+  				<i class="mdui-icon material-icons" style="font-size:48px;color:#ff9800;">warning</i>
+  				<div class="mdui-typo-title mdui-m-t-1">接口数据为空</div>
+  				<div class="mdui-typo-body-1 mdui-m-t-1" style="color:rgba(0,0,0,0.54);">该接口暂无详细信息，请检查接口是否存在。</div>
+  				<button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-m-t-2" onclick="history.back()">返回</button>
+  			</div>
+  			<div v-else class="mdui-text-center mdui-m-b-2 doc-header-glass" style="padding-top:80px;padding-bottom:80px;">
+  				<div class="mdui-typo-display-1">{{ info.name }}</div>
+  				<div class="mdui-typo-subtitle">{{ info.desc }}</div>
+  				<div class="mdui-m-t-2">
+  					<button class="mdui-btn mdui-btn-raised mdui-ripple doc-feedback-btn" @click="openFeedbackDialog(info.name)">
+  						<i class="mdui-icon material-icons mdui-m-r-1" style="font-size:18px;">feedback</i>接口反馈
+  					</button>
+  				</div>
+        	</div>
+    		<nav class="doc-toc mdui-text-color-theme-accent mdui-m-x-2"> 
+    	    	<ul> 
+    	     		<li><a href="javascript:scroll('#api_explanation');">接口说明</a>
+        	      		<ul> 
+        	       			<li><a href="javascript:scroll('#request_explanation');">请求说明</a></li> 
+        	       			<li><a href="javascript:scroll('#request_param');">请求参数</a></li> 
+        	       			<li><a href="javascript:scroll('#return_param');">返回参数</a></li> 
+        	       			<li><a href="javascript:scroll('#return_example');">返回示例</a></li>
+        	      		</ul>
+    	      		</li>
+    	      		<li><a href="javascript:scroll('#error_code');">错误码</a>
+    	      			<ul> 
+        	       			<li><a href="javascript:scroll('#error_code_status');">状态码说明</a></li> 
+        	       			<li><a href="javascript:scroll('#error_code_system');">系统级错误</a></li>
+        	      		</ul>
+    	      		</li>
+    	      		<li><a href="javascript:scroll('#example_code');">PHP代码示例</a></li>
+    	    	</ul> 
+    	   </nav>
+        	<div class="mdui-p-x-2 mdui-typo">
+        	   <div class="mdui-typo-headline mdui-text-color-theme-a400 mdui-m-y-2" id="api_explanation">接口说明</div>
+    			<div class="mdui-chip" id="request_explanation">
+                    	<span class="mdui-chip-icon mdui-color-theme-accent"><i class="mdui-icon material-icons">short_text</i></span> <span class="mdui-chip-title">请求说明</span>
+    			</div>
+    			<br>
+    			<div class="mdui-row">
+    				<div class="mdui-col-sm-6">
+                        <div class="mdui-m-t-2">
+                          	<p>
+                            	<b>请求地址：</b><br>
+                                <a :href="apiUrl(info.url)">{{ apiUrl(info.url) }}</a>
+                                <button class="mdui-btn mdui-btn-icon mdui-ripple url" :data-clipboard-text="apiUrl(info.url)" mdui-tooltip="{content: 'copy'}"><i class="mdui-icon material-icons">content_copy</i></button><br>
+                                <b>返回格式：</b><br>
+                                <kbd>{{ info.format }}<br></kbd>
+                               	<b>请求方式：</b><br>
+                                <kbd>{{ info.method }}<br></kbd>
+                                <b>请求示例：</b><br>
+                                <a :href="apiUrl(info.example_url)">{{ apiUrl(info.example_url) }}</a>
+                                <button class="mdui-btn mdui-btn-icon mdui-ripple url" :data-clipboard-text="apiUrl(info.example_url)" mdui-tooltip="{content: 'copy'}"><i class="mdui-icon material-icons">content_copy</i></button><br>
+                          	</p>
+                       	</div>
+                  	</div>
+                  	<div class="mdui-col-sm-6">
+                       	<div class="mdui-chip mdui-m-t-2" id="return_example">
+                     	 	<span class="mdui-chip-icon mdui-color-theme-accent"><i class="mdui-icon material-icons">short_text</i></span> <span class="mdui-chip-title">返回示例</span>
+                    	</div>
+                   		<div class="mdui-m-t-2" v-if="info.return">
+                  	   	<highlightjs class="mdui-shadow-1" :code="info.return" />
+                  		</div>
+                  		<div v-else class="mdui-text-center mdui-p-y-3" style="color:rgba(0,0,0,0.38);font-size:14px;">暂无返回示例</div>
+                    </div>
+            	</div>
+               	<div class="mdui-row">
+               		<div class="mdui-col-sm-6">
+                       	<div class="mdui-chip mdui-m-t-2" id="request_param">
+                          	<span class="mdui-chip-icon mdui-color-theme-accent"><i class="mdui-icon material-icons">short_text</i></span> <span class="mdui-chip-title">请求参数</span>
+                        </div>
+                        <div class="mdui-table-fluid mdui-m-t-2 mdui-typo">
+                           	<table class="mdui-table mdui-table-hoverable">
+                              	<thead>
+               		  			<tr>
+                       	 			<th>参数名称</th>
+                                       <th>参数类型</th>
+                                      	<th>是否必填</th>
+                                       <th>备注内容</th>
+                               	</tr>
+                             	</thead>
+                               	<tbody>
+                           		<tr v-for="request_parameter in info.request_parameter">
+                           			<td><code>{{ request_parameter.name }}</code></td>
+                           			<td><code>{{ request_parameter.type }}</code></td>
+                           			<td><code>{{ request_parameter.required }}</code></td>
+                           			<td>{{ request_parameter.info }}</td>
+                           		</tr>
+                       		</tbody>
+                      		</table>
+                      		<div v-if="!info.request_parameter || info.request_parameter.length === 0" class="mdui-text-center mdui-p-y-3" style="color:rgba(0,0,0,0.38);font-size:14px;">暂无请求参数</div>
+                   		</div>
+                   	</div>
+                   	<div class="mdui-col-sm-6">
+                       	<div class="mdui-chip mdui-m-t-2" id="return_param">
+                           	<span class="mdui-chip-icon mdui-color-theme-accent"><i class="mdui-icon material-icons">short_text</i></span> <span class="mdui-chip-title">返回参数</span>
+                    	</div>
+                      	<div class="mdui-table-fluid mdui-m-t-2 mdui-typo">
+                          	<table class="mdui-table mdui-table-hoverable">
+                             	<thead>
+                                 	<tr>
+                                      	<th>参数名称</th>
+                                       <th>参数类型</th>
+                                       <th>参数说明</th>
+                                  	</tr>
+                             	</thead>
+                          		<tbody>
+                              		<tr v-for="return_parameter in info.return_parameter">
+                              			<td><code>{{ return_parameter.name }}</code></td>
+                              			<td><code>{{ return_parameter.type }}</code></td>
+                              			<td>{{ return_parameter.msg }}</td>
+                              		</tr>
+                         		</tbody>
+                      		</table>
+                      		<div v-if="!info.return_parameter || info.return_parameter.length === 0" class="mdui-text-center mdui-p-y-3" style="color:rgba(0,0,0,0.38);font-size:14px;">暂无返回参数</div>
+                 		</div>
+                  	</div>
+          		</div>
+            	<div class="mdui-row">
+            		<div class="mdui-col-sm-6">
+             			<div class="mdui-typo-headline mdui-text-color-theme-a400 mdui-m-y-2" id="error_code">错误码</div>
+             			<div class="mdui-chip mdui-m-b-2" id="error_code_status">
+                    		<span class="mdui-chip-icon mdui-color-theme-accent"><i class="mdui-icon material-icons">short_text</i></span> <span class="mdui-chip-title">状态码说明</span>
+    					</div>
+                     	 <div class="mdui-table-fluid">
+                 			<table class="mdui-table mdui-table-hoverable">
+                   				<thead>
+                    	 				<tr>
+                       						<th>名称</th>
+                       						<th>说明</th>
+                     					</tr>
+                   				</thead>
+                   				<tbody>
+                           		<tr v-for="error_code in info.error_code">
+                           			<td><code>{{ error_code.code }}</code></td>
+                           			<td>{{ error_code.msg }}</td>
+                           		</tr>
+                   				</tbody>
+                 			</table>
+                 			<div v-if="!info.error_code || info.error_code.length === 0" class="mdui-text-center mdui-p-y-3" style="color:rgba(0,0,0,0.38);font-size:14px;">暂无错误码说明</div>
+               			</div>
+                		<div class="mdui-chip mdui-m-b-2" id="error_code_system">
+                    		<span class="mdui-chip-icon mdui-color-theme-accent"><i class="mdui-icon material-icons">short_text</i></span> <span class="mdui-chip-title">系统级错误</span>
+    					</div>
+                     	 <div class="mdui-table-fluid">
+                  			<table class="mdui-table mdui-table-hoverable">
+                    			<thead>
+                     	 			<tr>
+                        				<th>名称</th>
+                        				<th>说明</th>
+                      				</tr>
+                    			</thead>
+                    			<tbody>
+                            		<tr>
+                            			<td><code>400</code></td>
+                            			<td>请求错误！</td>
+                            		</tr>
+                            		<tr>
+                            			<td><code>403</code></td>
+                            			<td>请求被服务器拒绝！</td>
+                            		</tr>
+                            		<tr>
+                            			<td><code>405</code></td>
+                            			<td>客户端请求的方法被禁止！</td>
+                            		</tr>
+                            		<tr>
+                            			<td><code>408</code></td>
+                            			<td>请求时间过长！</td>
+                            		</tr>
+                            		<tr>
+                            			<td><code>500</code></td>
+                            			<td>服务器内部出现错误！</td>
+                            		</tr>
+                            		<tr>
+                            			<td><code>501</code></td>
+                            			<td>服务器不支持请求的功能，无法完成请求！</td>
+                            		</tr>
+                            		<tr>
+                            			<td><code>503</code></td>
+                            			<td>系统维护中！</td>
+                            		</tr>
+                    			</tbody>
+                  			</table>
+                		</div>
+                	</div>
+                	<div class="mdui-col-sm-6">
+                		<div class="mdui-typo-headline mdui-text-color-theme-a400 mdui-m-y-2" id="example_code">PHP代码示例</div>
+              			<highlightjs v-if="info.PHP_example" class="mdui-shadow-1" language="php" :code="info.PHP_example" />
+              			<div v-else class="mdui-text-center mdui-p-y-3" style="color:rgba(0,0,0,0.38);font-size:14px;">暂无PHP代码示例</div>
+              		</div>
+      			</div>
+ 			</div>
+			</template>
+			<!-- 接口反馈Dialog -->
+			<div class="mdui-dialog feedback-dialog-mobile doc_feedback_dialog">
+				<div class="mdui-dialog-title" style="font-size:16px;padding:10px 14px;line-height:24px;">
+					<button class="mdui-btn mdui-btn-icon" mdui-dialog-close style="margin-right:4px;width:28px;height:28px;"><i class="mdui-icon material-icons" style="font-size:18px;">close</i></button> 接口反馈
+				</div>
+				<div class="mdui-dialog-content" style="padding:6px 14px 14px;">
+					<div class="mdui-textfield" style="padding-top:2px;padding-bottom:2px;">
+						<label class="mdui-textfield-label" style="font-size:13px;">反馈标题</label>
+						<input class="mdui-textfield-input" type="text" v-model="feedback.title" required style="font-size:15px;" />
+						<div class="mdui-textfield-error">反馈标题不能为空</div>
+					</div>
+					<div class="mdui-textfield" style="padding-top:2px;padding-bottom:2px;">
+						<label class="mdui-textfield-label" style="font-size:13px;">反馈内容</label>
+						<textarea class="mdui-textfield-input" rows="2" v-model="feedback.content" style="min-height:52px;font-size:15px;"></textarea>
+					</div>
+					<div class="mdui-textfield" style="padding-top:2px;padding-bottom:2px;">
+						<label class="mdui-textfield-label" style="font-size:13px;">联系邮箱</label>
+						<input class="mdui-textfield-input" type="email" v-model="feedback.email" required style="font-size:15px;" />
+						<div class="mdui-textfield-error">联系邮箱格式不正确</div>
+					</div>
+					<div style="margin-top:8px;">
+						<button class="mdui-btn mdui-color-theme-accent mdui-btn-raised" @click="feedbackSend" style="width:100%;height:40px;border-radius:8px;font-size:14px;">提交反馈</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+<?php require "footer.html";?>
+
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/mdui.min.js"></script>
+<script src="./assets/js/index.js"></script>
+<script src="./assets/js/vue.js"></script>
+<script src="./assets/js/clipboard.min.js"></script>
+<script src="./assets/js/smooth-scroll.polyfills.min.js"></script>
+<script>
+/* 手动注册 highlightjs 组件（因为 highlight.min.js 不包含 Vue 插件） */
+Vue.component('highlightjs', {
+    props: ['code', 'language'],
+    render: function(createElement) {
+        var raw = this.code || '';
+        var highlighted = raw;
+        if (typeof hljs !== 'undefined') {
+            try {
+                if (this.language && hljs.getLanguage(this.language)) {
+                    highlighted = hljs.highlight(raw, { language: this.language }).value;
+                } else {
+                    highlighted = hljs.highlightAuto(raw).value;
+                }
+            } catch(e) {
+                highlighted = raw;
+            }
+        }
+        return createElement('pre', {
+            class: { 'hljs': true, 'mdui-shadow-1': true }
+        }, [
+            createElement('code', {
+                domProps: { innerHTML: highlighted }
+            })
+        ]);
+    }
+});
+
+Vue.config.errorHandler = function(err, vm, info) {
+	console.error('Vue error:', err, info);
+};
+
+let doc = new Vue({
+	el: '#doc',
+	data: {
+		info: {},
+		websetting: {},
+		loadError: '',
+		loading: true,
+		feedback: {
+			id: '',
+			name: '',
+			title: '',
+			content: '',
+			email: ''
+		}
+	},
+	methods: {
+		apiUrl: function(url) {
+			if (!url) return '';
+			if (/^https?:\/\//i.test(url) || /^\/\//i.test(url)) return url;
+			var base = (this.websetting && this.websetting.url) ? this.websetting.url : (window.location.protocol + '//' + window.location.host + '/');
+			if (!base.endsWith('/')) base += '/';
+			return base + 'API/' + url;
+		},
+		openFeedbackDialog: function(name) {
+			var id = getRequestParam('id') || '';
+			this.feedback.id = id;
+			this.feedback.name = name || '';
+			this.feedback.title = '';
+			this.feedback.content = '';
+			this.feedback.email = '';
+			var self = this;
+			this.$nextTick(function(){
+				try {
+					var inst = new mdui.Dialog('.doc_feedback_dialog');
+					inst.open();
+				} catch(err) {
+					mdui.snackbar('弹窗打开失败，请刷新页面');
+				}
+			});
+		},
+		feedbackSend: function() {
+			var title = (this.feedback.title || '').trim();
+			var content = (this.feedback.content || '').trim();
+			var email = (this.feedback.email || '').trim();
+			if(!title || !content || !email){
+				mdui.snackbar('请填写完整');
+				return;
+			}
+			fetch('./Data/post.php', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				body: 'type=add_feedback&api_id=' + this.feedback.id + '&api_name=' + encodeURIComponent(this.feedback.name) + '&title=' + encodeURIComponent(title) + '&content=' + encodeURIComponent(content) + '&email=' + encodeURIComponent(email)
+			})
+			.then(response => response.json())
+			.then(json => {
+				mdui.snackbar(json.msg || '操作完成');
+				if(json.code === 0){
+					this.feedback.title = '';
+					this.feedback.content = '';
+					this.feedback.email = '';
+					try { var inst = new mdui.Dialog('.doc_feedback_dialog'); inst.close(); } catch(e){}
+				}
+			})
+			.catch(function(){
+				mdui.snackbar('网络错误，请重试');
+			});
+		}
+	},
+	created (){
+		var id = getRequestParam('id');
+		if(!id){
+			this.loading = false;
+			this.loadError = '缺少接口ID参数';
+			return;
+		}
+		fetch('./Data/api.php?type=getOneApi&id='+id)
+			.then(response => response.json())
+			.then(json => {
+				this.loading = false;
+				if(!json || json.code != 0 || !json.data){
+					this.loadError = (json && json.msg) ? json.msg : '接口数据加载失败';
+					this.info = {};
+					return;
+				}
+				var d = json.data;
+				if(!d || typeof d !== 'object'){
+					this.loadError = '接口数据格式异常';
+					this.info = {};
+					return;
+				}
+				/* 确保所有字段都有默认值，防止页面部分空白 */
+				this.info = {
+					name: d.name || '未命名接口',
+					desc: d.desc || '',
+					url: d.url || '',
+					example_url: d.example_url || d.url || '',
+					format: d.format || 'JSON',
+					method: d.method || 'GET',
+					return: d.return || '',
+					PHP_example: d.PHP_example || ''
+				};
+				/* 请求参数 */
+				try {
+					var rp = JSON.parse(d.request_parameter);
+					this.info.request_parameter = Array.isArray(rp.data) ? rp.data : [];
+				} catch(e) {
+					this.info.request_parameter = [];
+				}
+				/* 返回参数 */
+				try {
+					var rpp = JSON.parse(d.return_parameter);
+					this.info.return_parameter = Array.isArray(rpp.data) ? rpp.data : [];
+				} catch(e) {
+					this.info.return_parameter = [];
+				}
+				/* 返回状态码 */
+				try {
+					var ec = JSON.parse(d.error_code);
+					this.info.error_code = Array.isArray(ec.data) ? ec.data : [];
+				} catch(e) {
+					this.info.error_code = [];
+				}
+			})
+			.catch(() => {
+				this.loading = false;
+				this.loadError = '网络错误，请检查网络连接后刷新重试';
+			});
+		fetch('./Data/api.php?type=getWebSetting')
+			.then(response => response.json())
+			.then(json => {
+				if(json && json.data){
+					this.websetting = json.data;
+					if(!this.websetting.url){
+						this.websetting.url = window.location.protocol + '//' + window.location.host + '/';
+					}
+				}
+			});
+	}
+});
+
+var clipboard = new ClipboardJS('.url');
+clipboard.on('success', function(e) {
+	mdui.snackbar("复制成功！");	
+    e.clearSelection();
+});
+clipboard.on('error', function(e) {
+	mdui.snackbar("复制失败！");
+});
+</script>
+</body>
+</html>
