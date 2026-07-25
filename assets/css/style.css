@@ -1,0 +1,1302 @@
+/* ========================================
+   全局彩虹渐变毛玻璃主题覆盖
+   确保所有页面都是彩虹渐变+毛玻璃风格
+   ======================================== */
+
+/* 渐变彩虹背景 */
+body, body.mdui-theme-accent-blue, body.mdui-color-blue-a200,
+body.mdui-theme-primary-blue, body.mdui-appbar-with-toolbar {
+    background: linear-gradient(135deg, #f0f4ff 0%, #f5f3ff 25%, #fef9e7 50%, #fce4ec 75%, #e8f5e9 100%) !important;
+    background-attachment: fixed !important;
+}
+
+/* 毛玻璃卡片 */
+.mdui-card {
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(45px) !important;
+    -webkit-backdrop-filter: blur(45px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.7) !important;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 工具栏增强毛玻璃 */
+.mdui-appbar .mdui-toolbar.mdui-color-white {
+    background: rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(45px) !important;
+    -webkit-backdrop-filter: blur(45px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Dialog/弹窗毛玻璃 */
+.mdui-dialog {
+    background: rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(45px) !important;
+    -webkit-backdrop-filter: blur(45px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Dialog 标题栏彩虹渐变 */
+.mdui-dialog-title.mdui-color-theme-a200 {
+    background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292) !important;
+    background-size: 300% auto !important;
+    animation: flowRightToLeft 8s linear infinite !important;
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.25) !important;
+}
+
+/* 彩虹渐变 raised 按钮 */
+.mdui-btn-raised.mdui-color-theme-accent,
+.mdui-btn.mdui-color-theme-accent.mdui-btn-raised {
+    background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292) !important;
+    background-size: 300% auto !important;
+    animation: flowRightToLeft 8s linear infinite !important;
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.25) !important;
+    border: none !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.3) inset !important;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2), box-shadow 0.3s ease !important;
+}
+
+.mdui-btn-raised.mdui-color-theme-accent:hover,
+.mdui-btn.mdui-color-theme-accent.mdui-btn-raised:hover {
+    transform: translateY(-3px) scale(1.04) !important;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.5) inset !important;
+}
+
+.mdui-btn-raised.mdui-color-theme-accent:active,
+.mdui-btn.mdui-color-theme-accent.mdui-btn-raised:active {
+    transform: translateY(0) scale(0.98) !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2) !important;
+}
+
+/* 彩虹 FAB 按钮 */
+.mdui-fab.mdui-color-theme-accent {
+    background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292) !important;
+    background-size: 300% auto !important;
+    animation: flowRightToLeft 8s linear infinite !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.3) inset !important;
+}
+
+/* Tab 栏毛玻璃 */
+.mdui-tab {
+    background: rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Drawer 侧边栏毛玻璃 */
+.mc-drawer.mdui-drawer {
+    background: rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(30px) !important;
+    -webkit-backdrop-filter: blur(30px) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+/* 彩虹流动动画 */
+@keyframes flowRightToLeft {
+    0% { background-position: 0% center; }
+    100% { background-position: -300% center; }
+}
+
+/* 列表项激活状态 */
+.mdui-list-item-active {
+    background: rgba(186, 104, 200, 0.1) !important;
+    color: #ba68c8 !important;
+}
+
+.mdui-list-item-active .mdui-icon {
+    color: #ba68c8 !important;
+}
+
+/* Snackbar/Toast 样式增强 */
+.mdui-snackbar {
+    background: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.7) !important;
+    color: #1e293b !important;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 20px !important;
+}
+
+.texto {
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* --- helper 文字允许换行显示完整内容 --- */
+.mdui-textfield-helper {
+    white-space: normal !important;
+    word-break: break-all;
+    line-height: 1.5;
+    overflow: visible;
+}
+
+[v-cloak] {
+    display: none !important;
+}
+
+.admin-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.admin-stat-item {
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, .03);
+    text-align: center;
+}
+
+.admin-info-list .mdui-list-item {
+    min-height: auto;
+    align-items: flex-start;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.admin-info-label {
+    min-width: 110px;
+    flex: 0 0 auto;
+    font-weight: 500;
+}
+
+.admin-info-value {
+    flex: 1;
+    text-align: right;
+    word-break: break-all;
+    white-space: normal;
+    line-height: 1.6;
+}
+
+.admin-chart-box {
+    height: 260px;
+}
+
+.pay-qrcode {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.pay-label {
+    font-size: 14px;
+    color: rgba(0, 0, 0, .54);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.pay-thumb {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,.12);
+    transition: transform .2s;
+    background: #f5f5f5;
+    vertical-align: middle;
+}
+
+.pay-thumb:hover {
+    transform: scale(1.1);
+}
+
+.pay-path-helper {
+    font-size: 12px;
+    color: rgba(0, 0, 0, .54);
+    line-height: 1.6;
+}
+
+.pay-desc-box {
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, .03);
+    border-radius: 8px;
+}
+
+.pay-desc-text {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .7);
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+@media (max-width: 600px) {
+    .admin-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .admin-stat-item {
+        padding: 8px 6px;
+    }
+
+    .admin-stat-item .mdui-card-primary-title {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .admin-info-list .mdui-list-item {
+        display: block;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .admin-info-label {
+        display: block;
+        margin-bottom: 4px;
+        color: rgba(0, 0, 0, .54);
+    }
+
+    .admin-info-value {
+        display: block;
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .admin-chart-box {
+        height: 220px;
+    }
+
+    .mc-datatable {
+        overflow-x: auto;
+    }
+
+    .mdui-table td,
+    .mdui-table th {
+        word-break: break-all;
+        white-space: normal;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .mdui-table th {
+        white-space: nowrap;
+    }
+}
+
+#menu .mdui-list-item,
+.mdui-collapse-item-header {
+    border-radius: 0px 50px 50px 0px;
+}
+
+#categorys .mdui-list-item,
+.mdui-collapse-item-header {
+    border-radius: 0px 50px 50px 0px;
+}
+
+.mdui-dialog {
+    border-radius: 7px;
+}
+
+.mdui-appbar {
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+#menu .mdui-list-item-content {
+    font-size: unset;
+}
+
+#categorys .mdui-list-item-content {
+    font-size: unset;
+}
+
+.mdui-main-text {
+    color: #475569;
+}
+
+.mdui-card {
+    border-radius: 15px 15px 15px 15px;
+}
+
+.mdui-typo pre {
+    border-radius: 10px;
+}
+
+.mdui-table-fluid {
+    border-radius: 10px;
+}
+
+.mdui-badge {
+    display: inline;
+    position: relative;
+    border-radius: 4px;
+    text-shadow: none;
+    text-align: center;
+    font-size: 8px;
+    color: #FFFFFF;
+    vertical-align: middle;
+    height: 100%;
+    top: -3px;
+    padding-top: 4px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.doc-toc {
+    margin: 0px 0 0 0;
+    font-size: 16px;
+    position: relative;
+    border-left: 3px solid;
+}
+
+.mc-drawer .copyright {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px 16px
+}
+
+.mc-drawer .copyright p {
+    margin: 0;
+    overflow: hidden;
+    color: rgba(0, 0, 0, .38);
+    font-size: 13px;
+    line-height: 20px;
+    white-space: normal;
+    word-break: break-all;
+}
+
+.mdui-theme-layout-dark .mc-drawer .copyright p {
+    color: hsla(0, 0%, 100%, .38)
+}
+
+.mc-drawer .copyright a {
+    color: rgba(0, 0, 0, .52);
+    text-decoration: none
+}
+
+.mdui-theme-layout-dark .mc-drawer .copyright a {
+    color: hsla(0, 0%, 100%, .52)
+}
+
+.mc-drawer .copyright a:hover {
+    text-decoration: underline
+}
+
+@media (prefers-color-scheme: dark) {}
+
+.doc-toc a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.doc-toc:before {
+    content: 'Content';
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 400;
+}
+
+.doc-toc ul,
+.doc-toc:before {
+    padding-left: 16px;
+}
+
+.doc-toc ul {
+    list-style: none;
+    margin: 0;
+}
+
+.doc-toc ul li {
+    margin: 1em 0;
+}
+
+.doc-toc ul li:first-child {
+    margin-top: 0;
+}
+
+.doc-toc ul li:last-child {
+    margin-bottom: 0;
+}
+
+.doc-toc ul li ul {
+    margin: 1em 0;
+    font-size: 0.83em;
+}
+
+.doc-toc>ul {
+    margin-top: 1em;
+}
+
+@media (min-width: 480px) {
+    .doc-toc {
+        margin-top: 0px;
+        font-size: 17px;
+        border-left-width: 4px;
+    }
+    .doc-toc ul,
+    .doc-toc:before {
+        padding-left: 18px;
+    }
+}
+
+@media (min-width: 840px) {
+    .doc-toc {
+        margin-top: 0px;
+        font-size: 18px;
+        border-left-width: 5px;
+    }
+    .doc-toc ul,
+    .doc-toc:before {
+        padding-left: 20px;
+    }
+}
+
+.mdui-card-header-avatar {
+    border-radius: 5px;
+}
+
+.doc-color-circle {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+#about {
+    max-width: 846px;
+    padding-top: 0
+}
+
+.user {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.user .cover {
+    position: relative;
+    box-sizing: border-box;
+    height: 0;
+    padding-bottom: 56%;
+    overflow: visible;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover
+}
+
+.user .cover .mc-cover-upload {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: none
+}
+
+.user .cover:hover .mc-cover-upload {
+    display: block
+}
+
+.user .info {
+    position: relative;
+    display: flex;
+    padding: 20px 24px 20px 20px
+}
+
+.user .info .avatar-box {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    min-width: 110px;
+    height: 110px;
+    background-color: rgba(0, 0, 0, .06);
+    border-radius: 50%
+}
+
+.mdui-theme-layout-dark .user .info .avatar-box {
+    background-color: hsla(0, 0%, 100%, .06)
+}
+
+.user .info .avatar-box .avatar {
+    width: 102px;
+    height: 102px;
+    border-radius: 50%;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.user .info .avatar-box .mc-avatar-upload {
+    display: none
+}
+
+.user .info .avatar-box:hover .mc-avatar-upload {
+    display: block
+}
+
+.user .info .profile {
+    padding-left: 32px
+}
+
+.user .info .profile .meta {
+    display: block;
+    align-items: center;
+    padding-left: 30px;
+    line-height: 22px
+}
+
+.user .info .profile .meta+.meta {
+    margin-top: 8px
+}
+
+.user .info .profile .meta i {
+    float: left;
+    margin-left: -30px;
+    padding-top: 2px;
+    font-size: 18px
+}
+
+.user .info .profile .username {
+    padding-top: 8px;
+    padding-bottom: 4px;
+    padding-left: 0;
+    font-size: 32px;
+    line-height: 32px
+}
+
+.user .info .profile.fold .meta {
+    display: none
+}
+
+.user .info .profile.fold .meta:first-child,
+.user .info .profile.fold .meta:nth-child(2) {
+    display: block
+}
+
+.user .info .profile .fold-button {
+    margin-top: 8px;
+    margin-left: -16px
+}
+
+.user .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 16px 57px
+}
+
+.user .actions .edit,
+.user .actions .mc-follow {
+    margin-right: 58px
+}
+
+.user .actions .edit i {
+    font-size: 21px
+}
+
+.user .actions .follow {
+    display: flex;
+    flex: 1;
+    align-items: center
+}
+
+.user .actions .divider {
+    width: 1px;
+    height: 16px;
+    margin: 0 8px;
+    background-color: rgba(0, 0, 0, .12)
+}
+
+.mdui-theme-layout-dark .user .actions .divider {
+    background-color: hsla(0, 0%, 100%, .12)
+}
+
+@media (max-width:599px) {
+    .user,
+    .user .cover {
+        border-radius: 0
+    }
+    .user .info {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 16px 16px
+    }
+    .user .info .avatar-box {
+        width: 106px;
+        min-width: 106px;
+        height: 106px;
+        margin-top: -53px
+    }
+    .user .info .profile {
+        width: 100%;
+        padding-left: 0
+    }
+    .user .info .profile.fold {
+        width: auto
+    }
+    .user .info .profile .username {
+        padding-top: 10px;
+        font-size: 24px;
+        text-align: center
+    }
+    .user .actions {
+        position: relative;
+        margin-top: 54px;
+        padding: 0 16px 16px
+    }
+    .user .actions .edit,
+    .user .actions .mc-follow {
+        margin-right: 0
+    }
+    .user .actions .follow {
+        position: absolute;
+        top: -54px;
+        right: 16px;
+        left: 16px;
+        border-top: 1px solid rgba(0, 0, 0, .06);
+        border-bottom: 1px solid rgba(0, 0, 0, .06)
+    }
+    .mdui-theme-layout-dark .user .actions .follow {
+        border-color: hsla(0, 0%, 100%, .06)
+    }
+    .user .actions .followees,
+    .user .actions .followers {
+        width: 50%;
+        border-radius: 0
+    }
+    .user .actions .divider {
+        margin: 0
+    }
+}
+
+.mc-account {
+    max-width: 448px;
+    overflow-y: auto
+}
+
+.mc-account .arrow_back,
+.mc-account .close {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    display: block;
+    color: #fff
+}
+
+.mc-account .avatar {
+    position: absolute;
+    top: 40px;
+    left: 36px;
+    display: block;
+    color: hsla(0, 0%, 100%, .56);
+    font-size: 76px
+}
+
+.mc-account .mdui-dialog-title {
+    margin-bottom: 24px;
+    padding: 146px 40px 28px;
+    color: #fff
+}
+
+.mdui-theme-layout-dark .mc-account .mdui-dialog-title {
+    background-color: #303030
+}
+
+.mc-account form {
+    padding: 0 40px 62px
+}
+
+.mc-account .more-option {
+    margin-left: -16px
+}
+
+.mc-account .captcha-field {
+    margin-right: 116px;
+    overflow: visible
+}
+
+.mc-account .captcha-image {
+    position: absolute;
+    right: -116px;
+    bottom: 29px;
+    cursor: pointer
+}
+
+.mc-account .send-email-field {
+    margin-right: 116px;
+    overflow: visible
+}
+
+.mc-account .send-email {
+    position: absolute;
+    right: -116px;
+    bottom: 29px
+}
+
+.mc-account .actions {
+    margin-top: 24px
+}
+
+.mc-account .action-btn {
+    float: right
+}
+
+.mdui-theme-layout-dark .mc-account .action-btn {
+    background-color: #525252!important
+}
+
+@media (max-width:599px) {
+    .mc-account {
+        position: fixed!important;
+        top: 0!important;
+        right: 0!important;
+        bottom: 0!important;
+        left: 0!important;
+        width: 100%!important;
+        max-width: none!important;
+        height: 100%!important;
+        max-height: none!important;
+        margin: 0!important;
+        border-radius: 0!important
+    }
+    .mc-account .back,
+    .mc-account .close {
+        top: 10px;
+        left: 8px
+    }
+    .mc-account .avatar {
+        display: none
+    }
+    .mc-account .mdui-dialog-title {
+        padding: 10px 16px 10px 52px;
+        line-height: 36px
+    }
+    .mc-account form {
+        padding: 0 24px 24px
+    }
+    .mc-account form .mdui-textfield {
+        padding-top: 4px
+    }
+    .mc-account .actions {
+        margin-top: 14px
+    }
+}
+
+.mc-login .mdui-dialog-title {
+    /* 已由下方白色毛玻璃覆盖规则处理 */
+}
+
+/* --- 对话框标题栏 --- */
+.mdui-dialog-title {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* --- 下拉菜单毛玻璃 --- */
+.mdui-menu {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05),
+        0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.mdui-theme-layout-dark .mdui-menu {
+    background: rgba(12, 45, 72, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* --- 面板项毛玻璃 --- */
+.mdui-panel-item {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.mdui-theme-layout-dark .mdui-panel-item {
+    background: rgba(12, 45, 72, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- 统计卡片毛玻璃 --- */
+.admin-stat-item {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-stat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.mdui-theme-layout-dark .admin-stat-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* --- 表格容器毛玻璃 --- */
+.mdui-table {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.mdui-theme-layout-dark .mdui-table {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* --- 列表项半透明 --- */
+.mdui-list-item {
+    background: transparent;
+}
+
+/* --- Snackbar 毛玻璃 --- */
+.mdui-snackbar {
+    background: rgba(40, 40, 50, 0.85) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Tooltip 毛玻璃 --- */
+.mdui-tooltip {
+    background: rgba(40, 40, 50, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* --- Select 下拉毛玻璃 --- */
+.mdui-select-menu {
+    background: rgba(255, 255, 255, 0.88) !important;
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.mdui-theme-layout-dark .mdui-select-menu {
+    background: rgba(12, 45, 72, 0.88) !important;
+}
+
+/* --- 进度条容器 --- */
+.mdui-card-content {
+    background: transparent;
+}
+
+/* --- 文本框半透明 --- */
+.mdui-textfield-focus .mdui-textfield-input {
+    border-bottom-color: rgba(0, 0, 0, 0.3);
+}
+
+/* --- 浮动按钮毛玻璃 --- */
+.mdui-fab {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* --- 遮罩层半透明模糊 --- */
+.mdui-dialog-mask,
+.mdui-overlay {
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+/* --- 安装页面背景（已由下方统一覆盖规则处理） --- */
+
+/* --- 安装日志容器保持深色 --- */
+.install-log-container {
+    background: rgba(15, 23, 42, 0.92) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+/* --- 进度条毛玻璃 --- */
+.mdui-progress {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* --- hover 卡片增强 --- */
+.mdui-hoverable:hover {
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.06),
+        0 12px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    transition: all 0.35s ease;
+}
+
+/* --- 底部按钮区域 --- */
+.mdui-btn-raised {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* --- 移动端优化：降低模糊值以提升性能 --- */
+@media (max-width: 600px) {
+    .mdui-card,
+    .mdui-dialog,
+    .mdui-menu,
+    .mdui-select-menu {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+    .mdui-appbar .mdui-toolbar,
+    .mdui-drawer {
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+    }
+    /* 移动端减小渐变尺寸，降低动画频率 */
+    body.mdui-appbar-with-toolbar,
+    body.mdui-theme-accent-blue,
+    body.mdui-color-blue-a200,
+    body.mdui-theme-primary-blue.mdui-theme-accent-blue.mdui-appbar-with-toolbar {
+        background-size: 200% 200%;
+        animation-duration: 35s;
+    }
+    body.mdui-appbar-with-toolbar::before,
+    body.mdui-theme-accent-blue::before,
+    body.mdui-color-blue-a200::before {
+        animation-duration: 30s;
+    }
+}
+
+/* --- 登录弹窗移动端适配 --- */
+.login-dialog-mobile {
+    max-width: 360px;
+    width: calc(100% - 32px);
+    margin: 16px auto;
+}
+@media (max-width: 480px) {
+    .login-dialog-mobile {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        border-radius: 14px 14px 0 0;
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        right: 0;
+        transform: none !important;
+        max-height: 55vh;
+    }
+    .login-dialog-mobile .mdui-dialog-title {
+        padding: 10px 14px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .login-dialog-mobile .mdui-dialog-content {
+        padding: 6px 14px 14px;
+        max-height: calc(55vh - 48px);
+        overflow-y: auto;
+    }
+    .login-dialog-mobile .mdui-textfield {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+    .login-dialog-mobile .mdui-textfield-input {
+        font-size: 16px;
+    }
+}
+
+/* --- 反馈弹窗移动端适配 --- */
+.feedback-dialog-mobile {
+    max-width: 420px;
+    width: calc(100% - 32px);
+}
+@media (max-width: 480px) {
+    .feedback-dialog-mobile {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        border-radius: 14px 14px 0 0;
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        right: 0;
+        transform: none !important;
+        max-height: 60vh;
+    }
+    .feedback-dialog-mobile .mdui-dialog-title {
+        padding: 10px 14px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .feedback-dialog-mobile .mdui-dialog-content {
+        padding: 6px 14px 14px;
+        max-height: calc(60vh - 48px);
+        overflow-y: auto;
+    }
+    .feedback-dialog-mobile .mdui-textfield {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+}
+
+/* --- 后台弹窗通用移动端适配 --- */
+.mc-user-edit {
+    max-width: 520px;
+    width: calc(100% - 32px);
+}
+@media (max-width: 560px) {
+    .mc-user-edit {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+    .mc-user-edit .mdui-dialog-content {
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+    }
+}
+
+/* --- 浮动按钮确保在最上层 --- */
+.mdui-fab-fixed {
+    z-index: 999;
+}
+
+@media (max-width: 480px) {
+    .mdui-fab-fixed {
+        bottom: 24px;
+        right: 16px;
+    }
+}
+
+/* --- 文字显示修复：防止被截断或覆盖 --- */
+.mdui-list-item-title,
+.mdui-list-item-text,
+.mdui-card-primary-title,
+.mdui-card-primary-subtitle {
+    word-break: break-all;
+    white-space: normal;
+}
+.mdui-list-item-one-line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mdui-chip-title {
+    white-space: normal;
+    word-break: break-all;
+}
+/* 表格文字显示修复 */
+.mdui-table td,
+.mdui-table th {
+    word-break: break-all;
+    white-space: normal;
+}
+.mdui-table th {
+    white-space: nowrap;
+}
+/* texto类在小屏幕上允许换行 */
+@media (max-width: 480px) {
+    .texto {
+        width: 100%;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
+}
+/* 确保pre和code内容不溢出 */
+.mdui-typo pre,
+.mdui-typo code {
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+/* 防止表格容器溢出 */
+.mdui-table-fluid {
+    overflow-x: auto;
+    max-width: 100%;
+}
+/* 弹窗标题文字修复 */
+.mdui-dialog-title {
+    word-break: break-all;
+    white-space: normal;
+    line-height: 1.4;
+}
+/* 确保卡片副标题不溢出 */
+.mdui-card-primary-subtitle {
+    overflow: visible;
+}
+/* textfield helper 文字确保显示完整 */
+.mdui-textfield {
+    padding-bottom: 4px;
+}
+.mdui-textfield-helper {
+    position: static;
+    margin-top: 4px;
+    padding-bottom: 2px;
+}
+/* 卡片内容文字不被截断 */
+.mdui-card-content {
+    overflow: visible;
+}
+/* 接口描述文字显示 */
+.mdui-card-primary .mdui-card-primary-title {
+    line-height: 1.35;
+}
+/* 确保 code 标签文字换行 */
+code {
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+/* 导航栏标题不溢出 */
+.mdui-typo-headline,
+.mdui-typo-title {
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+/* 大标题在移动端缩小，防止溢出 */
+@media (max-width: 480px) {
+    .mdui-typo-display-1 {
+        font-size: 28px;
+        line-height: 1.3;
+        word-break: break-all;
+    }
+    .mdui-typo-headline {
+        font-size: 22px;
+        line-height: 1.3;
+        word-break: break-all;
+    }
+}
+
+/* --- 尊重用户减少动画偏好 --- */
+@media (prefers-reduced-motion: reduce) {
+    body.mdui-appbar-with-toolbar,
+    body.mdui-theme-accent-blue,
+    body.mdui-color-blue-a200,
+    body.mdui-theme-primary-blue.mdui-theme-accent-blue.mdui-appbar-with-toolbar {
+        animation: none;
+        background-size: 100% 100%;
+    }
+    body.mdui-appbar-with-toolbar::before,
+    body.mdui-theme-accent-blue::before,
+    body.mdui-color-blue-a200::before {
+        animation: none;
+    }
+}
+
+/* --- 防止浮动按钮遮挡页面底部内容 --- */
+body.mdui-appbar-with-toolbar {
+    padding-bottom: 72px;
+}
+
+/* --- 不支持 backdrop-filter 的浏览器降级 --- */
+@supports not (backdrop-filter: blur(10px)) {
+    .mdui-card {
+        background: rgba(255, 255, 255, 0.94) !important;
+    }
+    .mdui-appbar .mdui-toolbar {
+        background: rgba(255, 255, 255, 0.94) !important;
+    }
+    .mdui-drawer {
+        background: rgba(255, 255, 255, 0.96) !important;
+    }
+    .mdui-dialog {
+        background: rgba(255, 255, 255, 0.96) !important;
+    }
+    .mdui-menu {
+        background: rgba(255, 255, 255, 0.96) !important;
+    }
+    .mdui-theme-layout-dark .mdui-card {
+        background: rgba(12, 45, 72, 0.94) !important;
+    }
+    .mdui-theme-layout-dark .mdui-appbar .mdui-toolbar {
+        background: rgba(12, 45, 72, 0.94) !important;
+    }
+    .mdui-theme-layout-dark .mdui-drawer {
+        background: rgba(8, 51, 68, 0.96) !important;
+    }
+    .mdui-theme-layout-dark .mdui-dialog {
+        background: rgba(12, 45, 72, 0.96) !important;
+    }
+    .mdui-theme-layout-dark .mdui-menu {
+        background: rgba(12, 45, 72, 0.96) !important;
+    }
+}
+
+/* ========================================
+   文档页头部（白色毛玻璃卡片替代蓝色横幅）
+   ======================================== */
+.doc-header-glass {
+    background: rgba(255, 255, 255, 0.55) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.doc-header-glass .mdui-typo-display-1 {
+    color: #1a1a2e;
+}
+
+.doc-header-glass .mdui-typo-subtitle {
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.mdui-theme-layout-dark .doc-header-glass {
+    background: rgba(30, 32, 40, 0.65) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mdui-theme-layout-dark .doc-header-glass .mdui-typo-display-1 {
+    color: #e2e8f0;
+}
+
+.mdui-theme-layout-dark .doc-header-glass .mdui-typo-subtitle {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- 接口反馈按钮（白色毛玻璃） --- */
+.doc-feedback-btn {
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    color: #334155 !important;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 10px !important;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.doc-feedback-btn:hover {
+    background: rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.doc-feedback-btn .mdui-icon {
+    color: #64748b;
+}
+
+.mdui-theme-layout-dark .doc-feedback-btn {
+    background: rgba(30, 32, 40, 0.6) !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mdui-theme-layout-dark .doc-feedback-btn:hover {
+    background: rgba(30, 32, 40, 0.8) !important;
+}
+
+.mdui-theme-layout-dark .doc-feedback-btn .mdui-icon {
+    color: #94a3b8;
+}
