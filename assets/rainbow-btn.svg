@@ -1,22 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="120" viewBox="0 0 500 120" preserveAspectRatio="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="140" viewBox="0 0 600 140" preserveAspectRatio="none">
   <defs>
-    <linearGradient id="rainbow" x1="0%" y1="50%" x2="300%" y2="50%">
-      <stop offset="0%" stop-color="#ff006e"/>
-      <stop offset="12%" stop-color="#fb5607"/>
-      <stop offset="25%" stop-color="#ffbe0b"/>
-      <stop offset="37%" stop-color="#8338ec"/>
-      <stop offset="50%" stop-color="#3a86ff"/>
-      <stop offset="62%" stop-color="#06ffa5"/>
-      <stop offset="75%" stop-color="#ffbe0b"/>
-      <stop offset="87%" stop-color="#fb5607"/>
-      <stop offset="100%" stop-color="#ff006e"/>
-      <animate attributeName="x1" values="0%;-300%;0%" dur="8s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="300%;0%;300%" dur="8s" repeatCount="indefinite"/>
+    <linearGradient id="rainbow" x1="0%" y1="0%" x2="300%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b9d"/>
+      <stop offset="15%" stop-color="#c44cff"/>
+      <stop offset="30%" stop-color="#6b8cff"/>
+      <stop offset="45%" stop-color="#4dd0e1"/>
+      <stop offset="60%" stop-color="#69f0ae"/>
+      <stop offset="75%" stop-color="#ffd740"/>
+      <stop offset="90%" stop-color="#ff7b4f"/>
+      <stop offset="100%" stop-color="#ff6b9d"/>
+      <animate attributeName="x1" values="0%;-300%;0%" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="300%;0%;300%" dur="7s" repeatCount="indefinite"/>
     </linearGradient>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
+    <linearGradient id="sheen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.5)"/>
+      <stop offset="40%" stop-color="rgba(255,255,255,0.1)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
   </defs>
-  <rect width="500" height="120" fill="url(#rainbow)" filter="url(#glow)"/>
+  <rect width="600" height="140" fill="url(#rainbow)" rx="70" ry="70"/>
+  <rect width="600" height="70" fill="url(#sheen)" rx="70" ry="70"/>
 </svg>
