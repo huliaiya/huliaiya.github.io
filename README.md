@@ -13,7 +13,6 @@
 </p>
 
 <p align="center">
-  <a href="https://www.ifdian.net/a/hulihulihuli"><img src="https://img.shields.io/badge/💖_爱发电-支持我-ff69b4?style=for-the-badge" /></a>
   <img src="https://img.shields.io/badge/Android-7.0+-2ea44f?logo=android&style=for-the-badge" />
   <img src="https://img.shields.io/badge/Root-Required-ff4444?style=for-the-badge" />
   <img src="https://img.shields.io/badge/🔥-Alpha_开发中-orange?style=for-the-badge" />
@@ -70,51 +69,6 @@ Huli（狐狸）是一款专为 **Android 搞机爱好者** 打造的新一代 R
   <div style="font-size: 48px; margin-bottom: 12px;">🎨</div>
   <h3 style="margin: 0 0 10px 0; color: #333;">极致体验</h3>
   <p style="margin: 0; color: rgba(0,0,0,0.7); font-size: 14px; line-height: 1.6;">Material You 动态色彩，系统壁纸是什么颜色，Huli 就是什么颜色。液态玻璃视觉效果，丝滑过渡动画，让每一次操作都变成一种享受。</p>
-</div>
-
-</div>
-
----
-
-## 💖 支持我
-
-> **这个项目由我个人在业余时间独立开发。从架构设计到 UI 打磨，从功能开发到测试适配，每一个细节都倾注了大量心血。如果你觉得它对你有帮助，或者期待后续功能，欢迎通过爱发电赞助我！**
-
-<div style="background: linear-gradient(135deg, rgba(255, 105, 180, 0.15), rgba(168, 85, 247, 0.15)); padding: 36px; border-radius: 28px; border: 2px solid rgba(255, 105, 180, 0.4); margin: 28px 0;">
-
-<p align="center">
-  <a href="https://www.ifdian.net/a/hulihulihuli" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/👉_点我去爱发电赞助_❤️-ff69b4?style=for-the-badge&logo=heart&logoColor=white" />
-  </a>
-</p>
-
-<div style="display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; align-items: flex-start; margin-top: 32px;">
-
-<div style="text-align: center;">
-  <a href="https://www.ifdian.net/a/hulihulihuli">
-    <img src="assets/afdian.png" alt="爱发电主页" style="width: 280px; border-radius: 20px; box-shadow: 0 12px 40px rgba(168, 85, 247, 0.4); border: 4px solid #fff;" />
-  </a>
-  <p style="margin-top: 16px; font-weight: bold; color: #a855f7; font-size: 16px;">👆 点击图片进入我的爱发电主页</p>
-</div>
-
-<div style="text-align: left; min-width: 260px; max-width: 360px;">
-  <h3 style="margin-top: 0; color: #ff69b4;">🎁 赞助档位</h3>
-  
-  <div style="background: rgba(255,255,255,0.5); padding: 14px 18px; border-radius: 14px; margin-bottom: 12px;">
-    <p style="margin: 0;"><b>☕ ¥10 / 月</b> — 请我喝杯咖啡，提神醒脑写代码</p>
-  </div>
-  
-  <div style="background: rgba(255,255,255,0.5); padding: 14px 18px; border-radius: 14px; margin-bottom: 12px;">
-    <p style="margin: 0;"><b>🍕 ¥30 / 月</b> — 获得内测版优先体验 + 功能建议优先权</p>
-  </div>
-  
-  <div style="background: rgba(255,255,255,0.5); padding: 14px 18px; border-radius: 14px; margin-bottom: 12px;">
-    <p style="margin: 0;"><b>🚀 ¥100 / 月</b> — 冠名感谢 + 定制功能优先级 + 专属交流群</p>
-  </div>
-  
-  <p style="color: #ff69b4; font-size: 14px; margin-top: 20px; font-weight: bold;">你的每一份支持，都是这个项目能持续走下去的最大动力 ❤️</p>
-</div>
-
 </div>
 
 </div>
@@ -238,9 +192,58 @@ A: 狐狸在东方文化中象征机智、敏捷和灵性。我们希望这款�
 
 ---
 
+## 💖 赞助支持
+
+> **这个项目由我个人在业余时间独立开发。从架构设计到 UI 打磨，从功能开发到测试适配，每一个细节都倾注了大量心血。如果你觉得它对你有帮助，欢迎通过以下方式赞助我！
+
+<div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin: 32px 0;">
+
+<div style="width: 260px; border-radius: 20px; padding: 24px 20px; text-align: center; backdrop-filter: blur(20px); border: 1px solid rgba(22, 119, 255, 0.3); background: linear-gradient(135deg, rgba(22, 119, 255, 0.15), rgba(22, 119, 255, 0.05)); box-shadow: 0 8px 32px rgba(22, 119, 255, 0.2);">
+  <div style="width: 56px; height: 56px; margin: 0 auto 12px; border-radius: 16px; background: linear-gradient(135deg, #1677ff, #0958d9); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; font-weight: bold;">支</div>
+  <h3 style="margin: 0 0 4px 0; color: #1677ff;">支付宝</h3>
+  <p style="margin: 0 0 16px 0; font-size: 13px; color: #888;">推荐使用 · 支持花呗/信用卡</p>
+  <div style="background: #fff; border-radius: 14px; padding: 8px; margin: 0 auto 12px; width: 160px; height: 160px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+    <img src="assets/alipay.png" alt="支付宝收款码" style="width: 100%; height: 100%; border-radius: 8px;" />
+  </div>
+  <p style="margin: 0; font-size: 14px; color: #333; font-weight: 500;">狐狸科技</p>
+</div>
+
+<div style="width: 260px; border-radius: 20px; padding: 24px 20px; text-align: center; backdrop-filter: blur(20px); border: 1px solid rgba(7, 193, 96, 0.3); background: linear-gradient(135deg, rgba(7, 193, 96, 0.15), rgba(7, 193, 96, 0.05)); box-shadow: 0 8px 32px rgba(7, 193, 96, 0.2);">
+  <div style="width: 56px; height: 56px; margin: 0 auto 12px; border-radius: 16px; background: linear-gradient(135deg, #07c160, #06ad56); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; font-weight: bold;">微</div>
+  <h3 style="margin: 0 0 4px 0; color: #07c160;">微信支付</h3>
+  <p style="margin: 0 0 16px 0; font-size: 13px; color: #888;">微信扫码，方便快捷</p>
+  <div style="background: #fff; border-radius: 14px; padding: 8px; margin: 0 auto 12px; width: 160px; height: 160px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+    <img src="assets/wechat.png" alt="微信收款码" style="width: 100%; height: 100%; border-radius: 8px;" />
+  </div>
+  <p style="margin: 0; font-size: 14px; color: #333; font-weight: 500;">狐狸</p>
+</div>
+
+<div style="width: 260px; border-radius: 20px; padding: 24px 20px; text-align: center; backdrop-filter: blur(20px); border: 1px solid rgba(168, 85, 247, 0.3); background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.05)); box-shadow: 0 8px 32px rgba(168, 85, 247, 0.2);">
+  <div style="width: 56px; height: 56px; margin: 0 auto 12px; border-radius: 16px; background: linear-gradient(135deg, #a855f7, #9333ea); display: flex; align-items: center; justify-content: center; font-size: 28px;">💖</div>
+  <h3 style="margin: 0 0 4px 0; color: #a855f7;">爱发电</h3>
+  <p style="margin: 0 0 16px 0; font-size: 13px; color: #888;">长期赞助 · 解锁更多权益</p>
+  <a href="https://www.ifdian.net/a/hulihulihuli">
+  <div style="background: #fff; border-radius: 14px; padding: 8px; margin: 0 auto 12px; width: 160px; height: 160px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+    <img src="assets/afdian.png" alt="爱发电主页" style="width: 100%; height: 100%; border-radius: 8px;" />
+  </div>
+  </a>
+  <p style="margin: 0; font-size: 14px; color: #333; font-weight: 500;">hulihulihuli</p>
+</div>
+
+</div>
+
+<p align="center" style="color: #888; font-size: 14px; margin-top: 8px;">
+  💡 扫码后请备注你的昵称，感谢你的支持 ❤️
+</p>
+
+<p align="center" style="color: #888; font-size: 13px; margin-top: 4px;">
+  📂 替换方法：把你的收款码命名为 alipay.png / wechat.png / afdian.png 放到 assets 文件夹即可
+</p>
+
+---
+
 <p align="center">
   <a href="https://www.ifdian.net/a/hulihulihuli"><img src="https://img.shields.io/badge/💖_爱发电-hulihulihuli-ff69b4?style=flat-square" /></a>
-  <a href="https://www.ifdian.net/a/hulihulihuli"><img src="https://img.shields.io/badge/☕_请我喝杯咖啡-ff69b4?style=flat-square" /></a>
 </p>
 
 <p align="center">
