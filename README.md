@@ -5,11 +5,11 @@
 <h1 align="center">🦊 Huli</h1>
 
 <p align="center">
-  <b>新一代 Android 病毒检测 & 安全防护引擎</b>
+  <b>Android 病毒检测 & 安全防护工具</b>
 </p>
 
 <p align="center">
-  <i>多引擎云查杀 · Root/LSPosed/Shizuku 三模深度检测 · 为你的设备保驾护航</i>
+  <i>云端多引擎检测 · Root/LSPosed/Shizuku 多模式支持 · 了解你的设备安全状态</i>
 </p>
 
 <p align="center">
@@ -29,42 +29,42 @@
 
 ## 📖 关于 Huli
 
-**Huli（狐狸）是一款专为 Android 设备打造的新一代病毒检测与安全防护引擎。它就是你口袋里的安全专家，全天候守护你的手机安全。**
+**Huli（狐狸）是一款专为 Android 设备打造的病毒检测与安全防护工具，帮助你了解和管理设备的安全状态。**
 
-你是否遇到过这些安全隐患？
+你是否关心过这些安全问题？
 
-| 威胁场景 | 你的设备是否安全？ |
+| 关注场景 | 你想了解吗？ |
 |---------|-------------|
-| 🦠 **木马病毒** | 手机是不是被偷偷植入了木马、勒索软件？ |
-| 🕵️ **间谍软件** | 有没有应用在窃取你的短信、通话记录、位置？ |
-| 🎮 **远控后门** | 设备是不是被 TeamViewer、向日葵、RAT工具远控了？ |
-| 📤 **恶意上传** | 有没有 App 在后台偷偷上传你的照片、视频、通讯录？ |
-| 🧩 **模块注入** | Magisk / LSPosed 模块有没有被植入恶意代码？ |
-| 🔑 **密码泄露** | 你保存的密码是不是已经在数据泄露事件中被公开？ |
-| 📡 **隐私窥探** | 有没有应用在后台偷偷调用摄像头、麦克风、剪贴板？ |
-| 💣 **系统篡改** | 系统分区文件是不是被替换、patch或注入了恶意代码？ |
-| 🔥 **异常发热** | 手机是不是莫名发烫、耗电飞快，后台有鬼却查不出来？ |
+| 🦠 **木马病毒** | 手机里有没有可疑的木马、勒索类应用？ |
+| 🕵️ **间谍软件** | 有没有应用在频繁读取短信、通话记录、位置信息？ |
+| 🎮 **远控后门** | 设备上有没有安装可疑的远控软件或 RAT 工具？ |
+| 📤 **恶意上传** | 有没有应用在后台上传大量数据？ |
+| 🧩 **模块注入** | Magisk / LSPosed 模块有没有包含可疑的脚本？ |
+| 🔑 **密码泄露** | 你保存的密码是不是太弱或在泄露事件中出现过？ |
+| 📡 **隐私窥探** | 有没有应用在后台频繁调用摄像头、麦克风、剪贴板？ |
+| 💣 **系统篡改** | 系统分区文件有没有被修改过？ |
+| 🔥 **异常发热** | 手机发烫、耗电快时，是哪个应用在后台跑？ |
 
-**Huli 就是为了解决这些问题而生的，全方位保护你的手机安全。**
+**Huli 希望通过多种检测方式，帮你更好地了解设备的安全状况。**
 
-我们整合了 **VirusTotal、Hybrid Analysis、MetaDefender** 等全球顶级云端扫描引擎（70+ 杀毒引擎联合检测），配合 **Root / LSPosed / Shizuku** 三种检测模式的深度权限，为你的 Android 设备提供**从应用层到系统层的全方位安全体检服务**。
+我们接入了 **VirusTotal、Hybrid Analysis、MetaDefender** 等云端扫描服务（可调用 70+ 杀毒引擎的检测结果），配合 **Root / LSPosed / Shizuku** 三种检测模式，为你的 Android 设备提供多维度的安全检测。
 
-> **为什么叫 Huli？** 狐狸在东方文化中象征着机智、敏捷和灵性。我们希望这款工具能像狐狸一样，敏锐地嗅出设备中的每一丝威胁，灵动地应对每一种风险，为你的 Android 之旅保驾护航 🦊
+> **为什么叫 Huli？** 狐狸在东方文化中象征着机警和敏锐。我们希望这款工具能像狐狸一样，帮助你及时发现设备中的安全问题 🦊
 
 ---
 
-## 🎯 三模检测体系
+## 🎯 多种检测模式
 
-Huli 支持三种检测模式，根据你的设备状态自动适配，**不需要全部开启，按需选择即可**：
+Huli 支持多种检测模式，你可以根据设备状态选择适合的方式：
 
-| 检测模式 | 权限要求 | 检测深度 | 说明 |
+| 检测模式 | 权限要求 | 检测范围 | 说明 |
 |---------|---------|---------|------|
-| 🟢 **基础模式** | 无需 Root | ⭐⭐ | 普通应用扫描、云端哈希检测、权限审计 |
-| 🔵 **Shizuku 模式** | Shizuku 授权 | ⭐⭐⭐ | ADB 级权限深度检测、系统服务扫描、应用ops审计 |
-| 🟠 **Root 模式** | Magisk / KernelSU / APatch | ⭐⭐⭐⭐⭐ | 系统分区校验、进程注入检测、模块安全审计、全维度扫描 |
-| 🟣 **LSPosed 模式** | LSPosed 框架 | ⭐⭐⭐⭐ | 模块行为监控、Hook 行为检测、作用域安全审计 |
+| 🟢 **基础模式** | 无需 Root | 应用扫描、云端哈希检测、权限审计 | 所有设备都可用 |
+| 🔵 **Shizuku 模式** | Shizuku 授权 | ADB 级检测、系统服务查看、应用 ops 检查 | 无需 Root，检测范围更广 |
+| 🟠 **Root 模式** | Magisk / KernelSU / APatch | 系统分区检查、进程检测、模块审计 | 检测最全面 |
+| 🟣 **LSPosed 模式** | LSPosed 框架 | 模块行为监控、Hook 检测、作用域检查 | 需配合 LSPosed 使用 |
 
-> 💡 **所有高级检测模式（Root / Shizuku）**均为**可选**，仅在你主动开启并授权后才会触发相关检测。未授权时自动降级到基础模式，UI体验完全一致。
+> 💡 所有高级检测模式（Root / Shizuku）均为可选，仅在你主动开启并授权后才会触发。未授权时自动使用基础模式。
 
 ---
 
@@ -74,137 +74,137 @@ Huli 支持三种检测模式，根据你的设备状态自动适配，**不需�
 
 <div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #ff5858 0%, #f09819 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(255, 88, 88, 0.4);">
   <div style="font-size: 48px; margin-bottom: 12px;">🦠</div>
-  <h3 style="margin: 0 0 10px 0; color: #fff;">云端病毒查杀</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">接入 VirusTotal 等 70+ 云端引擎，木马、勒索、间谍、广告、挖矿程序一网打尽。支持 APK 全量扫描与安装包实时监控，新安装应用自动检测。</p>
+  <h3 style="margin: 0 0 10px 0; color: #fff;">云端病毒检测</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">接入 VirusTotal 等云端服务，可查询 70+ 引擎的检测结果，帮助识别木马、勒索、间谍等可疑应用。支持 APK 批量扫描和新安装应用检测。</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);">
   <div style="font-size: 48px; margin-bottom: 12px;">🎮</div>
   <h3 style="margin: 0 0 10px 0; color: #fff;">远控后门扫描</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">检测 TeamViewer、向日葵、ToDesk、AnyDesk 等远控软件，以及 AhMyth、AndroRat、SpyNote 等开源 RAT 工具。扫描异常端口、后台服务、网络连接，发现潜伏后门立即切断。</p>
+  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">检测 TeamViewer、向日葵、ToDesk、AnyDesk 等常见远控软件，以及 AhMyth、AndroRat、SpyNote 等开源 RAT 工具特征。扫描异常端口、后台服务和网络连接，帮助发现可疑的远控行为。</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(245, 87, 108, 0.4);">
   <div style="font-size: 48px; margin-bottom: 12px;">🧩</div>
   <h3 style="margin: 0 0 10px 0; color: #fff;">模块安全审计</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">深度扫描所有已安装的 Magisk / KernelSU / LSPosed 模块。检测模块脚本中的恶意命令、系统文件替换、开机自启可疑操作。每个模块都经过安全评级，危险模块立即标记警告。</p>
+  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">扫描已安装的 Magisk / KernelSU / LSPosed 模块，检查模块脚本中是否包含可疑命令、是否修改了系统文件、是否在开机时执行了额外操作。对模块进行安全评级标注。</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(79, 172, 254, 0.4);">
   <div style="font-size: 48px; margin-bottom: 12px;">💉</div>
-  <h3 style="margin: 0 0 10px 0; color: #fff;">木马植入检测</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">扫描系统服务、Zygote 进程、应用进程是否被注入木马代码。检查 dex 文件、so 库、odex 缓存是否被 patch 或 hook。从应用层到框架层再到 Native 层，全方位排查植入威胁。</p>
+  <h3 style="margin: 0 0 10px 0; color: #fff;">注入行为检测</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">扫描系统服务、Zygote 进程、应用进程中是否存在可疑的注入行为。检查 dex 文件、so 库是否被修改，从应用层到框架层多维度排查。</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(250, 112, 154, 0.4);">
   <div style="font-size: 48px; margin-bottom: 12px;">📤</div>
-  <h3 style="margin: 0 0 10px 0; color: #fff;">恶意上传监控</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">实时监控应用网络行为，检测是否有应用在后台偷偷上传照片、视频、通讯录、短信、文件。通过流量大小、上传频率、目标域名多维度判断，可疑上传立即弹窗警告。</p>
+  <h3 style="margin: 0 0 10px 0; color: #fff;">网络行为监控</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">观察应用的网络行为，统计各应用的流量使用情况。对上传频率异常、流量消耗大的应用进行标注，帮助你了解哪些应用在后台活跃。</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(168, 237, 234, 0.4);">
   <div style="font-size: 48px; margin-bottom: 12px;">💣</div>
   <h3 style="margin: 0 0 10px 0; color: #333;">系统完整性校验</h3>
-  <p style="margin: 0; color: rgba(0,0,0,0.7); font-size: 14px; line-height: 1.6;">检测 /system、/vendor、/product 分区系统模块是否被篡改、替换或注入恶意代码。校验系统文件哈希值，与原厂 ROM 比对，发现不一致立即报警。通过 Root 模式可深入 Boot 分区级检测。</p>
+  <p style="margin: 0; color: rgba(0,0,0,0.7); font-size: 14px; line-height: 1.6;">检查 /system、/vendor、/product 分区的系统文件状态，与基准哈希值进行比对。发现与预期不一致的文件会进行标注，帮助你了解系统分区的变动情况。</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(132, 250, 176, 0.4);">
   <div style="font-size: 48px; margin-bottom: 12px;">🔑</div>
   <h3 style="margin: 0 0 10px 0; color: #333;">密码安全检测</h3>
-  <p style="margin: 0; color: rgba(0,0,0,0.7); font-size: 14px; line-height: 1.6;">扫描设备已保存密码，检测弱密码（123456、password）、重复密码（多账号共用）、泄露密码（对接 Have I Been Pwned 数据库）。使用 k-匿名性技术，密码哈希只发前5位，保护隐私。</p>
+  <p style="margin: 0; color: rgba(0,0,0,0.7); font-size: 14px; line-height: 1.6;">检查设备中已保存的密码强度，识别弱密码和重复使用的密码。可对接 Have I Been Pwned 查询密码是否在已知泄露事件中出现过（使用 k-匿名性技术保护隐私）。</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #654ea3 0%, #eaafc8 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(101, 78, 163, 0.4);">
   <div style="font-size: 48px; margin-bottom: 12px;">🔌</div>
   <h3 style="margin: 0 0 10px 0; color: #fff;">Shizuku 授权支持</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">通过 Shizuku 获取 ADB 级权限进行深度检测，无需 Root 也能达到系统级扫描能力。可进行应用 ops 权限审计、系统服务状态检测、应用间通信监控。用户主动触发授权，用完即回收。</p>
+  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">支持通过 Shizuku 获取 ADB 级权限进行更深入的检测，无需 Root 也能达到更高的检测能力。可进行应用 ops 权限查看、系统服务状态检查等。由用户主动触发授权，检测结束后权限失效。</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #0c3483 0%, #a2b6df 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(12, 52, 131, 0.4);">
   <div style="font-size: 48px; margin-bottom: 12px;">🛡️</div>
   <h3 style="margin: 0 0 10px 0; color: #fff;">隐私保护监控</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">实时监控摄像头、麦克风、剪贴板调用。谁在后台偷拍、偷录、偷读你的验证码？一目了然。敏感权限一键撤回，应用行为全程记录。你的隐私只属于你自己。</p>
+  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">记录摄像头、麦克风、剪贴板的调用情况，方便你查看哪些应用使用了这些敏感权限。支持对应用的敏感权限进行管理和撤回。</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(255, 154, 158, 0.4);">
   <div style="font-size: 48px; margin-bottom: 12px;">🔥</div>
   <h3 style="margin: 0 0 10px 0; color: #333;">设备异常发热检测</h3>
-  <p style="margin: 0; color: rgba(0,0,0,0.7); font-size: 14px; line-height: 1.6;">手机莫名发烫？后台一定有鬼。Huli 实时监控设备温度和 CPU/GPU 占用，识别异常发热的元凶。是挖矿程序在偷偷跑？还是远控软件在后台传数据？一键定位并强制停止，还你一个清凉的手机。</p>
+  <p style="margin: 0; color: rgba(0,0,0,0.7); font-size: 14px; line-height: 1.6;">监控设备温度和 CPU/GPU 占用情况，记录各应用的资源消耗。当设备温度过高或耗电异常时，帮助你定位是哪个应用在后台频繁活动。</p>
 </div>
 
 </div>
 
 ---
 
-## 🔍 为什么选择 Huli？
+## 🔍 功能对比
 
-| 特性 | Huli | 传统安全软件 |
-|------|------|-------------|
-| **云端多引擎扫描** | ✅ 70+ 引擎联合检测 | ❌ 单一引擎，检出率低 |
-| **Root 深度检测** | ✅ 系统级完整性校验 + 植入检测 | ❌ 无 Root 或仅基础扫描 |
-| **LSPosed 模块审计** | ✅ 模块脚本安全扫描 + 行为监控 | ❌ 完全不支持 |
-| **Shizuku ADB 级检测** | ✅ 无需 Root 也能深度扫描 | ❌ 完全不支持 |
-| **远控后门扫描** | ✅ 10+ 种远控工具识别 | ❌ 功能缺失 |
-| **木马植入检测** | ✅ dex/so 注入 + 进程 hook 检测 | ❌ 仅签名比对 |
-| **模块安全审计** | ✅ Magisk/KernelSU/LSPosed 全覆盖 | ❌ 完全不支持 |
-| **密码泄露检测** | ✅ 弱密码 + 泄露密码比对 | ❌ 功能缺失 |
-| **恶意上传监控** | ✅ 实时流量分析 + 可疑上传告警 | ❌ 功能缺失或付费 |
-| **系统完整性校验** | ✅ 原厂 ROM 哈希比对 | ❌ 功能缺失 |
-| **设备异常发热检测** | ✅ 温度监控 + CPU/GPU 占用分析 + 元凶定位 | ❌ 功能缺失或仅基础省电 |
-| **无广告 / 无后台偷跑** | ✅ 纯本地运行，开源透明 | ❌ 你懂的 |
+| 特性 | Huli | 其他工具 |
+|------|------|---------|
+| **云端多引擎查询** | ✅ 可查询 70+ 引擎检测结果 | 多数为单一引擎 |
+| **Root 检测支持** | ✅ 支持系统级检查 | 多数不支持或仅基础功能 |
+| **LSPosed 支持** | ✅ 模块内容检查 | 不支持 |
+| **Shizuku 支持** | ✅ 无需 Root 的 ADB 级检测 | 不支持 |
+| **远控软件识别** | ✅ 常见远控及 RAT 特征识别 | 功能缺失 |
+| **注入行为检测** | ✅ dex/so 文件修改检查 | 多数仅签名比对 |
+| **模块安全检查** | ✅ Magisk/KernelSU/LSPosed 支持 | 不支持 |
+| **密码安全检查** | ✅ 弱密码/泄露密码检测 | 功能缺失 |
+| **流量统计** | ✅ 应用流量使用情况统计 | 功能缺失或需付费 |
+| **系统文件检查** | ✅ 分区文件变动检查 | 功能缺失 |
+| **设备发热监测** | ✅ 温度/CPU/GPU 占用监测 | 功能缺失或仅基础省电 |
+| **无广告 / 开源** | ✅ 纯本地运行，代码开源 | 多数有广告或闭源 |
 
 ---
 
-## 🛡️ 云端安全检测引擎
+## 🛡️ 云端扫描服务
 
-Huli 接入全球顶级云端安全扫描服务，提供企业级安全防护能力：
+Huli 接入了多个云端安全扫描服务，可帮助你获得更全面的检测结果：
 
-### 🌐 接入的云端扫描服务
+### 🌐 支持的云端服务
 
 | 服务 | 说明 | 官网 |
 |------|------|------|
-| **VirusTotal** | 全球最权威多引擎扫描平台，70+ 杀毒引擎（卡巴斯基、Avast、Bitdefender 等） | [virustotal.com](https://www.virustotal.com) |
-| **Hybrid Analysis** | CrowdStrike 旗下免费沙箱，动态行为分析，隔离环境观察应用真实行为 | [hybrid-analysis.com](https://www.hybrid-analysis.com) |
-| **MetaDefender Cloud** | OPSWAT 多引擎威胁情报平台，文件哈希、域名/IP 信誉、CDR 高级功能 | [metadefender.opswat.com](https://metadefender.opswat.com) |
-| **Kaspersky Threat Intelligence** | 卡巴斯基官方威胁情报，文件、域名、IP、URL 安全检测 | [opentip.kaspersky.com](https://opentip.kaspersky.com) |
-| **urlscan.io** | 专业 URL/网站安全扫描，页面截图、流量分析、400+ 品牌钓鱼检测 | [urlscan.io](https://urlscan.io) |
-| **Google Safe Browsing** | 谷歌安全浏览透明报告，Chrome/Firefox 内置安全数据源 | [transparencyreport.google.com](https://transparencyreport.google.com/safe-browsing/search) |
+| **VirusTotal** | 多引擎扫描平台，可查询 70+ 杀毒引擎的检测结果 | [virustotal.com](https://www.virustotal.com) |
+| **Hybrid Analysis** | 沙箱分析服务，可观察应用的动态行为 | [hybrid-analysis.com](https://www.hybrid-analysis.com) |
+| **MetaDefender Cloud** | 多引擎威胁情报平台，支持哈希、域名、IP 查询 | [metadefender.opswat.com](https://metadefender.opswat.com) |
+| **Kaspersky Threat Intelligence** | 卡巴斯基威胁情报，支持文件、域名、IP、URL 查询 | [opentip.kaspersky.com](https://opentip.kaspersky.com) |
+| **urlscan.io** | URL/网站安全扫描服务 | [urlscan.io](https://urlscan.io) |
+| **Google Safe Browsing** | 谷歌安全浏览透明报告 | [transparencyreport.google.com](https://transparencyreport.google.com/safe-browsing/search) |
 
-> 💡 **隐私保护**：我们只上传应用的哈希值（指纹），**不上传完整 APK 文件。匿名检测，不需要注册账号，所有检测逻辑完全开源。
+> 💡 **隐私说明**：我们只上传应用的哈希值，不上传完整 APK 文件。不需要注册账号。
 
 ---
 
-## 🦠 可检测的威胁类型
+## 🦠 支持的检测类型
 
-### 🔴 恶意软件类
+### 🔴 应用安全类
 
-- **木马程序检测** — 识别隐藏在正常应用中的木马、后门。伪装成「实用工具」「游戏辅助」的恶意 App 无所遁形
-- **勒索软件检测** — 扫描文件加密行为，照片文档被加密勒索前提前发现清除
-- **间谍软件检测** — 发现窃取短信、通话记录、位置的恶意程序，你的隐私不该是商品
-- **广告软件检测** — 识别植入恶意广告 SDK 的应用，后台弹广告偷流量 App 一次性清理
-- **挖矿程序检测** — 检测后台加密货币挖矿程序，手机性能不该给别人挖矿
-- **银行木马检测** — 金融类 App 专项识别，支付安全重中之重
-- **Rootkit 检测** — 深度隐藏 Rootkit/Bootkit 扫描，系统底层揪出潜伏威胁
-- **钓鱼网站检测** — Google Safe Browsing + urlscan.io 实时检测恶意网址
+- **木马程序检测** — 通过云端多引擎结果比对，帮助识别可疑的木马、后门类应用
+- **勒索软件检测** — 扫描具有文件加密行为特征的应用
+- **间谍软件检测** — 发现有频繁读取短信、通话记录、位置等行为的应用
+- **广告软件检测** — 识别植入可疑广告 SDK 的应用
+- **挖矿程序检测** — 检测后台运行加密货币挖矿行为的应用
+- **银行木马检测** — 针对金融类应用的专项检测
+- **Rootkit 检测** — 扫描深度隐藏的可疑程序
+- **钓鱼网站检测** — 接入 Google Safe Browsing 和 urlscan.io 查询恶意网址
 
 ### 🟠 系统安全类
 
-- **系统模块完整性校验** — 检测 /system、/vendor、/product 分区是否被篡改注入
-- **木马植入检测** — dex/so/odex 注入扫描，Zygote/系统服务/应用进程全排查
-- **模块安全审计** — Magisk/KernelSU/LSPosed 模块脚本审计，恶意命令/文件替换检测
+- **系统模块完整性校验** — 检查 /system、/vendor、/product 分区文件是否有变动
+- **注入行为检测** — 扫描 dex/so 文件及进程中是否存在可疑的修改
+- **模块安全审计** — 检查 Magisk/KernelSU/LSPosed 模块脚本内容
 
-### 🟡 网络安全类
+### 🟡 网络行为类
 
-- **远控后门扫描** — TeamViewer/向日葵/ToDesk/AnyDesk + AhMyth/AndroRat/SpyNote 全识别
-- **恶意上传监控** — 照片/视频/通讯录/短信/文件上传行为实时监控
-- **可疑域名拦截** — 恶意软件/钓鱼/C&C 服务器域名 IP 自动拦截
+- **远控软件检测** — 识别常见远控软件及开源 RAT 工具特征
+- **流量行为观察** — 统计各应用的上传下载流量情况
+- **可疑域名标注** — 对接威胁情报库标注高风险域名
 
 ### 🔵 隐私安全类
 
-- **密码安全检测** — 弱密码/重复密码/泄露密码（Have I Been Pwned）检测
-- **摄像头/麦克风调用检测** — 后台偷拍偷录实时闪烁警告
-- **剪贴板读取监控** — 身份证/银行卡/验证码不该被无关应用看到
-- **敏感文件扫描** — 身份证/银行卡/私密照片存放位置安全检测
+- **密码安全检查** — 弱密码/重复密码/泄露密码检测
+- **摄像头/麦克风调用记录** — 记录应用对敏感硬件的调用
+- **剪贴板读取监控** — 记录应用读取剪贴板的行为
+- **敏感文件扫描** — 检查敏感文件的存储位置是否安全
 
 ---
 
@@ -227,20 +227,20 @@ Huli 接入全球顶级云端安全扫描服务，提供企业级安全防护能
 ## 🗺️ 开发路线图
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                            Huli 开发路线图                                    │
-├──────────┬────────────────────────────────────────────────────┬─────────────┤
-│  v0.1.0  │  项目框架搭建 + 主题系统 + 液态玻璃视觉           │  ✅ 已完成   │
-│  v0.2.0  │  云端病毒扫描接入 + 应用扫描 + 权限审计            │  🔥 开发中   │
-│  v0.3.0  │  Root 深度检测 + 系统模块校验 + 木马植入检测       │  📋 规划中   │
-│  v0.4.0  │  Shizuku 模式 + ADB 级深度检测                   │  📋 规划中   │
-│  v0.5.0  │  LSPosed 模块审计 + Hook 行为检测                │  📋 规划中   │
-│  v0.6.0  │  远控后门扫描 + 恶意上传监控 + 网络威胁拦截       │  📋 规划中   │
-│  v0.7.0  │  密码安全检测 + 敏感文件扫描 + 隐私监控           │  📋 规划中   │
-│  v0.8.0  │  设备异常发热检测 + 耗电元凶定位 + 性能优化       │  📋 规划中   │
-│  v0.9.0  │  全面安全体检 + 可视化报告 + 一键修复              │  📋 规划中   │
-│  v1.0.0  │  正式版发布 🎉 完整功能 + 稳定体验                │  🌟 未来     │
-└──────────┴────────────────────────────────────────────────────┴─────────────┘
+┌─────────────────────────────────────────────────────────────────────┐
+│                          Huli 开发路线图                              │
+├──────────┬──────────────────────────────────────────┬─────────────┤
+│  v0.1.0  │  项目框架搭建 + 主题系统                  │  ✅ 已完成   │
+│  v0.2.0  │  云端扫描接入 + 应用扫描 + 权限审计       │  🔥 开发中   │
+│  v0.3.0  │  Root 模式 + 系统文件检查                 │  📋 规划中   │
+│  v0.4.0  │  Shizuku 模式支持                         │  📋 规划中   │
+│  v0.5.0  │  LSPosed 模块检查                         │  📋 规划中   │
+│  v0.6.0  │  远控软件识别 + 流量统计                  │  📋 规划中   │
+│  v0.7.0  │  密码安全检查 + 隐私监控                  │  📋 规划中   │
+│  v0.8.0  │  设备温度/资源占用监测                    │  📋 规划中   │
+│  v0.9.0  │  综合检测报告 + 一键处理                  │  📋 规划中   │
+│  v1.0.0  │  正式版发布                                │  🌟 未来     │
+└──────────┴──────────────────────────────────────────┴─────────────┘
 ```
 
 ---
@@ -248,30 +248,30 @@ Huli 接入全球顶级云端安全扫描服务，提供企业级安全防护能
 ## 🤔 常见问题 FAQ
 
 ### Q: Huli 必须 Root 才能用吗？
-A: **不需要。** Huli 支持三种检测模式：
-- **基础模式**：无需任何权限，可进行应用扫描、云端哈希检测
-- **Shizuku 模式**：通过 Shizuku 授权获得 ADB 级权限进行深度检测
-- **Root 模式**：通过 Magisk/KernelSU/APatch 获得系统级最高检测能力
+A: 不需要。Huli 支持多种检测模式：
+- **基础模式**：无需任何权限，可进行应用扫描、云端哈希查询
+- **Shizuku 模式**：通过 Shizuku 授权获得 ADB 级权限进行更深入检测
+- **Root 模式**：通过 Magisk/KernelSU/APatch 获得最全面的检测能力
 
-所有高级模式均为**用户主动触发**，不会后台静默请求权限。
+所有高级模式均需用户主动触发，不会后台请求权限。
 
 ### Q: Shizuku 是什么？安全吗？
-A: Shizuku 是一个通过 Android 系统服务管理工具，可以让普通应用获得 ADB（Android Debug Bridge）级别的权限。相比 Root，Shizuku 的权限更可控，用完即可回收。Huli 仅在你点击「开启 Shizuku 检测」时才会请求授权，检测完毕后权限立即失效。
+A: Shizuku 是一个工具，可以让普通应用获得 ADB（Android Debug Bridge）级别的权限。相比 Root，Shizuku 的权限范围更可控。Huli 仅在你手动点击相关功能时才会请求 Shizuku 授权。
 
 ### Q: 病毒检测需要联网吗？
-A: 云端扫描需要联网查询 VirusTotal 等服务，但我们**只上传应用哈希值（指纹）**，不会上传完整 APK。你也可以在设置中关闭云端扫描，使用纯本地特征库模式。
+A: 云端扫描需要联网查询 VirusTotal 等服务。我们只上传应用的哈希值，不会上传完整 APK。你也可以选择仅使用本地功能。
 
 ### Q: 会有 iOS 版本吗？
-A: 短期内不会。Huli 专注于 Android 平台的深度安全检测。
+A: 短期内不会。Huli 专注于 Android 平台。
 
 ### Q: 项目开源吗？
-A: 是的！Huli 完全开源，代码托管在 GitHub。欢迎 Star、Fork、提交 PR。
+A: 是的，Huli 是开源项目，代码托管在 GitHub。欢迎 Star、Fork。
 
 ---
 
 ## 💖 赞助支持
 
-> **这个项目由我个人在业余时间独立开发。从架构设计到 UI 打磨，从功能开发到测试适配，每一个细节都倾注了大量心血。如果你觉得它对你有帮助，欢迎通过以下方式赞助我！**
+> 这个项目由我个人在业余时间开发。如果你觉得它对你有帮助，欢迎通过以下方式支持我。
 
 <div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; margin: 36px 0;">
 
