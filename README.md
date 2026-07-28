@@ -1,19 +1,15 @@
-<div align="center">
-
 # 🦊 Huli
 
 ## 新一代的 Root 管理工具
 
 ![Android](https://img.shields.io/badge/Android-7.0+-2ea44f?logo=android&style=for-the-badge)
-![Root](https://img.shields.io/badge/Root-Required-ff4444?style=for-the-badge&logo=superuser)
+![Root](https://img.shields.io/badge/Root-Required-ff4444?style=for-the-badge)
 ![Status](https://img.shields.io/badge/🔥-Alpha_开发中-orange?style=for-the-badge)
 [![爱发电](https://img.shields.io/badge/💖_爱发电-支持我-ff69b4?style=for-the-badge)](https://www.ifdian.net/a/hulihulihuli)
 
-**告别臃肿，回归纯粹。一款为搞机爱好者打造的下一代 Root 权限管理利器。**
+> **告别臃肿，回归纯粹。一款为搞机爱好者打造的下一代 Root 权限管理利器。**
 
 ---
-
-</div>
 
 ## ⚡ 为什么选择 Huli？
 
@@ -96,13 +92,9 @@ Huli 是一个个人业余项目，由我在工作之余独立开发。从架构
 
 如果你觉得这个项目对你有帮助，或者期待它的后续功能，欢迎通过以下方式支持我：
 
-<div align="center">
-
 ### [👉 点我在爱发电上赞助我](https://www.ifdian.net/a/hulihulihuli)
 
 **¥10 / 月** — 请我喝杯咖啡，支持持续更新 ☕
-
-</div>
 
 > 你的每一份支持，都是这个项目能持续走下去的最大动力。
 
@@ -122,10 +114,6 @@ Huli 是一个个人业余项目，由我在工作之余独立开发。从架构
 
 ---
 
-<div align="center">
-
 *Made with 🔥 by 搞机爱好者，为搞机爱好者*
 
 [![爱发电](https://img.shields.io/badge/💖_爱发电-hulihulihuli-ff69b4?style=flat-square)](https://www.ifdian.net/a/hulihulihuli)
-
-</div>
