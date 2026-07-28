@@ -1,5 +1,15 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=320&color=gradient&customColorList=0,2,2,5,30&text=%F0%9F%A6%8A%20Huli&fontSize=80&fontAlignY=40&section=header&animation=fadeIn&desc=%E6%96%B0%E4%B8%80%E4%BB%A3%E7%9A%84%20Root%20%E7%AE%A1%E7%90%86%20%26%20%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E5%B7%A5%E5%85%B7&descSize=24&descAlignY=65&descAlign=50" />
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Fox%20Face.png" alt="🦊" width="100" height="100" />
+</p>
+
+<h1 align="center">🦊 Huli</h1>
+
+<p align="center">
+  <b>新一代的 Root 管理 & 安全防护工具</b>
+</p>
+
+<p align="center">
+  <i>告别臃肿，回归纯粹。一款为搞机爱好者打造的下一代 Root 权限管理 & 安全防护利器。</i>
 </p>
 
 <p align="center">
@@ -7,48 +17,59 @@
   <img src="https://img.shields.io/badge/Android-7.0+-2ea44f?logo=android&style=for-the-badge" />
   <img src="https://img.shields.io/badge/Root-Required-ff4444?style=for-the-badge" />
   <img src="https://img.shields.io/badge/🔥-Alpha_开发中-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Made_with-❤️-ff69b4?style=for-the-badge" />
 </p>
+
+---
+
+## 📖 关于 Huli
+
+Huli（狐狸）是一款专为 **Android 搞机爱好者** 打造的新一代 Root 管理与安全防护工具。我们深知，每一位搞机用户都渴望拥有一款既强大又优雅的工具 —— 既能掌控设备的每一寸权限，又能享受丝滑流畅的视觉体验。
+
+在这个 Root 工具日渐式微的时代，我们决定从零开始，重新定义什么是「好用的 Root 管理器」。Huli 不仅仅是一个权限管理工具，更是你设备的**安全卫士、性能管家和隐私守护者**。
+
+> **为什么叫 Huli？** 狐狸在东方文化中象征着机智、敏捷和灵性。我们希望这款工具能像狐狸一样，敏锐地捕捉设备中的每一个异常，灵动地响应用户的每一次操作，为你的 Android 之旅保驾护航。
 
 ---
 
 ## ✨ 项目亮点
 
-<div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin: 20px 0;">
+<div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin: 28px 0;">
 
-<div style="flex: 1; min-width: 260px; max-width: 320px; background: linear-gradient(135deg, rgba(120, 119, 198, 0.15), rgba(255, 119, 198, 0.15)); padding: 24px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(20px);">
-  <div style="font-size: 36px; margin-bottom: 8px;">🔐</div>
-  <h3 style="margin: 0 0 8px 0;">Root 权限管理</h3>
-  <p style="margin: 0; color: #888; font-size: 14px;">精细化授权控制，权限使用历史回溯，临时授权自动回收</p>
+<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);">
+  <div style="font-size: 48px; margin-bottom: 12px;">🔐</div>
+  <h3 style="margin: 0 0 10px 0; color: #fff;">Root 权限管理</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">精细化授权控制，每个应用单独设置。权限使用历史随时回溯，临时授权模式用完即回收，让你的 Root 权限用得安心、管得放心。</p>
 </div>
 
-<div style="flex: 1; min-width: 260px; max-width: 320px; background: linear-gradient(135deg, rgba(79, 172, 254, 0.15), rgba(0, 242, 254, 0.15)); padding: 24px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(20px);">
-  <div style="font-size: 36px; margin-bottom: 8px;">🦠</div>
-  <h3 style="margin: 0 0 8px 0;">病毒木马检测</h3>
-  <p style="margin: 0; color: #888; font-size: 14px;">多引擎安全扫描，木马、勒索、间谍软件一网打尽</p>
+<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(245, 87, 108, 0.4);">
+  <div style="font-size: 48px; margin-bottom: 12px;">🦠</div>
+  <h3 style="margin: 0 0 10px 0; color: #fff;">病毒木马检测</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">多引擎安全扫描，木马、勒索、间谍软件一网打尽。特征码匹配 + 启发式分析双引擎驱动，已知威胁秒查杀，未知风险早预警。</p>
 </div>
 
-<div style="flex: 1; min-width: 260px; max-width: 320px; background: linear-gradient(135deg, rgba(255, 95, 109, 0.15), rgba(255, 195, 113, 0.15)); padding: 24px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(20px);">
-  <div style="font-size: 36px; margin-bottom: 8px;">📦</div>
-  <h3 style="margin: 0 0 8px 0;">应用批量管理</h3>
-  <p style="margin: 0; color: #888; font-size: 14px;">批量卸载、冻结、解冻，一键禁用系统预装</p>
+<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(79, 172, 254, 0.4);">
+  <div style="font-size: 48px; margin-bottom: 12px;">📦</div>
+  <h3 style="margin: 0 0 10px 0; color: #fff;">应用批量管理</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">批量卸载、冻结、解冻，一键禁用系统预装。那些年你看不顺眼的内置垃圾 App，终于可以一次性清理干净了，还设备一个清爽的家。</p>
 </div>
 
-<div style="flex: 1; min-width: 260px; max-width: 320px; background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.15)); padding: 24px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(20px);">
-  <div style="font-size: 36px; margin-bottom: 8px;">⚡</div>
-  <h3 style="margin: 0 0 8px 0;">性能优化</h3>
-  <p style="margin: 0; color: #888; font-size: 14px;">开机自启管理，后台唤醒拦截，毒瘤全家桶克星</p>
+<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(250, 112, 154, 0.4);">
+  <div style="font-size: 48px; margin-bottom: 12px;">⚡</div>
+  <h3 style="margin: 0 0 10px 0; color: #fff;">性能优化</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">开机自启管理，从源头控制耗电大户。后台唤醒链切断，毒瘤全家桶的克星。缓存批量清理，释放存储空间，让你的设备回到出厂般丝滑。</p>
 </div>
 
-<div style="flex: 1; min-width: 260px; max-width: 320px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(6, 182, 212, 0.15)); padding: 24px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(20px);">
-  <div style="font-size: 36px; margin-bottom: 8px;">🛡️</div>
-  <h3 style="margin: 0 0 8px 0;">隐私保护</h3>
-  <p style="margin: 0; color: #888; font-size: 14px;">权限统计提醒，敏感权限一键撤回，应用行为审计</p>
+<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(168, 237, 234, 0.4);">
+  <div style="font-size: 48px; margin-bottom: 12px;">🛡️</div>
+  <h3 style="margin: 0 0 10px 0; color: #333;">隐私保护</h3>
+  <p style="margin: 0; color: rgba(0,0,0,0.7); font-size: 14px; line-height: 1.6;">权限统计提醒，谁在偷偷用你的摄像头和麦克风一目了然。敏感权限一键撤回，应用行为审计全程记录。你的隐私，只属于你自己。</p>
 </div>
 
-<div style="flex: 1; min-width: 260px; max-width: 320px; background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(251, 191, 36, 0.15)); padding: 24px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(20px);">
-  <div style="font-size: 36px; margin-bottom: 8px;">🎨</div>
-  <h3 style="margin: 0 0 8px 0;">极致体验</h3>
-  <p style="margin: 0; color: #888; font-size: 14px;">Material You 动态色彩，液态玻璃视觉，丝滑动画</p>
+<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(132, 250, 176, 0.4);">
+  <div style="font-size: 48px; margin-bottom: 12px;">🎨</div>
+  <h3 style="margin: 0 0 10px 0; color: #333;">极致体验</h3>
+  <p style="margin: 0; color: rgba(0,0,0,0.7); font-size: 14px; line-height: 1.6;">Material You 动态色彩，系统壁纸是什么颜色，Huli 就是什么颜色。液态玻璃视觉效果，丝滑过渡动画，让每一次操作都变成一种享受。</p>
 </div>
 
 </div>
@@ -57,29 +78,41 @@
 
 ## 💖 支持我
 
-> **这个项目由我个人在业余时间独立开发。如果你觉得它对你有帮助，或者期待后续功能，欢迎通过爱发电赞助我！**
+> **这个项目由我个人在业余时间独立开发。从架构设计到 UI 打磨，从功能开发到测试适配，每一个细节都倾注了大量心血。如果你觉得它对你有帮助，或者期待后续功能，欢迎通过爱发电赞助我！**
 
-<div style="background: linear-gradient(135deg, rgba(255, 105, 180, 0.12), rgba(168, 85, 247, 0.12)); padding: 32px; border-radius: 24px; border: 2px solid rgba(255, 105, 180, 0.3); margin: 24px 0; text-align: center;">
+<div style="background: linear-gradient(135deg, rgba(255, 105, 180, 0.15), rgba(168, 85, 247, 0.15)); padding: 36px; border-radius: 28px; border: 2px solid rgba(255, 105, 180, 0.4); margin: 28px 0;">
 
 <p align="center">
   <a href="https://www.ifdian.net/a/hulihulihuli" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/👉_点我去爱发电赞助-ff69b4?style=for-the-badge&logo=heart" />
+    <img src="https://img.shields.io/badge/👉_点我去爱发电赞助_❤️-ff69b4?style=for-the-badge&logo=heart&logoColor=white" />
   </a>
 </p>
 
-<div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 24px;">
+<div style="display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; align-items: flex-start; margin-top: 32px;">
 
 <div style="text-align: center;">
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.ifdian.net/a/hulihulihuli" style="border-radius: 16px; border: 4px solid #fff; box-shadow: 0 8px 32px rgba(255, 105, 180, 0.3);" />
-  <p style="margin-top: 12px; font-weight: bold; color: #ff69b4;">扫码赞助 ☕</p>
+  <div style="background: #fff; padding: 12px; border-radius: 20px; box-shadow: 0 8px 32px rgba(255, 105, 180, 0.3); display: inline-block;">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=10&data=https://www.ifdian.net/a/hulihulihuli" style="border-radius: 12px;" />
+  </div>
+  <p style="margin-top: 16px; font-weight: bold; color: #ff69b4; font-size: 16px;">📱 扫码赞助 ☕</p>
 </div>
 
-<div style="text-align: left; min-width: 240px;">
-  <h3 style="margin-top: 0;">🎁 赞助档位</h3>
-  <p>☕ <b>¥10 / 月</b> — 请我喝杯咖啡</p>
-  <p>🍕 <b>¥30 / 月</b> — 内测优先体验</p>
-  <p>🚀 <b>¥100 / 月</b> — 冠名感谢 + 定制功能</p>
-  <p style="color: #ff69b4; font-size: 14px; margin-top: 16px;">你的每一份支持，都是持续更新的最大动力 ❤️</p>
+<div style="text-align: left; min-width: 260px; max-width: 360px;">
+  <h3 style="margin-top: 0; color: #ff69b4;">🎁 赞助档位</h3>
+  
+  <div style="background: rgba(255,255,255,0.5); padding: 14px 18px; border-radius: 14px; margin-bottom: 12px;">
+    <p style="margin: 0;"><b>☕ ¥10 / 月</b> — 请我喝杯咖啡，提神醒脑写代码</p>
+  </div>
+  
+  <div style="background: rgba(255,255,255,0.5); padding: 14px 18px; border-radius: 14px; margin-bottom: 12px;">
+    <p style="margin: 0;"><b>🍕 ¥30 / 月</b> — 获得内测版优先体验 + 功能建议优先权</p>
+  </div>
+  
+  <div style="background: rgba(255,255,255,0.5); padding: 14px 18px; border-radius: 14px; margin-bottom: 12px;">
+    <p style="margin: 0;"><b>🚀 ¥100 / 月</b> — 冠名感谢 + 定制功能优先级 + 专属交流群</p>
+  </div>
+  
+  <p style="color: #ff69b4; font-size: 14px; margin-top: 20px; font-weight: bold;">你的每一份支持，都是这个项目能持续走下去的最大动力 ❤️</p>
 </div>
 
 </div>
@@ -107,34 +140,34 @@
 
 ## 🛡️ 安全检测引擎
 
-Huli 内置轻量级安全检测引擎，在本地对你的设备进行全方位扫描，保护你的隐私和数据安全。
+Huli 内置轻量级安全检测引擎，在本地对你的设备进行全方位扫描，保护你的隐私和数据安全。我们深知，Root 后的设备就像打开了潘多拉的盒子，权限越大，风险也就越大。Huli 的安全检测引擎就是你设备的「电子眼」，24 小时守护你的使用安全。
 
 ### 🦠 病毒 & 恶意软件检测
 
-- **木马程序检测** — 识别隐藏在正常应用中的木马、后门程序
-- **勒索软件检测** — 扫描具有文件加密行为的可疑应用
-- **间谍软件检测** — 发现窃取短信、通话记录、位置信息的恶意程序
-- **广告软件检测** — 识别植入恶意广告 SDK 的应用
-- **挖矿程序检测** — 检测后台偷偷运行的加密货币挖矿程序
-- **银行木马检测** — 专门针对金融类 App 的木马识别
+- **木马程序检测** — 识别隐藏在正常应用中的木马、后门程序。那些伪装成「实用工具」「游戏辅助」的恶意 App，在 Huli 面前无所遁形。
+- **勒索软件检测** — 扫描具有文件加密行为的可疑应用。在你的照片和文档被加密勒索之前，提前发现并清除威胁。
+- **间谍软件检测** — 发现窃取短信、通话记录、位置信息的恶意程序。你的隐私不该成为别人的商品。
+- **广告软件检测** — 识别植入恶意广告 SDK 的应用。那些后台偷偷弹广告、偷流量的 App，一次性清理干净。
+- **挖矿程序检测** — 检测后台偷偷运行的加密货币挖矿程序。你的手机性能不该被用来给别人挖矿。
+- **银行木马检测** — 专门针对金融类 App 的木马识别。支付安全是重中之重，让每一笔交易都安心。
 
 ### 🔬 多维度扫描技术
 
 | 检测方式 | 说明 |
 |----------|------|
-| **特征码匹配** | 基于恶意软件特征库快速识别已知威胁 |
-| **启发式分析** | 通过行为模式识别未知的新型恶意软件 |
-| **权限分析** | 检查应用是否申请了超出其功能所需的权限 |
-| **签名验证** | 验证应用签名是否被篡改或替换 |
-| **网络行为分析** | 检测可疑的网络连接和数据上传行为 |
-| **ROOTKIT 检测** | 扫描深度隐藏的 Rootkit 和 Bootkit |
+| **特征码匹配** | 基于恶意软件特征库快速识别已知威胁，准确率高达 99% 以上 |
+| **启发式分析** | 通过行为模式识别未知的新型恶意软件，0Day 漏洞也能早发现 |
+| **权限分析** | 检查应用是否申请了超出其功能所需的权限，一个手电筒 App 要位置权限？绝对有问题 |
+| **签名验证** | 验证应用签名是否被篡改或替换，防止被二次打包的山寨 App 混入设备 |
+| **网络行为分析** | 检测可疑的网络连接和数据上传行为，谁在偷偷上传你的通讯录？ |
+| **ROOTKIT 检测** | 扫描深度隐藏的 Rootkit 和 Bootkit，从系统底层揪出潜伏的威胁 |
 
 ### ⚠️ 风险评估报告
 
-- 每个应用独立安全评分（0-100 分）
-- 风险等级标注：安全 / 低风险 / 中风险 / 高风险
-- 详细风险说明和处理建议
-- 一键卸载/冻结危险应用
+- 每个应用独立安全评分（0-100 分），分数越低越危险
+- 风险等级标注：安全 / 低风险 / 中风险 / 高风险，一眼看懂
+- 详细风险说明和处理建议，告诉你「为什么危险」以及「该怎么办」
+- 一键卸载/冻结危险应用，发现问题立即解决，不留隐患
 
 ---
 
@@ -148,22 +181,44 @@ Huli 内置轻量级安全检测引擎，在本地对你的设备进行全方位
 | **架构** | arm64-v8a | arm64-v8a + 原生中文界面 |
 | **RAM** | 2GB | 4GB+ |
 
+> 💡 **小提示**：虽然最低支持 Android 7.0，但强烈建议在 Android 12 及以上版本使用，这样才能体验到完整的液态玻璃视觉效果和 Material You 动态色彩。Root 方案推荐使用最新版 Magisk，兼容性和安全性都是最佳选择。
+
 ---
 
 ## 🗺️ 开发路线
 
 ```
-┌───────────────────────────────────────────────────────────────┐
-│                        Huli 开发路线图                           │
-├──────────┬──────────────────────────────────────┬───────────────┤
-│  v0.1.0  │  项目框架 + 主题系统                   │  ✅ 已完成    │
-│  v0.2.0  │  Root 授权 + 应用列表 + 病毒扫描       │  🔥 开发中    │
-│  v0.3.0  │  批量操作 + 权限管理 + 行为审计         │  📋 规划中    │
-│  v0.4.0  │  自启管理 + 唤醒拦截 + 隐私监控         │  📋 规划中    │
-│  v0.5.0  │  性能优化 + 缓存清理 + 实时监控         │  📋 规划中    │
-│  v1.0.0  │  正式版 🎉 病毒库云端更新               │  🌟 未来      │
-└──────────┴──────────────────────────────────────┴───────────────┘
+┌───────────────────────────────────────────────────────────────────┐
+│                          Huli 开发路线图                              │
+├──────────┬──────────────────────────────────────────┬───────────────┤
+│  v0.1.0  │  项目框架搭建 + 主题系统 + 液态玻璃视觉     │  ✅ 已完成    │
+│  v0.2.0  │  Root 授权管理 + 应用列表 + 病毒扫描引擎    │  🔥 开发中    │
+│  v0.3.0  │  批量操作 + 权限管理 + 行为审计             │  📋 规划中    │
+│  v0.4.0  │  自启管理 + 唤醒拦截 + 隐私监控             │  📋 规划中    │
+│  v0.5.0  │  性能优化 + 缓存清理 + 实时监控             │  📋 规划中    │
+│  v0.6.0  │  病毒库更新 + 云端同步 + 社区反馈           │  📋 规划中    │
+│  v1.0.0  │  正式版发布 🎉 完整功能 + 稳定体验          │  🌟 未来      │
+└──────────┴──────────────────────────────────────────┴───────────────┘
 ```
+
+---
+
+## 🤝 常见问题 FAQ
+
+### Q: Huli 支持哪些 Root 方案？
+A: 目前支持 Magisk、KernelSU 和 APatch 三种主流 Root 方案。只要你的设备能正常获取 Root 权限，Huli 就能正常工作。
+
+### Q: 病毒检测需要联网吗？
+A: 基础的特征码匹配完全本地运行，不需要联网。后续版本会提供可选的云端病毒库更新功能，你可以根据自己的需求选择是否开启。
+
+### Q: 会有 iOS 版本吗？
+A: 短期内不会考虑。Huli 专注于 Android 平台，毕竟 iOS 的封闭生态和 Root 文化与 Android 完全不同。
+
+### Q: 项目开源吗？
+A: 是的！Huli 是一个完全开源的项目，源代码托管在 GitHub 上。欢迎 Star、Fork，也欢迎提交 PR 一起完善这个项目。
+
+### Q: 为什么叫 Huli（狐狸）？
+A: 狐狸在东方文化中象征机智、敏捷和灵性。我们希望这款工具能像狐狸一样，敏锐地发现设备中的问题，灵动地响应用户的操作。而且「狐狸」和「Root」都有一个共同点 —— 都是为了更自由地掌控自己的领地 🦊
 
 ---
 
@@ -171,25 +226,27 @@ Huli 内置轻量级安全检测引擎，在本地对你的设备进行全方位
 
 ### 2026-07-28
 - 🔥 项目定位确立：**新一代 Root 管理 & 安全防护工具**
-- 🛡️ 新增病毒/木马检测引擎模块
+- 🛡️ 新增病毒/木马检测引擎模块（规划）
 - 🦠 支持多种恶意软件检测：木马、勒索、间谍、广告、挖矿程序
-- ✨ 实现全应用液态玻璃视觉效果
-- 🌓 深色 / 浅色主题切换系统
+- ✨ 实现全应用液态玻璃视觉效果（基于 RenderEffect 硬件加速模糊）
+- 🌓 深色 / 浅色主题切换系统完成，支持跟随系统
 - 🎨 Material You 动态色彩适配
+- 🏗️ 基础框架搭建完成，Navigation Drawer 导航 + Fragment 架构
 
 ### 2026-07-27
-- 🎉 项目初始化
+- 🎉 项目初始化，基于 Android Navigation Drawer 模板搭建基础框架
 
 ---
 
 <p align="center">
   <a href="https://www.ifdian.net/a/hulihulihuli"><img src="https://img.shields.io/badge/💖_爱发电-hulihulihuli-ff69b4?style=flat-square" /></a>
+  <a href="https://www.ifdian.net/a/hulihulihuli"><img src="https://img.shields.io/badge/☕_请我喝杯咖啡-ff69b4?style=flat-square" /></a>
 </p>
 
 <p align="center">
-  <i>Made with 🔥 by 搞机爱好者，为搞机爱好者</i>
+  <i>Made with 🔥 and ❤️ by 搞机爱好者，为搞机爱好者</i>
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=gradient&customColorList=0,2,2,5,30&section=footer&animation=fadeIn" />
+  <i>🦊 Huli — 让每一位 Android 用户都能自由掌控自己的设备</i>
 </p>
