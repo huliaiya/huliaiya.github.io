@@ -15,6 +15,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Android-7.0+-2ea44f?logo=android&style=for-the-badge" />
   <img src="https://img.shields.io/badge/Root-Required-ff4444?style=for-the-badge&logo=superuser" />
+  <img src="https://img.shields.io/badge/LSPosed-支持-7c4dff?style=for-the-badge" />
   <img src="https://img.shields.io/badge/☁️_云端扫描-VirusTotal-394eff?style=for-the-badge" />
   <img src="https://img.shields.io/badge/🛡️_安全防护-70+引擎-00d4aa?style=for-the-badge" />
 </p>
@@ -73,7 +74,7 @@ Root 之后安全第一。Huli 内置云端多引擎病毒扫描、权限审计�
 <div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);">
   <div style="font-size: 48px; margin-bottom: 12px;">🔐</div>
   <h3 style="margin: 0 0 10px 0; color: #fff;">Root 权限管理</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">精细化授权控制，每个应用单独设置。权限使用历史随时回溯，临时授权模式用完即回收，让你的 Root 权限用得安心、管得放心。</p>
+  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">精细化授权控制，每个应用单独设置。权限使用历史随时回溯，临时授权模式用完即回收。支持 Magisk、KernelSU、APatch 多种 Root 方案，让你的 Root 权限用得安心、管得放心。</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(245, 87, 108, 0.4);">
@@ -118,6 +119,12 @@ Root 之后安全第一。Huli 内置云端多引擎病毒扫描、权限审计�
   <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">检测已保存密码的安全性，弱密码和重复密码立即警告。扫描可疑远控服务和后门，实时监控恶意上传行为，谁在偷偷传你的照片和视频一目了然。</p>
 </div>
 
+<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #654ea3 0%, #eaafc8 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(101, 78, 163, 0.4);">
+  <div style="font-size: 48px; margin-bottom: 12px;">🧩</div>
+  <h3 style="margin: 0 0 10px 0; color: #fff;">LSPosed 模块管理</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">内置 LSPosed 模块仓库，一键浏览安装热门模块。模块安全审计、一键启用禁用、作用域管理。配合 LSPosed 框架使用，模块世界任你遨游。</p>
+</div>
+
 </div>
 
 ---
@@ -130,6 +137,8 @@ Root 之后安全第一。Huli 内置云端多引擎病毒扫描、权限审计�
 |------|------|----------|
 | **Material You 设计** | ✅ 原生支持动态取色 | ❌ 千篇一律的老界面 |
 | **液态玻璃视觉** | ✅ 实时模糊 + 半透明材质 | ❌ 死板的纯色块 |
+| **Root 权限管理** | ✅ 精细化授权 + 临时授权 + 历史回溯 | ❌ 基础授权，功能简陋 |
+| **LSPosed 模块支持** | ✅ 内置模块仓库 + 一键安装 + 安全审计 | ❌ 需要单独安装 LSPosed Manager |
 | **云端病毒检测** | ✅ 接入 VirusTotal 等 70+ 引擎 | ❌ 功能缺失或付费解锁 |
 | **全面安全体检** | ✅ 一键扫描系统+应用+网络全维度 | ❌ 单一检测，不全面 |
 | **密码安全检测** | ✅ 弱密码/重复密码检测+警告 | ❌ 完全没有 |
@@ -303,32 +312,39 @@ A: 狐狸在东方文化中象征机智、敏捷和灵性。我们希望这款�
   <div style="width: 60px; height: 60px; margin: 0 auto 14px; border-radius: 18px; background: linear-gradient(135deg, #1677ff, #0958d9); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 30px; font-weight: bold; box-shadow: 0 6px 20px rgba(22, 119, 255, 0.4);">支</div>
   <h3 style="margin: 0 0 6px 0; color: #1677ff; font-size: 20px;">支付宝</h3>
   <p style="margin: 0 0 18px 0; font-size: 13px; color: #999;">推荐使用 · 支持花呗 / 信用卡</p>
-  <div style="background: #fff; border-radius: 16px; padding: 10px; margin: 0 auto 14px; width: 100%; max-width: 180px; aspect-ratio: 1 / 1; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);">
-    <img src="assets/alipay.png" alt="支付宝收款码" style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;" />
+  <a href="assets/alipay.png" target="_blank" style="text-decoration: none;">
+  <div style="background: #fff; border-radius: 16px; padding: 10px; margin: 0 auto 14px; width: 100%; max-width: 180px; aspect-ratio: 1 / 1; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12); cursor: pointer; transition: transform 0.2s;">
+    <img src="assets/alipay.png" alt="支付宝收款码（点击放大）" style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;" />
   </div>
-  <p style="margin: 0; font-size: 14px; color: #333; font-weight: 600;">狐狸科技</p>
+  </a>
+  <p style="margin: 0; font-size: 13px; color: #888;">👆 点击图片查看大图</p>
+  <p style="margin: 8px 0 0 0; font-size: 14px; color: #333; font-weight: 600;">狐狸科技</p>
 </div>
 
 <div style="width: 280px; border-radius: 24px; padding: 28px 22px; text-align: center; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(7, 193, 96, 0.35); background: linear-gradient(160deg, rgba(7, 193, 96, 0.18), rgba(7, 193, 96, 0.04)); box-shadow: 0 12px 40px rgba(7, 193, 96, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);">
   <div style="width: 60px; height: 60px; margin: 0 auto 14px; border-radius: 18px; background: linear-gradient(135deg, #07c160, #06ad56); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 30px; font-weight: bold; box-shadow: 0 6px 20px rgba(7, 193, 96, 0.4);">微</div>
   <h3 style="margin: 0 0 6px 0; color: #07c160; font-size: 20px;">微信支付</h3>
   <p style="margin: 0 0 18px 0; font-size: 13px; color: #999;">微信扫码，方便快捷</p>
-  <div style="background: #fff; border-radius: 16px; padding: 10px; margin: 0 auto 14px; width: 100%; max-width: 180px; aspect-ratio: 1 / 1; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);">
-    <img src="assets/wechat.png" alt="微信收款码" style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;" />
+  <a href="assets/wechat.png" target="_blank" style="text-decoration: none;">
+  <div style="background: #fff; border-radius: 16px; padding: 10px; margin: 0 auto 14px; width: 100%; max-width: 180px; aspect-ratio: 1 / 1; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12); cursor: pointer;">
+    <img src="assets/wechat.png" alt="微信收款码（点击放大）" style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;" />
   </div>
-  <p style="margin: 0; font-size: 14px; color: #333; font-weight: 600;">狐狸</p>
+  </a>
+  <p style="margin: 0; font-size: 13px; color: #888;">👆 点击图片查看大图</p>
+  <p style="margin: 8px 0 0 0; font-size: 14px; color: #333; font-weight: 600;">狐狸</p>
 </div>
 
 <div style="width: 280px; border-radius: 24px; padding: 28px 22px; text-align: center; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(168, 85, 247, 0.35); background: linear-gradient(160deg, rgba(168, 85, 247, 0.18), rgba(168, 85, 247, 0.04)); box-shadow: 0 12px 40px rgba(168, 85, 247, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);">
   <div style="width: 60px; height: 60px; margin: 0 auto 14px; border-radius: 18px; background: linear-gradient(135deg, #a855f7, #9333ea); display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);">💖</div>
   <h3 style="margin: 0 0 6px 0; color: #a855f7; font-size: 20px;">爱发电</h3>
   <p style="margin: 0 0 18px 0; font-size: 13px; color: #999;">长期赞助 · 解锁更多权益</p>
-  <a href="https://www.ifdian.net/a/hulihulihuli" style="text-decoration: none;">
-  <div style="background: #fff; border-radius: 16px; padding: 10px; margin: 0 auto 14px; width: 100%; max-width: 180px; aspect-ratio: 1 / 1; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);">
-    <img src="assets/afdian.png" alt="爱发电主页" style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;" />
+  <a href="assets/afdian.png" target="_blank" style="text-decoration: none;">
+  <div style="background: #fff; border-radius: 16px; padding: 10px; margin: 0 auto 14px; width: 100%; max-width: 180px; aspect-ratio: 1 / 1; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12); cursor: pointer;">
+    <img src="assets/afdian.png" alt="爱发电主页码（点击放大）" style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;" />
   </div>
   </a>
-  <p style="margin: 0; font-size: 14px; color: #333; font-weight: 600;">hulihulihuli</p>
+  <p style="margin: 0; font-size: 13px; color: #888;">👆 点击图片查看大图</p>
+  <a href="https://www.ifdian.net/a/hulihulihuli" target="_blank" style="display: inline-block; margin-top: 12px; padding: 10px 24px; background: linear-gradient(135deg, #a855f7, #9333ea); color: #fff; border-radius: 12px; text-decoration: none; font-size: 14px; font-weight: 600; box-shadow: 0 4px 16px rgba(168, 85, 247, 0.4);">👉 前往爱发电主页</a>
 </div>
 
 </div>
