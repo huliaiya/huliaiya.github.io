@@ -12,8 +12,8 @@
       <stop offset="80%" stop-color="#ff8a65"/>
       <stop offset="90%" stop-color="#e57373"/>
       <stop offset="100%" stop-color="#f06292"/>
-      <animate attributeName="x1" values="0%;-300%" dur="6s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="300%;0%" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="x1" values="0%;-300%;0%" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="300%;0%;300%" dur="12s" repeatCount="indefinite"/>
     </linearGradient>
   </defs>
   <rect width="600" height="400" fill="url(#rainbow)"/>
