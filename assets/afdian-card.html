@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>爱发电</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #9b7cff;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 360px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 8px;
+  }
+  .desc {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 24px;
+  }
+  .qrcode {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 10px;
+  }
+  .qrcode img {
+    width: 100%;
+    height: 100%;
+  }
+  .sponsor-text {
+    font-size: 16px;
+    color: #444;
+    margin-top: 8px;
+  }
+  .footer {
+    margin-top: 24px;
+    text-align: center;
+    color: #fff;
+  }
+  .footer-logo {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 4px;
+  }
+  .footer-logo svg {
+    width: 100%;
+    height: 100%;
+  }
+  .footer-text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .footer-sub {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="avatar">
+      <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f98a.svg" alt="狐狸" />
+    </div>
+    <div class="name">狐狸🦊</div>
+    <div class="desc">正在创作 管理工具</div>
+    <div class="qrcode">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=0&data=https://www.ifdian.net/a/hulihulihuli" alt="二维码" />
+    </div>
+    <div class="sponsor-text">为我发电</div>
+  </div>
+  <div class="footer">
+    <div class="footer-logo">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 10C27.9 10 10 27.9 10 50C10 72.1 27.9 90 50 90C55 90 57 88 57 85C57 83 56 82 55 81C50 78 47 72 47 65C47 58 50 52 55 50C56 49 57 48 57 46C57 43 55 41 50 41C42 41 35 48 35 58C35 68 42 76 50 76C58 76 65 68 65 58C65 48 58 41 50 41C45 41 40 44 40 50C40 52 41 54 43 54C44 54 45 53 45 52C45 51 44 50 43 50C42 50 42 51 42 52C42 53 43 54 44 54C46 54 47 53 47 51C47 48 49 46 51 46C54 46 56 48 56 51C56 54 54 56 51 56C48 56 46 54 46 51C46 48 48 46 51 46C53 46 54 47 54 49C54 50 54 51 53 51C52 51 52 50 52 49C52 48 53 48 54 48C54 48 55 49 55 50C55 51 54 52 53 52C51 52 50 51 50 49C50 47 51 46 53 46C55 46 56 47 56 49C56 51 55 53 53 53C51 53 50 51 50 49C50 47 51 46 53 46Z" fill="white"/>
+        <circle cx="50" cy="50" r="40" stroke="white" stroke-width="3" fill="none"/>
+      </svg>
+    </div>
+    <div class="footer-text">爱发电</div>
+    <div class="footer-sub">连接创作者与粉丝的赞助平台</div>
+  </div>
+</body>
+</html>
