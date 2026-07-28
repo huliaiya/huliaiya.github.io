@@ -1,15 +1,48 @@
+<style>
+  @keyframes flowRainbow {
+    0% { background-position: 0% center; }
+    100% { background-position: -300% center; }
+  }
+  .rainbow-title {
+    background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: flowRainbow 8s linear infinite;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+  }
+  .rainbow-subtitle {
+    background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4dd0e1, #81c784, #ffb74d, #ff8a65, #f06292);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: flowRainbow 12s linear infinite;
+  }
+  .rainbow-section {
+    background: linear-gradient(270deg, #667eea, #764ba2, #f06292, #ff8a65, #4dd0e1, #667eea);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: flowRainbow 15s linear infinite;
+    font-weight: 800;
+  }
+</style>
+
 <p align="center">
   <img src="assets/logo.png" alt="Huli Logo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); border: 4px solid #fff; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none;" draggable="false" />
 </p>
 
-<h1 align="center">🦊 Huli</h1>
+<h1 align="center" class="rainbow-title">🦊 Huli</h1>
 
 <p align="center">
-  <b>Android 病毒检测 & 安全防护工具</b>
+  <b class="rainbow-subtitle">Android 病毒检测 & 安全防护工具</b>
 </p>
 
 <p align="center">
-  <i>云端多引擎检测 · Root/LSPosed/Shizuku 多模式支持 · 了解你的设备安全状态</i>
+  <i style="color: #6b7280;">云端多引擎检测 · Root/LSPosed/Shizuku 多模式支持 · 了解你的设备安全状态</i>
 </p>
 
 <p align="center">
@@ -27,7 +60,7 @@
 
 ---
 
-## 📖 关于 Huli
+## <span class="rainbow-section">📖 关于 Huli</span>
 
 **Huli（狐狸）是一款专为 Android 设备打造的病毒检测与安全防护工具，帮助你了解和管理设备的安全状态。**
 
@@ -68,7 +101,7 @@ Huli 支持多种检测模式，你可以根据设备状态选择适合的方式
 
 ---
 
-## ✨ 核心功能
+## <span class="rainbow-section">✨ 核心功能</span>
 
 <div style="display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; margin: 32px 0;">
 
@@ -194,7 +227,7 @@ Huli 接入了多个云端安全扫描服务，可帮助你获得更全面的检
 
 ---
 
-## 🦠 支持的检测类型
+## <span class="rainbow-section">🦠 支持的检测类型</span>
 
 ### 🔴 应用安全类
 
@@ -289,20 +322,14 @@ A: 是的，Huli 是开源项目，代码托管在 GitHub。欢迎 Star、Fork�
 
 ---
 
-## 💖 赞助支持
+## <span class="rainbow-section">💖 赞助支持</span>
 
 > 这个项目由我个人在业余时间开发。如果你觉得它对你有帮助，欢迎通过以下方式支持我。
 
 <div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; margin: 36px 0;">
 
-<div style="width: 280px; border-radius: 28px; padding: 28px 22px 24px; text-align: center; backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(22, 119, 255, 0.25); background: linear-gradient(180deg, rgba(22, 119, 255, 0.12) 0%, rgba(22, 119, 255, 0.03) 100%); box-shadow: 0 16px 48px rgba(22, 119, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);">
-  <div style="width: 68px; height: 68px; margin: 0 auto 16px; border-radius: 20px; background: linear-gradient(135deg, #1677ff 0%, #0958d9 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 28px rgba(22, 119, 255, 0.45); position: relative; overflow: hidden;">
-    <div style="position: absolute; top: -10px; right: -10px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15);"></div>
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="position: relative; z-index: 1;">
-      <path d="M18 6C11.373 6 6 10.03 6 15c0 2.71 1.383 5.133 3.547 6.74l-1.14 3.42c-.18.54.135 1.11.675 1.29.12.04.24.06.36.06.42 0 .81-.21 1.02-.57l1.95-3.39c1.59.57 3.27.9 5.01.95.21 0 .42-.01.63-.03l2.61 4.02c.24.37.66.57 1.11.54.45-.03.84-.3 1.02-.75l1.29-3.3C30.07 22.86 32 20.57 32 18c0-4.42-5.37-8-12-8-2.84 0-5.5.55-7.5 1.5C13.9 9.98 15.85 9 18 9c3.87 0 7 2.24 7 5s-3.13 5-7 5c-1.24 0-2.43-.26-3.52-.73-.17.46-.37.9-.6 1.32.88.26 1.81.41 2.77.41 6.63 0 12-3.58 12-8s-5.37-8-12-8z" fill="#fff"/>
-      <text x="18" y="23" text-anchor="middle" fill="#1677ff" font-size="14" font-weight="bold">支</text>
-    </svg>
-  </div>
+<div style="width: 280px; border-radius: 32px; padding: 28px 22px 24px; text-align: center; backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border: 1px solid rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.25); box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);">
+  <div style="width: 68px; height: 68px; margin: 0 auto 16px; border-radius: 20px; background: linear-gradient(135deg, #1677ff 0%, #0958d9 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 30px; font-weight: bold; box-shadow: 0 10px 28px rgba(22, 119, 255, 0.45);">支</div>
   <h3 style="margin: 0 0 4px 0; color: #1677ff; font-size: 20px; font-weight: 700;">支付宝</h3>
   <p style="margin: 0 0 18px 0; font-size: 12.5px; color: #888;">推荐使用 · 支持花呗 / 信用卡</p>
   <a href="assets/alipay.png" target="_blank" style="text-decoration: none; -webkit-touch-callout: none;">
@@ -313,15 +340,8 @@ A: 是的，Huli 是开源项目，代码托管在 GitHub。欢迎 Star、Fork�
   <p style="margin: 0; font-size: 12.5px; color: #999;">👆 点击查看大图</p>
 </div>
 
-<div style="width: 280px; border-radius: 28px; padding: 28px 22px 24px; text-align: center; backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(7, 193, 96, 0.25); background: linear-gradient(180deg, rgba(7, 193, 96, 0.12) 0%, rgba(7, 193, 96, 0.03) 100%); box-shadow: 0 16px 48px rgba(7, 193, 96, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);">
-  <div style="width: 68px; height: 68px; margin: 0 auto 16px; border-radius: 20px; background: linear-gradient(135deg, #07c160 0%, #06ad56 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 28px rgba(7, 193, 96, 0.45); position: relative; overflow: hidden;">
-    <div style="position: absolute; top: -10px; right: -10px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15);"></div>
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="position: relative; z-index: 1;">
-      <path d="M12.5 11c-3.59 0-6.5 2.46-6.5 5.5 0 1.74.97 3.29 2.47 4.28l-.62 1.86c-.1.3.08.62.38.72.06.02.13.03.19.03.23 0 .44-.12.56-.31l1.06-1.84c.87.31 1.79.49 2.75.51l1.41 2.17c.13.2.36.31.6.3.24-.01.45-.14.55-.37l.7-1.78c.77-.14 1.5-.39 2.18-.73.25.45.49.92.71 1.4.48.13.99.23 1.51.29 1.95 3.01 5.03 5.02 8.62 5.02 3.87 0 7-2.24 7-5s-3.13-5-7-5c-.95 0-1.87.16-2.73.45-.49-.85-1.07-1.63-1.72-2.33.87-.52 1.64-1.16 2.29-1.9 1.72 1.04 3.73 1.64 5.89 1.64 4.42 0 8-2.24 8-5s-3.58-5-8-5c-5.52 0-10 3.58-10 8 0 .34.02.67.06 1-.7-.45-1.45-.83-2.24-1.14-.3-1.88-1.58-3.52-3.32-4.49 1.18-1.46 1.96-3.31 1.96-5.37 0-4.14-4.03-7.5-9-7.5z" fill="#fff"/>
-      <circle cx="11" cy="16.5" r="1.2" fill="#07c160"/>
-      <circle cx="15" cy="16.5" r="1.2" fill="#07c160"/>
-    </svg>
-  </div>
+<div style="width: 280px; border-radius: 32px; padding: 28px 22px 24px; text-align: center; backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border: 1px solid rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.25); box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);">
+  <div style="width: 68px; height: 68px; margin: 0 auto 16px; border-radius: 20px; background: linear-gradient(135deg, #07c160 0%, #06ad56 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 30px; font-weight: bold; box-shadow: 0 10px 28px rgba(7, 193, 96, 0.45);">微</div>
   <h3 style="margin: 0 0 4px 0; color: #07c160; font-size: 20px; font-weight: 700;">微信支付</h3>
   <p style="margin: 0 0 18px 0; font-size: 12.5px; color: #888;">微信扫码，方便快捷</p>
   <a href="assets/wechat.png" target="_blank" style="text-decoration: none; -webkit-touch-callout: none;">
@@ -332,14 +352,8 @@ A: 是的，Huli 是开源项目，代码托管在 GitHub。欢迎 Star、Fork�
   <p style="margin: 0; font-size: 12.5px; color: #999;">👆 点击查看大图</p>
 </div>
 
-<div style="width: 280px; border-radius: 28px; padding: 28px 22px 24px; text-align: center; backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(168, 85, 247, 0.25); background: linear-gradient(180deg, rgba(168, 85, 247, 0.12) 0%, rgba(168, 85, 247, 0.03) 100%); box-shadow: 0 16px 48px rgba(168, 85, 247, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);">
-  <div style="width: 68px; height: 68px; margin: 0 auto 16px; border-radius: 20px; background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 28px rgba(168, 85, 247, 0.45); position: relative; overflow: hidden;">
-    <div style="position: absolute; top: -10px; right: -10px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15);"></div>
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="position: relative; z-index: 1;">
-      <path d="M24.5 6c-1.83 0-3.5.62-4.85 1.66C18.3 6.62 16.63 6 14.8 6c-3.87 0-7 2.69-7 6 0 2.03.92 3.85 2.38 5.08-.2.78-.32 1.6-.35 2.45l-.04.88c-.03.52.38.95.9.95.14 0 .27-.03.39-.08l2.76-1.1c.87.53 1.84.96 2.89 1.26v1.56c0 .55.45 1 1 1s1-.45 1-1v-1.77c1.16-.32 2.25-.8 3.24-1.42l2.17 1.3c.12.07.25.11.39.11.52 0 .93-.43.9-.95l-.12-2.07c1.35-1.1 2.19-2.72 2.19-4.51 0-3.31-3.13-6-7-6zm0 2c2.76 0 5 1.79 5 4s-2.24 4-5 4c-.8 0-1.57-.19-2.25-.53-.42-.2-.89-.3-1.37-.3-.48 0-.95.1-1.37.3-.68.34-1.45.53-2.25.53-2.76 0-5-1.79-5-4s2.24-4 5-4c.8 0 1.57.19 2.25.53.42.2.89.3 1.37.3.48 0 .95-.1 1.37-.3.68-.34 1.45-.53 2.25-.53z" fill="#fff"/>
-      <path d="M20.5 13l-2.5 3.5-2.5-3.5h-2l3.5 4.5L13.5 22h2l2.5-3.5 2.5 3.5h2l-3.5-4.5 3.5-4.5z" fill="#fff"/>
-    </svg>
-  </div>
+<div style="width: 280px; border-radius: 32px; padding: 28px 22px 24px; text-align: center; backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border: 1px solid rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.25); box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);">
+  <div style="width: 68px; height: 68px; margin: 0 auto 16px; border-radius: 20px; background: linear-gradient(135deg, #f06292 0%, #ba68c8 50%, #64b5f6 100%); background-size: 200% auto; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 28px rgba(168, 85, 247, 0.45);">💖</div>
   <h3 style="margin: 0 0 4px 0; color: #a855f7; font-size: 20px; font-weight: 700;">爱发电</h3>
   <p style="margin: 0 0 18px 0; font-size: 12.5px; color: #888;">长期赞助 · 解锁更多权益</p>
   <a href="assets/afdian.png" target="_blank" style="text-decoration: none; -webkit-touch-callout: none;">
@@ -348,7 +362,7 @@ A: 是的，Huli 是开源项目，代码托管在 GitHub。欢迎 Star、Fork�
   </div>
   </a>
   <p style="margin: 0; font-size: 12.5px; color: #999;">👆 点击查看大图</p>
-  <a href="https://www.ifdian.net/a/hulihulihuli" target="_blank" style="display: inline-block; margin-top: 14px; padding: 11px 26px; background: linear-gradient(135deg, #a855f7, #9333ea); color: #fff; border-radius: 14px; text-decoration: none; font-size: 13.5px; font-weight: 600; box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);">前往爱发电主页</a>
+  <a href="https://www.ifdian.net/a/hulihulihuli" target="_blank" style="display: inline-block; margin-top: 14px; padding: 11px 26px; color: #fff; border-radius: 60px; text-decoration: none; font-size: 13.5px; font-weight: 700; background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292); background-size: 300% auto; box-shadow: 0 6px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);">前往爱发电主页</a>
 </div>
 
 </div>
