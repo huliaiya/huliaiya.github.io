@@ -1,279 +1,234 @@
-# 🦊 HuLiAPI 狐狸API
+# huli 项目说明
 
-> 免费API接口调用管理平台
-
-<p align="center">
-  <img src="https://img.shields.io/badge/version-2.0.0-blueviolet?style=for-the-badge" alt="version">
-  <img src="https://img.shields.io/badge/PHP-%3E%3D7.4-777BB4?style=for-the-badge&logo=php" alt="PHP">
-  <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License">
-</p>
+基于 Android Navigation Drawer 模板的应用，包含侧边栏导航、深色模式切换、液态玻璃效果。
 
 ---
 
-## 📋 更新日志
-
-### ✨ v2.0.0 `2026-07-26`
-
-#### 🎯 全新功能
-
-- 🌈 全局彩虹渐变毛玻璃主题，所有页面和弹窗统一视觉风格
-- ✨ 点击粒子动画（Sparkle），页面交互时喷射彩色星星
-- 🎛️ 后台新增「点击粒子动画」开关，可自由控制前台动画显示
-- 💰 爱发电收款码支持，后台支付设置可直接配置
-- 📜 安装流程增加免责声明步骤，需勾选同意后才能继续
-
-#### 🔒 安全加固
-
-- 🛡️ 全站 CSRF Token 保护，所有 POST 请求（含安装流程）需携带有效令牌
-- 🚫 API 源码安全审查，`eval()`、`system()` 等危险函数拦截
-- 🔑 登录防暴力破解，15分钟内失败5次自动封禁30分钟
-- 💎 密码哈希升级为 `password_hash()`，向下兼容旧密码
-- 📁 `Core/.htaccess` 精准保护，仅放行 `install.php`，其他敏感文件禁止访问
-- 🔐 安装锁文件权限设为 0444（只读），防止被 Web 进程删除
-- 🧹 XSS 防护增强，输出统一使用 `htmlspecialchars()` 转义
-- 🍪 Session 安全配置：`httponly`、`samesite=Lax`、`secure`
-- 🚷 移除 API Key GET 参数传递方式，仅保留 HTTP Header（`X-API-Key`）认证，防止密钥泄露到日志和浏览器历史
-- 🛑 `sendTestEmail` / `exitLogin` 强制 POST 请求，防止 CSRF 触发发送垃圾邮件或强制注销管理员
-- 🚫 `end_script` 字段禁止通过后台设置修改，彻底杜绝存储型 XSS 注入
-- 🔒 `getWebSetting` 接口移除 `close_site`、`cc_protect`、`fire_wall`、`end_script` 等敏感字段，防止内部配置暴露
-- 🛡️ 新增根目录 `.htaccess`，设置安全响应头（X-Content-Type-Options、X-Frame-Options 等），禁止访问 `.sql`、`.log`、`.bak` 等敏感文件类型
-- 🔇 致命错误处理页面移除服务器文件路径输出，防止信息泄露
-
-#### 🐛 问题修复
-
-| 修复项 | 说明 |
-|--------|------|
-| 安装流程不可用 | `switch/case` 类型不匹配，`intval()` 返回整数与字符串比较永远不相等 |
-| 安装自动登录 | 未验证数据库管理员是否存在就直接设置 session |
-| 密码空值绕过 | 使用 `==` 松散比较，空字符串绕过前端校验 |
-| API 接口不通 | `API/.htaccess` 禁止所有访问，导致外部无法调用接口 |
-| 前台功能瘫痪 | `Data/.htaccess` 禁止所有访问，导致 `post.php`/`api.php` 无法被 AJAX 调用 |
-| Core 目录访问 | `Core/.htaccess` 禁止 `install.php`，导致安装流程 Access Denied |
-| 用户信息编辑 | 弹窗按钮遮挡 QQ 号且保存功能无效 |
-| SMTP 配置保存 | 保存按钮绑定错误方法，提交后无响应 |
-| HTML 解析异常 | `textarea` 自闭合标签导致页面结构错误 |
-| JS 报错 | `mdui` 未加载时直接调用 `mdui.snackbar()` 崩溃 |
-| JSON 解析 | `JSON.parse(data)` 重复调用且无 `try-catch` |
-| CSS 无效值 | `vertical-align: center` 不是合法值，`font-size` 缺分号 |
-| 路径依赖 | `config.inc.php` 使用相对路径，不同工作目录下失效 |
-| SQL 非标准 | `&&` 代替 `AND`，不符合 SQL 标准 |
-| 搜索方法属性错误 | `control.html` 中 `focus` 方法设置不存在的 `code` 属性 |
-| 免责声明无弹窗 | 安装页面不勾选同意直接点击按钮，没有弹窗提示 |
-| 安装跳步 | session 残留导致配置数据步骤被跳过，重新安装时可能直接跳到后续步骤 |
-| `Core/.htaccess` 规则顺序 | Apache `<Files>` 后出现的覆盖先出现的，`deny all` 放在 `grant install.php` 后面导致 install.php 也被拒绝，安装页 Access Denied |
-| `install.php` 缺少 `__ROOT_DIR__` | 加载 `connect.php` 时触发 `Access Denied` 检查，导致步骤2/3（数据库读写）直接终止，配置数据步骤被跳过 |
-| URL 跳步漏洞 | 可通过 URL 参数 `?step=4` 绕过前置安装步骤直接跳到完成页 |
-| `step_4.html` 相对路径 | 安装完成后的文件删除操作使用相对路径 `./Core/`，依赖工作目录，部分服务器配置下删除失败 |
-| UPDATE 无 WHERE | `huli_config` 表 UPDATE 语句缺少 `WHERE`/`LIMIT`，多行数据时全部更新 |
-| URL 协议硬编码 | 安装时站点 URL 写死 `http://`，HTTPS 环境下配置协议错误 |
-| 参数注入漏洞 | `edit_link.html` 中 ID 参数未验证且未编码，可注入恶意数据 |
-| AJAX 无错误回调 | `control_link.html` 网络请求失败时永久卡在加载状态 |
-| 死代码残留 | `login_log.html` 存在无对应 UI 的分页代码，且缺少空状态提示 |
-| 函数重复定义 | `API/function.php` 中 `addAccess()`/`addApiAccess()` 与 `Common.php` 重复定义导致致命错误 |
-| highlightjs XSS | `doc.html` 中 highlightjs 未加载时直接输出未转义代码 |
-| DOCTYPE 缺失 | `control_link.html` 缺少 `<!DOCTYPE html>` 声明导致渲染异常 |
-| 空状态逻辑错误 | 多个模板 `v-if` 条件判断数组而非长度，空数组时仍显示列表 |
-| fetch 无错误处理 | 多处 `fetch()` 调用缺少 `.catch()`，网络异常时无反馈 |
-| URL 参数未编码 | 多处 API ID 拼接 URL 未使用 `encodeURIComponent()`，存在注入风险 |
-| CSRF Token 丢失 | `footer.html` 中 `unset()` 过早清除 Token 导致后续请求失败 |
-
-#### ⚡ 体验优化
-
-- 彩虹流动渐变动画应用于按钮、标题栏、FAB 等交互元素
-- 毛玻璃效果覆盖卡片、弹窗、侧边栏、工具栏
-- Snackbar/Toast 提示增强毛玻璃样式
-- 全局路径改为 `__DIR__` 绝对路径，消除工作目录依赖
-- 错误码规范统一，失败统一返回 `-1`
-- 代码风格统一，所有 Session 比较改为严格比较 `===`
-- `sendMail()` 添加 `__ROOT_DIR__` 定义检查，防止未定义时报错
-- 安装向导全新 UI 设计：毛玻璃卡片、Hero 图标区、顶部进度条、步骤徽章
-- 安装按钮样式优化：靛蓝-紫罗兰渐变配色，统一圆角 14px，修复 MDUI 框架 `text-transform` 冲突
-- 安装表单美化：浮动标签输入框、毛玻璃提示信息框、统一交互动画
-
-#### 📦 部署文档
-
-- 新增宝塔面板部署教程，覆盖安装、配置、SSL、权限、常见问题等全流程
+## 更新日志
 
 ---
 
-### 🚀 v1.x `早期版本`
+### 2026-07-28：修复 Toolbar 白条遮挡汉堡菜单按钮
 
-- API 接口管理系统基础框架
-- 后台管理面板：接口增删改查、分类管理、公告管理
-- 用户反馈系统
-- 友情链接管理
-- 登录日志与访问日志记录
-- CC 防护与 SQL 注入拦截
-- SMTP 邮件发送功能
-- API 密钥认证体系
-- 网站开关控制与防火墙功能
+问题：浅色模式下顶部 Toolbar 显示为白条，汉堡菜单按钮（打开侧边栏）不可见。
 
----
+根因：Toolbar 背景为 `#80FFFFFF`（半透明白色），同时 `AppBarOverlay` 使用 `Dark.ActionBar` 让图标和文字变成白色，白色图标在白色背景上完全不可见。
 
-## 🚀 宝塔面板部署教程
+修复：
+- Toolbar 背景改为 `@android:color/transparent`，让液态玻璃背景透过 Toolbar 显示
+- 浅色模式 `AppBarOverlay` 改为 `ThemeOverlay.AppCompat.Light`（深色图标，透明背景上可见）
+- 深色模式 `values-night/themes.xml` 新增 `AppBarOverlay` 使用 `Dark.ActionBar`（浅色图标）
 
-### 环境要求
-
-- 宝塔面板 7.x 及以上
-- PHP >= 7.4（推荐 8.0/8.1）
-- MySQL 5.7 或 8.0
-- Nginx 或 Apache
-
-### 一、安装宝塔面板
-
-如果服务器尚未安装宝塔面板，使用 SSH 连接服务器后执行：
-
-```bash
-# CentOS/RedHat
-yum install -y wget && wget -O install.sh https://download.bt.cn/install/install_6.0.sh && sh install.sh
-
-# Ubuntu/Debian
-wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh
-```
-
-安装完成后，在浏览器访问宝塔面板地址，使用面板提供的账号密码登录。
-
-### 二、创建网站
-
-1. 登录宝塔面板，点击左侧菜单「网站」→「添加站点」
-2. 填写域名（如 `api.example.com`），如果没有域名可暂时填服务器 IP
-3. 根目录保持默认 `/www/wwwroot/你的域名`
-4. PHP 版本选择 **7.4** 或以上
-5. 数据库选择 **MySQL**，记住自动生成的数据库名、用户名和密码
-6. 点击「提交」创建站点
-
-### 三、上传项目文件
-
-1. 将 `HuLiAPI_v2.0.0.zip` 上传到网站根目录 `/www/wwwroot/你的域名/`
-2. 在宝塔文件管理器中右键压缩包 →「解压」到当前目录
-3. 确保解压后文件结构为：`/www/wwwroot/你的域名/index.php`、`/www/wwwroot/你的域名/Core/` 等
-4. 删除多余的压缩包文件
-
-### 四、设置目录权限
-
-在宝塔文件管理器中，右键网站根目录 →「权限」：
-
-| 目录/文件 | 权限 | 说明 |
-|-----------|------|------|
-| 整个网站根目录 | 755 | 目录默认权限 |
-| 所有 PHP 文件 | 644 | 文件默认权限 |
-| `Core/Database/` | 755 | 数据库配置目录，需可写 |
-| `Core/Config/` | 755 | 配置文件目录，需可写 |
-| `API/` | 755 | API 接口目录，需可写（动态生成接口文件） |
-
-### 五、配置 Nginx 伪静态（Nginx 用户）
-
-如果使用 Nginx，在网站设置 →「伪静态」中添加：
-
-```nginx
-location / {
-    try_files $uri $uri/ /index.php?$query_string;
-}
-
-# 禁止访问敏感目录和文件
-location ~ ^/(Core|Include|Template)/ {
-    deny all;
-    return 403;
-}
-
-location ~ \.(sql|log|bak|lock|env|yml|yaml)$ {
-    deny all;
-    return 403;
-}
-```
-
-### 六、配置 Apache（Apache 用户）
-
-如果使用 Apache，项目自带的 `.htaccess` 文件已包含所有安全规则，无需额外配置。确保 Apache 开启了 `mod_rewrite` 模块：
-
-```bash
-a2enmod rewrite
-systemctl restart apache2
-```
-
-### 七、申请 SSL 证书（推荐）
-
-1. 在网站设置 →「SSL」中选择「Let's Encrypt」
-2. 勾选域名，点击「申请」
-3. 申请成功后开启「强制 HTTPS」
-
-### 八、配置 PHP 扩展
-
-在宝塔面板 →「软件商店」→ 找到对应 PHP 版本 →「设置」→「安装扩展」，确保以下扩展已启用：
-
-- `mysqli`（数据库连接）
-- `curl`（API 请求）
-- `mbstring`（多字节字符串处理）
-- `openssl`（加密通信）
-- `fileinfo`（文件信息检测）
-
-### 九、设置 PHP 禁用函数
-
-在 PHP 设置 →「禁用函数」中，**删除以下函数的禁用**（安装和运行需要）：
-
-- `putenv`
-- `proc_open`（仅 PHPMailer sendmail 模式需要，使用 SMTP 可不解禁）
-
-> 注意：`eval`、`system`、`exec` 等危险函数应保持禁用状态，项目代码不依赖这些函数。
-
-### 十、执行安装向导
-
-1. 浏览器访问 `https://你的域名/`
-2. 系统会自动跳转到安装页面
-3. 阅读并勾选同意「免责声明与授权协议」
-4. **第一步 - 数据库配置**：填写宝塔创建数据库时的主机（`127.0.0.1`）、端口（`3306`）、数据库名、用户名和密码
-5. **第二步 - 网站信息**：设置网站标题、管理员用户名、管理员密码（至少6位）、邮箱和域名
-6. **第三步 - SMTP 配置**（可选）：配置邮件服务器信息，可跳过后续在后台设置
-7. 安装完成后，系统自动登录后台管理面板
-
-### 十一、安装后安全建议
-
-1. **删除安装文件**：安装完成后系统会自动创建 `Core/install.lock` 锁文件，防止重复安装。建议额外确认该文件存在
-2. **修改默认密码**：登录后台后立即修改管理员密码
-3. **配置 API Key**：在后台设置中查看并妥善保管系统自动生成的 API Key
-4. **开启防火墙**：在后台开启 CC 防护和防火墙功能
-5. **定期备份**：在宝塔面板 →「计划任务」中设置数据库自动备份
-6. **关闭目录浏览**：确保 Nginx/Apache 配置中已关闭目录列表功能
-
-### 十二、常见问题
-
-<details>
-<summary>安装页面显示 Access Denied</summary>
-
-检查 `Core/.htaccess` 文件是否存在且规则正确。Nginx 用户需确认伪静态规则已正确配置。如问题持续，检查 PHP 版本是否 >= 7.4。
-</details>
-
-<details>
-<summary>安装后页面空白或报错</summary>
-
-1. 检查 PHP 扩展是否齐全（参考第六步）
-2. 检查目录权限是否正确（参考第四步）
-3. 查看宝塔面板的错误日志：网站设置 →「网站日志」→「错误日志」
-</details>
-
-<details>
-<summary>API 接口无法访问（404）</summary>
-
-Nginx 用户需确认伪静态规则中包含 `try_files` 配置。Apache 用户确认 `mod_rewrite` 已启用。检查 `API/` 目录权限是否为 755。
-</details>
-
-<details>
-<summary>邮件发送失败</summary>
-
-1. 确认 PHP `openssl` 和 `curl` 扩展已启用
-2. 在后台「网站配置」→「SMTP 设置」中检查邮件服务器配置
-3. 使用后台「发送测试邮件」功能验证配置
-4. 部分云服务器默认封禁 25 端口，建议使用 465（SSL）或 587（TLS）端口
-</details>
-
-<details>
-<summary>点击粒子动画卡顿</summary>
-
-在后台「网站配置」中关闭「点击粒子动画」开关即可禁用动画效果，提升低性能设备体验。
-</details>
+修改文件：
+- `app/src/main/res/layout/app_bar_main.xml` — Toolbar 背景改透明
+- `app/src/main/res/values/themes.xml` — AppBarOverlay 改为 Light
+- `app/src/main/res/values-night/themes.xml` — 新增深色模式 AppBarOverlay
 
 ---
 
-<p align="center">
-  &copy; HuLiAPI 狐狸API · 免费API接口调用平台
-</p>
+### 2026-07-28：修复 Release 构建 AAPT proto XML 解析错误
+
+问题：`processReleaseResources` / `processDebugResources` 报错 `failed to parse proto XML`，不同文件随机出现该错误。
+
+根因：`compileSdk = 36`（Android 16 预览版 SDK）的 AAPT2 存在 proto XML 解析 bug，导致构建随机失败。降级到 compileSdk 34 后，依赖库 `androidx.core:core:1.17.0` 等要求 compileSdk 36，产生版本冲突。
+
+修复：
+- 将 `compileSdk` 从 36 降至稳定版 34（与 `targetSdk` 一致）
+- 降低所有 AndroidX 依赖版本到兼容 compileSdk 34 的版本：
+  - core: 1.17.0 → 1.13.1
+  - appcompat: 1.7.1 → 1.7.0
+  - material: 1.13.0 → 1.12.0
+  - constraintlayout: 2.2.1 → 2.1.4
+  - lifecycle: 2.9.4 → 2.8.7
+  - navigation: 2.9.5 → 2.8.5
+- `liquid_glass_dialog_background.xml` 和 `liquid_glass_surface.xml` 中 `@color/glass_card` 改为硬编码颜色值 `#4DFFFFFF`
+- 在设备上执行 `./gradlew clean` 清理构建缓存后重新编译
+
+修改文件：
+- `app/build.gradle.kts` — compileSdk 36 → 34
+- `gradle/libs.versions.toml` — 降低所有依赖版本
+- `app/src/main/res/drawable/liquid_glass_dialog_background.xml`
+- `app/src/main/res/drawable/liquid_glass_surface.xml`
+
+---
+
+### 2026-07-28：全面修复 UI 问题 + 删除所有注解 + 代码优化
+
+#### 修复设置页文案重复
+
+问题：设置页卡片标题"设置"与页面标题重复，"深色模式"描述与标题重复。
+
+修复：
+- 移除卡片内重复的"设置"标题
+- "深色模式"改为"外观"，描述改为"选择应用的主题颜色方案"
+- 调整卡片内布局顺序，分隔线移到单选按钮上方
+
+修改文件：
+- `app/src/main/res/layout/fragment_settings.xml` — 移除重复标题，调整布局
+- `app/src/main/res/values/strings.xml` — theme_mode 改为"外观"，新增 theme_mode_desc
+
+#### 修复 Toolbar 白条问题
+
+问题：Toolbar 使用 liquid_glass_surface drawable 在浅色模式下显示为白色块。
+
+修复：
+- Toolbar 背景改为直接使用半透明颜色 `@color/glass_toolbar`（#80FFFFFF）
+- 新增 values-night/colors.xml 覆盖夜间模式颜色（#80000000）
+- AppBarLayout 添加 `app:elevation="0dp"` 去除阴影
+
+修改文件：
+- `app/src/main/res/layout/app_bar_main.xml` — Toolbar 背景改为颜色引用
+- `app/src/main/res/values/colors.xml` — 新增 glass_toolbar 和 glass_toolbar_dark
+- `app/src/main/res/values-night/colors.xml`（新增）— 夜间模式颜色覆盖，glass_card 改为深色半透明
+
+#### 删除所有 Java 注解
+
+从所有 Java 文件中移除了以下注解：
+- `@Override`
+- `@NonNull`
+- `@Nullable`
+
+涉及文件（全部 9 个 Java 文件）：
+1. `MainActivity.java`
+2. `HomeFragment.java`
+3. `GalleryFragment.java`
+4. `SlideshowFragment.java`
+5. `SettingsFragment.java`
+6. `SettingsViewModel.java`
+7. `ThemeManager.java`
+8. `LiquidGlassUtil.java`
+9. （HomeViewModel / GalleryViewModel / SlideshowViewModel 本身无注解）
+
+#### 修复 NavigationView 模糊导致文字不可读
+
+问题：对 NavigationView 整体应用 RenderEffect 模糊，导致菜单文字模糊不可读。
+
+修复：移除 applyLiquidGlassToNavView() 方法，不再对侧边栏施加模糊效果。
+
+#### 修复 Snackbar 模糊导致文字不可读
+
+问题：对 Snackbar 视图施加 RenderEffect 模糊，导致提示文字模糊不可读。
+
+修复：Snackbar 不再施加 RenderEffect，保持文字清晰。
+
+#### 修复窗口布局问题
+
+问题：`FLAG_LAYOUT_NO_LIMITS` 导致内容顶到状态栏下方，`FLAG_BLUR_BEHIND` 和 `FLAG_TRANSLUCENT_STATUS/NAVIGATION` 已弃用。
+
+修复：
+- 移除所有已弃用的 Window flag
+- 仅保留 `window.setBackgroundBlurRadius()` 实现窗口背景模糊
+- 模糊半径从 60 降为 30，避免过度模糊
+
+#### 修复 onBackPressed 弃用问题
+
+问题：`onBackPressed()` 在高版本 API 已弃用。
+
+修复：改用 `OnBackPressedDispatcher` + `OnBackPressedCallback` 实现返回拦截。
+
+#### 移除未使用权限
+
+问题：AndroidManifest 中声明了 `FOREGROUND_SERVICE_DATA_SYNC` 权限但未使用。
+
+修复：从 AndroidManifest.xml 中移除该权限。
+
+#### 代码安全与质量优化
+
+- ThemeManager 构造函数添加 null 检查，使用 `getApplicationContext()` 防止 Activity 泄漏
+- LiquidGlassUtil 移除未使用的 import（ViewGroup、WindowManager、ViewCompat）
+- LiquidGlassUtil 移除可能 NPE 的 `applyTranslucentBackground()` 方法
+- LiquidGlassUtil 移除未使用的 `applyLiquidGlassBackground()` 方法
+- SettingsFragment 简化玻璃效果应用逻辑，只对卡片施加效果，不对子 View 重复施加
+- Fragment 玻璃效果从 onViewCreated 移到 onCreateView 末尾，减少生命周期复杂度
+- 窗口模糊添加 null 检查（`dialog.getWindow() != null`）
+- 卡片透明度从 0.75-0.8 调整为 0.85，提升文字可读性
+
+#### 文件变更清单
+
+修改文件（10个）：
+1. `app/src/main/java/com/example/mynavigation/huli/MainActivity.java` — 删除注解，移除 NavView/Snackbar 模糊，移除弃用 flag，改用 OnBackPressedDispatcher
+2. `app/src/main/java/com/example/mynavigation/huli/util/LiquidGlassUtil.java` — 删除注解，移除未使用 import 和方法
+3. `app/src/main/java/com/example/mynavigation/huli/util/ThemeManager.java` — 删除注解，添加 null 检查，使用 applicationContext
+4. `app/src/main/java/com/example/mynavigation/huli/ui/settings/SettingsFragment.java` — 删除注解，简化玻璃效果逻辑
+5. `app/src/main/java/com/example/mynavigation/huli/ui/settings/SettingsViewModel.java` — 删除注解
+6. `app/src/main/java/com/example/mynavigation/huli/ui/home/HomeFragment.java` — 删除注解，合并玻璃效果到 onCreateView
+7. `app/src/main/java/com/example/mynavigation/huli/ui/gallery/GalleryFragment.java` — 同上
+8. `app/src/main/java/com/example/mynavigation/huli/ui/slideshow/SlideshowFragment.java` — 同上
+9. `app/src/main/res/layout/fragment_settings.xml` — 移除重复标题，调整布局
+10. `app/src/main/res/layout/app_bar_main.xml` — Toolbar 改用颜色背景
+11. `app/src/main/res/values/strings.xml` — 修改文案
+12. `app/src/main/res/values/colors.xml` — 新增 glass_toolbar 颜色
+13. `app/src/main/AndroidManifest.xml` — 移除未使用权限
+
+新增文件（1个）：
+1. `app/src/main/res/values-night/colors.xml` — 夜间模式颜色覆盖
+
+---
+
+### 2026-07-28：添加液态玻璃效果 + 设置页面 + 深色模式
+
+#### 侧边栏新增「设置」入口
+
+在抽屉菜单底部新增「系统」分组，内含「设置」选项，点击后跳转到设置页面。
+
+修改文件：
+- `app/src/main/res/menu/activity_main_drawer.xml` — 添加设置菜单项（nav_settings）
+- `app/src/main/res/navigation/mobile_navigation.xml` — 添加 nav_settings 导航目的地，指向 SettingsFragment
+- `app/src/main/res/values/strings.xml` — 添加设置相关中文字符串
+- `app/src/main/java/com/example/mynavigation/huli/MainActivity.java` — 将 nav_settings 加入 AppBarConfiguration 顶级目的地列表
+
+#### 设置页面 — 深色模式切换
+
+新增文件：
+- `app/src/main/java/com/example/mynavigation/huli/ui/settings/SettingsFragment.java`
+- `app/src/main/java/com/example/mynavigation/huli/ui/settings/SettingsViewModel.java`
+- `app/src/main/java/com/example/mynavigation/huli/util/ThemeManager.java`
+- `app/src/main/res/layout/fragment_settings.xml`
+
+支持三种模式：
+| 模式 | 说明 | 对应 AppCompatDelegate 值 |
+|------|------|--------------------------|
+| 跟随系统 | 自动跟随系统深浅色设置（API 31+）| MODE_NIGHT_FOLLOW_SYSTEM |
+| 浅色模式 | 强制使用浅色主题 | MODE_NIGHT_NO |
+| 深色模式 | 强制使用深色主题 | MODE_NIGHT_YES |
+
+#### 液态玻璃效果（全应用覆盖）
+
+实现原理：
+- Android 12+ (API 31+)：使用 RenderEffect.createBlurEffect() 实现 GPU 硬件加速的实时模糊
+- Window 模糊：window.setBackgroundBlurRadius() 对窗口背景进行模糊
+- 半透明材质：自定义 shape drawable 配合半透明颜色模拟玻璃质感
+
+新增文件：
+- `app/src/main/java/com/example/mynavigation/huli/util/LiquidGlassUtil.java`
+- `app/src/main/res/drawable/liquid_glass_background.xml`
+- `app/src/main/res/drawable/liquid_glass_surface.xml`
+- `app/src/main/res/drawable/liquid_glass_dialog_background.xml`
+
+#### 主题适配
+
+修改文件：
+- `app/src/main/res/values/themes.xml` — 新增 LiquidGlassDialog 弹窗主题
+- `app/src/main/res/values-night/themes.xml` — 同步夜间主题
+- `app/src/main/res/values/colors.xml` — 新增玻璃材质颜色
+
+---
+
+### 2026-07-28：修复 minSdk 版本冲突
+
+编译报错：`uses-sdk:minSdkVersion 16 cannot be smaller than version 21 declared in library [androidx.navigation:navigation-runtime-android:2.9.5]`
+
+修复：将 `app/build.gradle.kts` 中的 `minSdk = 16` 改为 `minSdk = 21`。
+
+---
+
+### 2026-07-28：Navigation Drawer 模板（初始版本）
+
+项目基于 Android Navigation Drawer 模板创建，包含：
+- MainActivity + DrawerLayout 侧边栏导航
+- 三个页面：Home、Gallery、Slideshow（各含 Fragment + ViewModel）
+- Toolbar 顶部栏 + FloatingActionButton 浮动按钮
+- Navigation Component 导航组件
+- ViewBinding 数据绑定
+- Material Design 主题（DayNight 深浅色支持）
+- Gradle 9.0.0 + AGP 8.13.0 + Java 17
