@@ -1,8 +1,26 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Fox%20Face.png" alt="🦊" width="100" height="100" />
+  <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="foxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#ff7e5f"/>
+        <stop offset="100%" style="stop-color:#feb47b"/>
+      </linearGradient>
+    </defs>
+    <path d="M20 25 L12 10 L30 20 Z" fill="url(#foxGrad)"/>
+    <path d="M80 25 L88 10 L70 20 Z" fill="url(#foxGrad)"/>
+    <ellipse cx="50" cy="55" rx="32" ry="28" fill="url(#foxGrad)"/>
+    <ellipse cx="50" cy="62" rx="20" ry="16" fill="#fff5ee"/>
+    <ellipse cx="38" cy="50" rx="4" ry="5" fill="#222"/>
+    <ellipse cx="62" cy="50" rx="4" ry="5" fill="#222"/>
+    <circle cx="39" cy="48" r="1.5" fill="#fff"/>
+    <circle cx="63" cy="48" r="1.5" fill="#fff"/>
+    <ellipse cx="50" cy="62" rx="4" ry="3" fill="#222"/>
+    <path d="M50 65 Q46 70 42 68" stroke="#222" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M50 65 Q54 70 58 68" stroke="#222" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </svg>
 </p>
 
-<h1 align="center">🦊 Huli</h1>
+<h1 align="center">Huli</h1>
 
 <p align="center">
   <b>新一代的 Root 管理 & 安全防护工具</b>
