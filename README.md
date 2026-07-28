@@ -70,66 +70,86 @@ Huli 支持多种检测模式，你可以根据设备状态选择适合的方式
 
 ## ✨ 核心功能
 
-<div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin: 28px 0;">
+<div style="display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; margin: 32px 0;">
 
-<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #ff5858 0%, #f09819 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(255, 88, 88, 0.4);">
-  <div style="font-size: 48px; margin-bottom: 12px;">🦠</div>
-  <h3 style="margin: 0 0 10px 0; color: #fff;">云端病毒检测</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">接入 VirusTotal 等云端服务，可查询 70+ 引擎的检测结果，帮助识别木马、勒索、间谍等可疑应用。支持 APK 批量扫描和新安装应用检测。</p>
+<div style="flex: 1; min-width: 280px; max-width: 330px; background: linear-gradient(145deg, #ff6b6b 0%, #ee5a6f 100%); padding: 28px 26px; border-radius: 26px; box-shadow: 0 12px 36px rgba(238, 90, 111, 0.35); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 18px 48px rgba(238, 90, 111, 0.45)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 36px rgba(238, 90, 111, 0.35)'">
+  <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; backdrop-filter: blur(8px);">
+    <span style="font-size: 30px;">🦠</span>
+  </div>
+  <h3 style="margin: 0 0 10px 0; color: #fff; font-size: 17px; font-weight: 700;">云端病毒检测</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.88); font-size: 13.5px; line-height: 1.65;">接入 VirusTotal 等云端服务，可查询 70+ 引擎的检测结果，帮助识别木马、勒索、间谍等可疑应用。支持 APK 批量扫描和新安装应用检测。</p>
 </div>
 
-<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);">
-  <div style="font-size: 48px; margin-bottom: 12px;">🎮</div>
-  <h3 style="margin: 0 0 10px 0; color: #fff;">远控后门扫描</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">检测 TeamViewer、向日葵、ToDesk、AnyDesk 等常见远控软件，以及 AhMyth、AndroRat、SpyNote 等开源 RAT 工具特征。扫描异常端口、后台服务和网络连接，帮助发现可疑的远控行为。</p>
+<div style="flex: 1; min-width: 280px; max-width: 330px; background: linear-gradient(145deg, #667eea 0%, #764ba2 100%); padding: 28px 26px; border-radius: 26px; box-shadow: 0 12px 36px rgba(102, 126, 234, 0.35); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 18px 48px rgba(102, 126, 234, 0.45)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 36px rgba(102, 126, 234, 0.35)'">
+  <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; backdrop-filter: blur(8px);">
+    <span style="font-size: 30px;">🎮</span>
+  </div>
+  <h3 style="margin: 0 0 10px 0; color: #fff; font-size: 17px; font-weight: 700;">远控后门扫描</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.88); font-size: 13.5px; line-height: 1.65;">检测 TeamViewer、向日葵、ToDesk、AnyDesk 等常见远控软件，以及 AhMyth、AndroRat、SpyNote 等开源 RAT 工具特征。扫描异常端口、后台服务和网络连接。</p>
 </div>
 
-<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(245, 87, 108, 0.4);">
-  <div style="font-size: 48px; margin-bottom: 12px;">🧩</div>
-  <h3 style="margin: 0 0 10px 0; color: #fff;">模块安全审计</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">扫描已安装的 Magisk / KernelSU / LSPosed 模块，检查模块脚本中是否包含可疑命令、是否修改了系统文件、是否在开机时执行了额外操作。对模块进行安全评级标注。</p>
+<div style="flex: 1; min-width: 280px; max-width: 330px; background: linear-gradient(145deg, #b06ab3 0%, #e74c8c 100%); padding: 28px 26px; border-radius: 26px; box-shadow: 0 12px 36px rgba(231, 76, 140, 0.35); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 18px 48px rgba(231, 76, 140, 0.45)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 36px rgba(231, 76, 140, 0.35)'">
+  <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; backdrop-filter: blur(8px);">
+    <span style="font-size: 30px;">🧩</span>
+  </div>
+  <h3 style="margin: 0 0 10px 0; color: #fff; font-size: 17px; font-weight: 700;">模块安全审计</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.88); font-size: 13.5px; line-height: 1.65;">扫描已安装的 Magisk / KernelSU / LSPosed 模块，检查模块脚本中是否包含可疑命令、是否修改了系统文件、是否在开机时执行了额外操作。对模块进行安全评级标注。</p>
 </div>
 
-<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(79, 172, 254, 0.4);">
-  <div style="font-size: 48px; margin-bottom: 12px;">💉</div>
-  <h3 style="margin: 0 0 10px 0; color: #fff;">注入行为检测</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">扫描系统服务、Zygote 进程、应用进程中是否存在可疑的注入行为。检查 dex 文件、so 库是否被修改，从应用层到框架层多维度排查。</p>
+<div style="flex: 1; min-width: 280px; max-width: 330px; background: linear-gradient(145deg, #4facfe 0%, #22c1c3 100%); padding: 28px 26px; border-radius: 26px; box-shadow: 0 12px 36px rgba(79, 172, 254, 0.35); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 18px 48px rgba(79, 172, 254, 0.45)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 36px rgba(79, 172, 254, 0.35)'">
+  <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; backdrop-filter: blur(8px);">
+    <span style="font-size: 30px;">💉</span>
+  </div>
+  <h3 style="margin: 0 0 10px 0; color: #fff; font-size: 17px; font-weight: 700;">注入行为检测</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.88); font-size: 13.5px; line-height: 1.65;">扫描系统服务、Zygote 进程、应用进程中是否存在可疑的注入行为。检查 dex 文件、so 库是否被修改，从应用层到框架层多维度排查。</p>
 </div>
 
-<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(250, 112, 154, 0.4);">
-  <div style="font-size: 48px; margin-bottom: 12px;">📤</div>
-  <h3 style="margin: 0 0 10px 0; color: #fff;">网络行为监控</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">观察应用的网络行为，统计各应用的流量使用情况。对上传频率异常、流量消耗大的应用进行标注，帮助你了解哪些应用在后台活跃。</p>
+<div style="flex: 1; min-width: 280px; max-width: 330px; background: linear-gradient(145deg, #fa709a 0%, #fee140 100%); padding: 28px 26px; border-radius: 26px; box-shadow: 0 12px 36px rgba(250, 112, 154, 0.35); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 18px 48px rgba(250, 112, 154, 0.45)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 36px rgba(250, 112, 154, 0.35)'">
+  <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; backdrop-filter: blur(8px);">
+    <span style="font-size: 30px;">📤</span>
+  </div>
+  <h3 style="margin: 0 0 10px 0; color: #fff; font-size: 17px; font-weight: 700;">网络行为监控</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.9); font-size: 13.5px; line-height: 1.65;">观察应用的网络行为，统计各应用的流量使用情况。对上传频率异常、流量消耗大的应用进行标注，帮助你了解哪些应用在后台活跃。</p>
 </div>
 
-<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(168, 237, 234, 0.4);">
-  <div style="font-size: 48px; margin-bottom: 12px;">💣</div>
-  <h3 style="margin: 0 0 10px 0; color: #333;">系统完整性校验</h3>
-  <p style="margin: 0; color: rgba(0,0,0,0.7); font-size: 14px; line-height: 1.6;">检查 /system、/vendor、/product 分区的系统文件状态，与基准哈希值进行比对。发现与预期不一致的文件会进行标注，帮助你了解系统分区的变动情况。</p>
+<div style="flex: 1; min-width: 280px; max-width: 330px; background: linear-gradient(145deg, #11998e 0%, #38ef7d 100%); padding: 28px 26px; border-radius: 26px; box-shadow: 0 12px 36px rgba(17, 153, 142, 0.35); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 18px 48px rgba(17, 153, 142, 0.45)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 36px rgba(17, 153, 142, 0.35)'">
+  <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; backdrop-filter: blur(8px);">
+    <span style="font-size: 30px;">💣</span>
+  </div>
+  <h3 style="margin: 0 0 10px 0; color: #fff; font-size: 17px; font-weight: 700;">系统完整性校验</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.9); font-size: 13.5px; line-height: 1.65;">检查 /system、/vendor、/product 分区的系统文件状态，与基准哈希值进行比对。发现与预期不一致的文件会进行标注，帮助你了解系统分区的变动情况。</p>
 </div>
 
-<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(132, 250, 176, 0.4);">
-  <div style="font-size: 48px; margin-bottom: 12px;">🔑</div>
-  <h3 style="margin: 0 0 10px 0; color: #333;">密码安全检测</h3>
-  <p style="margin: 0; color: rgba(0,0,0,0.7); font-size: 14px; line-height: 1.6;">检查设备中已保存的密码强度，识别弱密码和重复使用的密码。可对接 Have I Been Pwned 查询密码是否在已知泄露事件中出现过（使用 k-匿名性技术保护隐私）。</p>
+<div style="flex: 1; min-width: 280px; max-width: 330px; background: linear-gradient(145deg, #56ccf2 0%, #2f80ed 100%); padding: 28px 26px; border-radius: 26px; box-shadow: 0 12px 36px rgba(47, 128, 237, 0.35); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 18px 48px rgba(47, 128, 237, 0.45)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 36px rgba(47, 128, 237, 0.35)'">
+  <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; backdrop-filter: blur(8px);">
+    <span style="font-size: 30px;">🔑</span>
+  </div>
+  <h3 style="margin: 0 0 10px 0; color: #fff; font-size: 17px; font-weight: 700;">密码安全检测</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.88); font-size: 13.5px; line-height: 1.65;">检查设备中已保存的密码强度，识别弱密码和重复使用的密码。可对接 Have I Been Pwned 查询密码是否在已知泄露事件中出现过（使用 k-匿名性技术保护隐私）。</p>
 </div>
 
-<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #654ea3 0%, #eaafc8 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(101, 78, 163, 0.4);">
-  <div style="font-size: 48px; margin-bottom: 12px;">🔌</div>
-  <h3 style="margin: 0 0 10px 0; color: #fff;">Shizuku 授权支持</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">支持通过 Shizuku 获取 ADB 级权限进行更深入的检测，无需 Root 也能达到更高的检测能力。可进行应用 ops 权限查看、系统服务状态检查等。由用户主动触发授权，检测结束后权限失效。</p>
+<div style="flex: 1; min-width: 280px; max-width: 330px; background: linear-gradient(145deg, #8e2de2 0%, #4a00e0 100%); padding: 28px 26px; border-radius: 26px; box-shadow: 0 12px 36px rgba(142, 45, 226, 0.35); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 18px 48px rgba(142, 45, 226, 0.45)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 36px rgba(142, 45, 226, 0.35)'">
+  <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; backdrop-filter: blur(8px);">
+    <span style="font-size: 30px;">🔌</span>
+  </div>
+  <h3 style="margin: 0 0 10px 0; color: #fff; font-size: 17px; font-weight: 700;">Shizuku 授权支持</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.88); font-size: 13.5px; line-height: 1.65;">支持通过 Shizuku 获取 ADB 级权限进行更深入的检测，无需 Root 也能达到更高的检测能力。可进行应用 ops 权限查看、系统服务状态检查等。由用户主动触发授权。</p>
 </div>
 
-<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #0c3483 0%, #a2b6df 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(12, 52, 131, 0.4);">
-  <div style="font-size: 48px; margin-bottom: 12px;">🛡️</div>
-  <h3 style="margin: 0 0 10px 0; color: #fff;">隐私保护监控</h3>
-  <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">记录摄像头、麦克风、剪贴板的调用情况，方便你查看哪些应用使用了这些敏感权限。支持对应用的敏感权限进行管理和撤回。</p>
+<div style="flex: 1; min-width: 280px; max-width: 330px; background: linear-gradient(145deg, #0f2027 0%, #2c5364 100%); padding: 28px 26px; border-radius: 26px; box-shadow: 0 12px 36px rgba(15, 32, 39, 0.35); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 18px 48px rgba(15, 32, 39, 0.45)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 36px rgba(15, 32, 39, 0.35)'">
+  <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; backdrop-filter: blur(8px);">
+    <span style="font-size: 30px;">🛡️</span>
+  </div>
+  <h3 style="margin: 0 0 10px 0; color: #fff; font-size: 17px; font-weight: 700;">隐私保护监控</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.88); font-size: 13.5px; line-height: 1.65;">记录摄像头、麦克风、剪贴板的调用情况，方便你查看哪些应用使用了这些敏感权限。支持对应用的敏感权限进行管理和撤回。</p>
 </div>
 
-<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(255, 154, 158, 0.4);">
-  <div style="font-size: 48px; margin-bottom: 12px;">🔥</div>
-  <h3 style="margin: 0 0 10px 0; color: #333;">设备异常发热检测</h3>
-  <p style="margin: 0; color: rgba(0,0,0,0.7); font-size: 14px; line-height: 1.6;">监控设备温度和 CPU/GPU 占用情况，记录各应用的资源消耗。当设备温度过高或耗电异常时，帮助你定位是哪个应用在后台频繁活动。</p>
+<div style="flex: 1; min-width: 280px; max-width: 330px; background: linear-gradient(145deg, #ff9966 0%, #ff5e62 100%); padding: 28px 26px; border-radius: 26px; box-shadow: 0 12px 36px rgba(255, 94, 98, 0.35); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 18px 48px rgba(255, 94, 98, 0.45)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 36px rgba(255, 94, 98, 0.35)'">
+  <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; backdrop-filter: blur(8px);">
+    <span style="font-size: 30px;">🔥</span>
+  </div>
+  <h3 style="margin: 0 0 10px 0; color: #fff; font-size: 17px; font-weight: 700;">设备异常发热检测</h3>
+  <p style="margin: 0; color: rgba(255,255,255,0.88); font-size: 13.5px; line-height: 1.65;">监控设备温度和 CPU/GPU 占用情况，记录各应用的资源消耗。当设备温度过高或耗电异常时，帮助你定位是哪个应用在后台频繁活动。</p>
 </div>
 
 </div>
@@ -275,49 +295,66 @@ A: 是的，Huli 是开源项目，代码托管在 GitHub。欢迎 Star、Fork�
 
 <div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; margin: 36px 0;">
 
-<div style="width: 280px; border-radius: 24px; padding: 28px 22px; text-align: center; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(22, 119, 255, 0.35); background: linear-gradient(160deg, rgba(22, 119, 255, 0.18), rgba(22, 119, 255, 0.04)); box-shadow: 0 12px 40px rgba(22, 119, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);">
-  <div style="width: 60px; height: 60px; margin: 0 auto 14px; border-radius: 18px; background: linear-gradient(135deg, #1677ff, #0958d9); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 30px; font-weight: bold; box-shadow: 0 6px 20px rgba(22, 119, 255, 0.4);">支</div>
-  <h3 style="margin: 0 0 6px 0; color: #1677ff; font-size: 20px;">支付宝</h3>
-  <p style="margin: 0 0 18px 0; font-size: 13px; color: #999;">推荐使用 · 支持花呗 / 信用卡</p>
+<div style="width: 280px; border-radius: 28px; padding: 28px 22px 24px; text-align: center; backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(22, 119, 255, 0.25); background: linear-gradient(180deg, rgba(22, 119, 255, 0.12) 0%, rgba(22, 119, 255, 0.03) 100%); box-shadow: 0 16px 48px rgba(22, 119, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);">
+  <div style="width: 68px; height: 68px; margin: 0 auto 16px; border-radius: 20px; background: linear-gradient(135deg, #1677ff 0%, #0958d9 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 28px rgba(22, 119, 255, 0.45); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -10px; right: -10px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15);"></div>
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="position: relative; z-index: 1;">
+      <path d="M18 6C11.373 6 6 10.03 6 15c0 2.71 1.383 5.133 3.547 6.74l-1.14 3.42c-.18.54.135 1.11.675 1.29.12.04.24.06.36.06.42 0 .81-.21 1.02-.57l1.95-3.39c1.59.57 3.27.9 5.01.95.21 0 .42-.01.63-.03l2.61 4.02c.24.37.66.57 1.11.54.45-.03.84-.3 1.02-.75l1.29-3.3C30.07 22.86 32 20.57 32 18c0-4.42-5.37-8-12-8-2.84 0-5.5.55-7.5 1.5C13.9 9.98 15.85 9 18 9c3.87 0 7 2.24 7 5s-3.13 5-7 5c-1.24 0-2.43-.26-3.52-.73-.17.46-.37.9-.6 1.32.88.26 1.81.41 2.77.41 6.63 0 12-3.58 12-8s-5.37-8-12-8z" fill="#fff"/>
+      <text x="18" y="23" text-anchor="middle" fill="#1677ff" font-size="14" font-weight="bold">支</text>
+    </svg>
+  </div>
+  <h3 style="margin: 0 0 4px 0; color: #1677ff; font-size: 20px; font-weight: 700;">支付宝</h3>
+  <p style="margin: 0 0 18px 0; font-size: 12.5px; color: #888;">推荐使用 · 支持花呗 / 信用卡</p>
   <a href="assets/alipay.png" target="_blank" style="text-decoration: none; -webkit-touch-callout: none;">
-  <div style="background: #fff; border-radius: 20px; padding: 12px; margin: 0 auto 14px; width: 100%; max-width: 190px; aspect-ratio: 1 / 1; box-shadow: 0 8px 28px rgba(22, 119, 255, 0.25); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 12px 36px rgba(22, 119, 255, 0.35)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 8px 28px rgba(22, 119, 255, 0.25)'">
+  <div style="background: #fff; border-radius: 20px; padding: 12px; margin: 0 auto 14px; width: 100%; max-width: 190px; aspect-ratio: 1 / 1; box-shadow: 0 8px 28px rgba(22, 119, 255, 0.22); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 14px 40px rgba(22, 119, 255, 0.32)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 8px 28px rgba(22, 119, 255, 0.22)'">
     <img src="assets/alipay.png" alt="支付宝收款码（点击放大）" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; pointer-events: none;" draggable="false" />
   </div>
   </a>
-  <p style="margin: 0; font-size: 13px; color: #888;">👆 点击图片查看大图</p>
-  <p style="margin: 8px 0 0 0; font-size: 14px; color: #333; font-weight: 600;">狐狸科技</p>
+  <p style="margin: 0; font-size: 12.5px; color: #999;">👆 点击查看大图</p>
 </div>
 
-<div style="width: 280px; border-radius: 24px; padding: 28px 22px; text-align: center; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(7, 193, 96, 0.35); background: linear-gradient(160deg, rgba(7, 193, 96, 0.18), rgba(7, 193, 96, 0.04)); box-shadow: 0 12px 40px rgba(7, 193, 96, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);">
-  <div style="width: 60px; height: 60px; margin: 0 auto 14px; border-radius: 18px; background: linear-gradient(135deg, #07c160, #06ad56); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 30px; font-weight: bold; box-shadow: 0 6px 20px rgba(7, 193, 96, 0.4);">微</div>
-  <h3 style="margin: 0 0 6px 0; color: #07c160; font-size: 20px;">微信支付</h3>
-  <p style="margin: 0 0 18px 0; font-size: 13px; color: #999;">微信扫码，方便快捷</p>
+<div style="width: 280px; border-radius: 28px; padding: 28px 22px 24px; text-align: center; backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(7, 193, 96, 0.25); background: linear-gradient(180deg, rgba(7, 193, 96, 0.12) 0%, rgba(7, 193, 96, 0.03) 100%); box-shadow: 0 16px 48px rgba(7, 193, 96, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);">
+  <div style="width: 68px; height: 68px; margin: 0 auto 16px; border-radius: 20px; background: linear-gradient(135deg, #07c160 0%, #06ad56 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 28px rgba(7, 193, 96, 0.45); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -10px; right: -10px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15);"></div>
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="position: relative; z-index: 1;">
+      <path d="M12.5 11c-3.59 0-6.5 2.46-6.5 5.5 0 1.74.97 3.29 2.47 4.28l-.62 1.86c-.1.3.08.62.38.72.06.02.13.03.19.03.23 0 .44-.12.56-.31l1.06-1.84c.87.31 1.79.49 2.75.51l1.41 2.17c.13.2.36.31.6.3.24-.01.45-.14.55-.37l.7-1.78c.77-.14 1.5-.39 2.18-.73.25.45.49.92.71 1.4.48.13.99.23 1.51.29 1.95 3.01 5.03 5.02 8.62 5.02 3.87 0 7-2.24 7-5s-3.13-5-7-5c-.95 0-1.87.16-2.73.45-.49-.85-1.07-1.63-1.72-2.33.87-.52 1.64-1.16 2.29-1.9 1.72 1.04 3.73 1.64 5.89 1.64 4.42 0 8-2.24 8-5s-3.58-5-8-5c-5.52 0-10 3.58-10 8 0 .34.02.67.06 1-.7-.45-1.45-.83-2.24-1.14-.3-1.88-1.58-3.52-3.32-4.49 1.18-1.46 1.96-3.31 1.96-5.37 0-4.14-4.03-7.5-9-7.5z" fill="#fff"/>
+      <circle cx="11" cy="16.5" r="1.2" fill="#07c160"/>
+      <circle cx="15" cy="16.5" r="1.2" fill="#07c160"/>
+    </svg>
+  </div>
+  <h3 style="margin: 0 0 4px 0; color: #07c160; font-size: 20px; font-weight: 700;">微信支付</h3>
+  <p style="margin: 0 0 18px 0; font-size: 12.5px; color: #888;">微信扫码，方便快捷</p>
   <a href="assets/wechat.png" target="_blank" style="text-decoration: none; -webkit-touch-callout: none;">
-  <div style="background: #fff; border-radius: 20px; padding: 12px; margin: 0 auto 14px; width: 100%; max-width: 190px; aspect-ratio: 1 / 1; box-shadow: 0 8px 28px rgba(7, 193, 96, 0.25); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 12px 36px rgba(7, 193, 96, 0.35)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 8px 28px rgba(7, 193, 96, 0.25)'">
+  <div style="background: #fff; border-radius: 20px; padding: 12px; margin: 0 auto 14px; width: 100%; max-width: 190px; aspect-ratio: 1 / 1; box-shadow: 0 8px 28px rgba(7, 193, 96, 0.22); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 14px 40px rgba(7, 193, 96, 0.32)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 8px 28px rgba(7, 193, 96, 0.22)'">
     <img src="assets/wechat.png" alt="微信收款码（点击放大）" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; pointer-events: none;" draggable="false" />
   </div>
   </a>
-  <p style="margin: 0; font-size: 13px; color: #888;">👆 点击图片查看大图</p>
-  <p style="margin: 8px 0 0 0; font-size: 14px; color: #333; font-weight: 600;">狐狸</p>
+  <p style="margin: 0; font-size: 12.5px; color: #999;">👆 点击查看大图</p>
 </div>
 
-<div style="width: 280px; border-radius: 24px; padding: 28px 22px; text-align: center; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(168, 85, 247, 0.35); background: linear-gradient(160deg, rgba(168, 85, 247, 0.18), rgba(168, 85, 247, 0.04)); box-shadow: 0 12px 40px rgba(168, 85, 247, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);">
-  <div style="width: 60px; height: 60px; margin: 0 auto 14px; border-radius: 18px; background: linear-gradient(135deg, #a855f7, #9333ea); display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);">💖</div>
-  <h3 style="margin: 0 0 6px 0; color: #a855f7; font-size: 20px;">爱发电</h3>
-  <p style="margin: 0 0 18px 0; font-size: 13px; color: #999;">长期赞助 · 解锁更多权益</p>
+<div style="width: 280px; border-radius: 28px; padding: 28px 22px 24px; text-align: center; backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(168, 85, 247, 0.25); background: linear-gradient(180deg, rgba(168, 85, 247, 0.12) 0%, rgba(168, 85, 247, 0.03) 100%); box-shadow: 0 16px 48px rgba(168, 85, 247, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);">
+  <div style="width: 68px; height: 68px; margin: 0 auto 16px; border-radius: 20px; background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 28px rgba(168, 85, 247, 0.45); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -10px; right: -10px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15);"></div>
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="position: relative; z-index: 1;">
+      <path d="M24.5 6c-1.83 0-3.5.62-4.85 1.66C18.3 6.62 16.63 6 14.8 6c-3.87 0-7 2.69-7 6 0 2.03.92 3.85 2.38 5.08-.2.78-.32 1.6-.35 2.45l-.04.88c-.03.52.38.95.9.95.14 0 .27-.03.39-.08l2.76-1.1c.87.53 1.84.96 2.89 1.26v1.56c0 .55.45 1 1 1s1-.45 1-1v-1.77c1.16-.32 2.25-.8 3.24-1.42l2.17 1.3c.12.07.25.11.39.11.52 0 .93-.43.9-.95l-.12-2.07c1.35-1.1 2.19-2.72 2.19-4.51 0-3.31-3.13-6-7-6zm0 2c2.76 0 5 1.79 5 4s-2.24 4-5 4c-.8 0-1.57-.19-2.25-.53-.42-.2-.89-.3-1.37-.3-.48 0-.95.1-1.37.3-.68.34-1.45.53-2.25.53-2.76 0-5-1.79-5-4s2.24-4 5-4c.8 0 1.57.19 2.25.53.42.2.89.3 1.37.3.48 0 .95-.1 1.37-.3.68-.34 1.45-.53 2.25-.53z" fill="#fff"/>
+      <path d="M20.5 13l-2.5 3.5-2.5-3.5h-2l3.5 4.5L13.5 22h2l2.5-3.5 2.5 3.5h2l-3.5-4.5 3.5-4.5z" fill="#fff"/>
+    </svg>
+  </div>
+  <h3 style="margin: 0 0 4px 0; color: #a855f7; font-size: 20px; font-weight: 700;">爱发电</h3>
+  <p style="margin: 0 0 18px 0; font-size: 12.5px; color: #888;">长期赞助 · 解锁更多权益</p>
   <a href="assets/afdian.png" target="_blank" style="text-decoration: none; -webkit-touch-callout: none;">
-  <div style="background: #fff; border-radius: 20px; padding: 12px; margin: 0 auto 14px; width: 100%; max-width: 190px; aspect-ratio: 1 / 1; box-shadow: 0 8px 28px rgba(168, 85, 247, 0.25); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 12px 36px rgba(168, 85, 247, 0.35)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 8px 28px rgba(168, 85, 247, 0.25)'">
+  <div style="background: #fff; border-radius: 20px; padding: 12px; margin: 0 auto 14px; width: 100%; max-width: 190px; aspect-ratio: 1 / 1; box-shadow: 0 8px 28px rgba(168, 85, 247, 0.22); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 14px 40px rgba(168, 85, 247, 0.32)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 8px 28px rgba(168, 85, 247, 0.22)'">
     <img src="assets/afdian.png" alt="爱发电主页码（点击放大）" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; pointer-events: none;" draggable="false" />
   </div>
   </a>
-  <p style="margin: 0; font-size: 13px; color: #888;">👆 点击图片查看大图</p>
-  <a href="https://www.ifdian.net/a/hulihulihuli" target="_blank" style="display: inline-block; margin-top: 12px; padding: 10px 24px; background: linear-gradient(135deg, #a855f7, #9333ea); color: #fff; border-radius: 12px; text-decoration: none; font-size: 14px; font-weight: 600; box-shadow: 0 4px 16px rgba(168, 85, 247, 0.4);">👉 前往爱发电主页</a>
+  <p style="margin: 0; font-size: 12.5px; color: #999;">👆 点击查看大图</p>
+  <a href="https://www.ifdian.net/a/hulihulihuli" target="_blank" style="display: inline-block; margin-top: 14px; padding: 11px 26px; background: linear-gradient(135deg, #a855f7, #9333ea); color: #fff; border-radius: 14px; text-decoration: none; font-size: 13.5px; font-weight: 600; box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);">前往爱发电主页</a>
 </div>
 
 </div>
 
-<p align="center" style="color: #888; font-size: 14px; margin-top: 12px;">
-  💡 扫码后请备注你的昵称，感谢你的支持 ❤️
+<p align="center" style="color: #999; font-size: 13px; margin-top: 8px;">
+  扫码后请备注你的昵称，感谢支持 ❤️
 </p>
 
 ---
