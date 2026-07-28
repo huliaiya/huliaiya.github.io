@@ -1,4 +1,8 @@
 <style>
+  @-webkit-keyframes flowRainbow {
+    0% { background-position: 0% center; }
+    100% { background-position: -300% center; }
+  }
   @keyframes flowRainbow {
     0% { background-position: 0% center; }
     100% { background-position: -300% center; }
@@ -9,8 +13,10 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-animation: flowRainbow 8s linear infinite;
     animation: flowRainbow 8s linear infinite;
     filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+    will-change: background-position;
   }
   .rainbow-subtitle {
     background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4dd0e1, #81c784, #ffb74d, #ff8a65, #f06292);
@@ -18,7 +24,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-animation: flowRainbow 12s linear infinite;
     animation: flowRainbow 12s linear infinite;
+    will-change: background-position;
   }
   .rainbow-section {
     background: linear-gradient(270deg, #667eea, #764ba2, #f06292, #ff8a65, #4dd0e1, #667eea);
@@ -26,22 +34,28 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-animation: flowRainbow 15s linear infinite;
     animation: flowRainbow 15s linear infinite;
     font-weight: 800;
+    will-change: background-position;
   }
   .rainbow-card {
     background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292) !important;
-    background-size: 300% auto !important;
-    animation: flowRainbow 12s linear infinite !important;
+    background-size: 300% 100% !important;
+    -webkit-animation: flowRainbow 6s linear infinite !important;
+    animation: flowRainbow 6s linear infinite !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    will-change: background-position;
   }
   .rainbow-btn {
     background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292) !important;
-    background-size: 300% auto !important;
-    animation: flowRainbow 10s linear infinite !important;
+    background-size: 300% 100% !important;
+    -webkit-animation: flowRainbow 5s linear infinite !important;
+    animation: flowRainbow 5s linear infinite !important;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
     border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    will-change: background-position;
   }
 </style>
 
