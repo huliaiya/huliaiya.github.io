@@ -236,10 +236,6 @@ A: 狐狸在东方文化中象征机智、敏捷和灵性。我们希望这款�
   💡 扫码后请备注你的昵称，感谢你的支持 ❤️
 </p>
 
-<p align="center" style="color: #aaa; font-size: 13px; margin-top: 6px;">
-  📂 图片路径：<code>assets/alipay.png</code> · <code>assets/wechat.png</code> · <code>assets/afdian.png</code>
-</p>
-
 ---
 
 <p align="center">
