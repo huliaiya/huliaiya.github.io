@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.jpg" alt="Huli Logo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); border: 4px solid #fff;" />
+  <img src="assets/logo.png" alt="Huli Logo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); border: 4px solid #fff;" />
 </p>
 
 <h1 align="center">Huli</h1>
