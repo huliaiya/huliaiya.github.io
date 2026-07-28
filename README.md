@@ -91,10 +91,10 @@ Huli（狐狸）是一款专为 **Android 搞机爱好者** 打造的新一代 R
 <div style="display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; align-items: flex-start; margin-top: 32px;">
 
 <div style="text-align: center;">
-  <div style="background: #fff; padding: 12px; border-radius: 20px; box-shadow: 0 8px 32px rgba(255, 105, 180, 0.3); display: inline-block;">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=10&data=https://www.ifdian.net/a/hulihulihuli" style="border-radius: 12px;" />
-  </div>
-  <p style="margin-top: 16px; font-weight: bold; color: #ff69b4; font-size: 16px;">📱 扫码赞助 ☕</p>
+  <a href="https://www.ifdian.net/a/hulihulihuli">
+    <img src="assets/afdian.jpg" alt="爱发电主页" style="width: 280px; border-radius: 20px; box-shadow: 0 12px 40px rgba(168, 85, 247, 0.4); border: 4px solid #fff;" />
+  </a>
+  <p style="margin-top: 16px; font-weight: bold; color: #a855f7; font-size: 16px;">👆 点击图片进入我的爱发电主页</p>
 </div>
 
 <div style="text-align: left; min-width: 260px; max-width: 360px;">
