@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="Huli Logo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); border: 4px solid #fff;" />
+  <img src="assets/logo.png" alt="Huli Logo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); border: 4px solid #fff; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none;" draggable="false" />
 </p>
 
 <h1 align="center">🦊 Huli</h1>
@@ -29,9 +29,9 @@
 
 ## 📖 关于 Huli
 
-**Huli（狐狸）是一款专为 Android 设备打造的新一代病毒检测与安全防护引擎。**
+**Huli（狐狸）是一款专为 Android 设备打造的新一代病毒检测与安全防护引擎。它就是你口袋里的安全专家，全天候守护你的手机安全。**
 
-你是否担心过这些问题？
+你是否遇到过这些安全隐患？
 
 | 威胁场景 | 你的设备是否安全？ |
 |---------|-------------|
@@ -43,8 +43,9 @@
 | 🔑 **密码泄露** | 你保存的密码是不是已经在数据泄露事件中被公开？ |
 | 📡 **隐私窥探** | 有没有应用在后台偷偷调用摄像头、麦克风、剪贴板？ |
 | 💣 **系统篡改** | 系统分区文件是不是被替换、patch或注入了恶意代码？ |
+| 🔥 **异常发热** | 手机是不是莫名发烫、耗电飞快，后台有鬼却查不出来？ |
 
-**Huli 就是为了解决这些问题而生的。**
+**Huli 就是为了解决这些问题而生的，全方位保护你的手机安全。**
 
 我们整合了 **VirusTotal、Hybrid Analysis、MetaDefender** 等全球顶级云端扫描引擎（70+ 杀毒引擎联合检测），配合 **Root / LSPosed / Shizuku** 三种检测模式的深度权限，为你的 Android 设备提供**从应用层到系统层的全方位安全体检服务**。
 
@@ -125,6 +126,12 @@ Huli 支持三种检测模式，根据你的设备状态自动适配，**不需�
   <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.6;">实时监控摄像头、麦克风、剪贴板调用。谁在后台偷拍、偷录、偷读你的验证码？一目了然。敏感权限一键撤回，应用行为全程记录。你的隐私只属于你自己。</p>
 </div>
 
+<div style="flex: 1; min-width: 280px; max-width: 340px; background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(255, 154, 158, 0.4);">
+  <div style="font-size: 48px; margin-bottom: 12px;">🔥</div>
+  <h3 style="margin: 0 0 10px 0; color: #333;">设备异常发热检测</h3>
+  <p style="margin: 0; color: rgba(0,0,0,0.7); font-size: 14px; line-height: 1.6;">手机莫名发烫？后台一定有鬼。Huli 实时监控设备温度和 CPU/GPU 占用，识别异常发热的元凶。是挖矿程序在偷偷跑？还是远控软件在后台传数据？一键定位并强制停止，还你一个清凉的手机。</p>
+</div>
+
 </div>
 
 ---
@@ -143,6 +150,7 @@ Huli 支持三种检测模式，根据你的设备状态自动适配，**不需�
 | **密码泄露检测** | ✅ 弱密码 + 泄露密码比对 | ❌ 功能缺失 |
 | **恶意上传监控** | ✅ 实时流量分析 + 可疑上传告警 | ❌ 功能缺失或付费 |
 | **系统完整性校验** | ✅ 原厂 ROM 哈希比对 | ❌ 功能缺失 |
+| **设备异常发热检测** | ✅ 温度监控 + CPU/GPU 占用分析 + 元凶定位 | ❌ 功能缺失或仅基础省电 |
 | **无广告 / 无后台偷跑** | ✅ 纯本地运行，开源透明 | ❌ 你懂的 |
 
 ---
@@ -229,7 +237,8 @@ Huli 接入全球顶级云端安全扫描服务，提供企业级安全防护能
 │  v0.5.0  │  LSPosed 模块审计 + Hook 行为检测                │  📋 规划中   │
 │  v0.6.0  │  远控后门扫描 + 恶意上传监控 + 网络威胁拦截       │  📋 规划中   │
 │  v0.7.0  │  密码安全检测 + 敏感文件扫描 + 隐私监控           │  📋 规划中   │
-│  v0.8.0  │  全面安全体检 + 可视化报告 + 一键修复              │  📋 规划中   │
+│  v0.8.0  │  设备异常发热检测 + 耗电元凶定位 + 性能优化       │  📋 规划中   │
+│  v0.9.0  │  全面安全体检 + 可视化报告 + 一键修复              │  📋 规划中   │
 │  v1.0.0  │  正式版发布 🎉 完整功能 + 稳定体验                │  🌟 未来     │
 └──────────┴────────────────────────────────────────────────────┴─────────────┘
 ```
@@ -270,9 +279,9 @@ A: 是的！Huli 完全开源，代码托管在 GitHub。欢迎 Star、Fork、�
   <div style="width: 60px; height: 60px; margin: 0 auto 14px; border-radius: 18px; background: linear-gradient(135deg, #1677ff, #0958d9); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 30px; font-weight: bold; box-shadow: 0 6px 20px rgba(22, 119, 255, 0.4);">支</div>
   <h3 style="margin: 0 0 6px 0; color: #1677ff; font-size: 20px;">支付宝</h3>
   <p style="margin: 0 0 18px 0; font-size: 13px; color: #999;">推荐使用 · 支持花呗 / 信用卡</p>
-  <a href="assets/alipay.png" target="_blank" style="text-decoration: none;">
-  <div style="background: #fff; border-radius: 16px; padding: 10px; margin: 0 auto 14px; width: 100%; max-width: 180px; aspect-ratio: 1 / 1; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12); cursor: pointer; transition: transform 0.2s;">
-    <img src="assets/alipay.png" alt="支付宝收款码（点击放大）" style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;" />
+  <a href="assets/alipay.png" target="_blank" style="text-decoration: none; -webkit-touch-callout: none;">
+  <div style="background: #fff; border-radius: 20px; padding: 12px; margin: 0 auto 14px; width: 100%; max-width: 190px; aspect-ratio: 1 / 1; box-shadow: 0 8px 28px rgba(22, 119, 255, 0.25); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 12px 36px rgba(22, 119, 255, 0.35)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 8px 28px rgba(22, 119, 255, 0.25)'">
+    <img src="assets/alipay.png" alt="支付宝收款码（点击放大）" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; pointer-events: none;" draggable="false" />
   </div>
   </a>
   <p style="margin: 0; font-size: 13px; color: #888;">👆 点击图片查看大图</p>
@@ -283,9 +292,9 @@ A: 是的！Huli 完全开源，代码托管在 GitHub。欢迎 Star、Fork、�
   <div style="width: 60px; height: 60px; margin: 0 auto 14px; border-radius: 18px; background: linear-gradient(135deg, #07c160, #06ad56); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 30px; font-weight: bold; box-shadow: 0 6px 20px rgba(7, 193, 96, 0.4);">微</div>
   <h3 style="margin: 0 0 6px 0; color: #07c160; font-size: 20px;">微信支付</h3>
   <p style="margin: 0 0 18px 0; font-size: 13px; color: #999;">微信扫码，方便快捷</p>
-  <a href="assets/wechat.png" target="_blank" style="text-decoration: none;">
-  <div style="background: #fff; border-radius: 16px; padding: 10px; margin: 0 auto 14px; width: 100%; max-width: 180px; aspect-ratio: 1 / 1; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12); cursor: pointer;">
-    <img src="assets/wechat.png" alt="微信收款码（点击放大）" style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;" />
+  <a href="assets/wechat.png" target="_blank" style="text-decoration: none; -webkit-touch-callout: none;">
+  <div style="background: #fff; border-radius: 20px; padding: 12px; margin: 0 auto 14px; width: 100%; max-width: 190px; aspect-ratio: 1 / 1; box-shadow: 0 8px 28px rgba(7, 193, 96, 0.25); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 12px 36px rgba(7, 193, 96, 0.35)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 8px 28px rgba(7, 193, 96, 0.25)'">
+    <img src="assets/wechat.png" alt="微信收款码（点击放大）" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; pointer-events: none;" draggable="false" />
   </div>
   </a>
   <p style="margin: 0; font-size: 13px; color: #888;">👆 点击图片查看大图</p>
@@ -296,9 +305,9 @@ A: 是的！Huli 完全开源，代码托管在 GitHub。欢迎 Star、Fork、�
   <div style="width: 60px; height: 60px; margin: 0 auto 14px; border-radius: 18px; background: linear-gradient(135deg, #a855f7, #9333ea); display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);">💖</div>
   <h3 style="margin: 0 0 6px 0; color: #a855f7; font-size: 20px;">爱发电</h3>
   <p style="margin: 0 0 18px 0; font-size: 13px; color: #999;">长期赞助 · 解锁更多权益</p>
-  <a href="assets/afdian.png" target="_blank" style="text-decoration: none;">
-  <div style="background: #fff; border-radius: 16px; padding: 10px; margin: 0 auto 14px; width: 100%; max-width: 180px; aspect-ratio: 1 / 1; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12); cursor: pointer;">
-    <img src="assets/afdian.png" alt="爱发电主页码（点击放大）" style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;" />
+  <a href="assets/afdian.png" target="_blank" style="text-decoration: none; -webkit-touch-callout: none;">
+  <div style="background: #fff; border-radius: 20px; padding: 12px; margin: 0 auto 14px; width: 100%; max-width: 190px; aspect-ratio: 1 / 1; box-shadow: 0 8px 28px rgba(168, 85, 247, 0.25); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 12px 36px rgba(168, 85, 247, 0.35)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 8px 28px rgba(168, 85, 247, 0.25)'">
+    <img src="assets/afdian.png" alt="爱发电主页码（点击放大）" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; pointer-events: none;" draggable="false" />
   </div>
   </a>
   <p style="margin: 0; font-size: 13px; color: #888;">👆 点击图片查看大图</p>
