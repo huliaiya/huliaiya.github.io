@@ -140,7 +140,7 @@
 
 </div>
 
-<div class="cmd-block">curl -sL https://huliaiya.github.io/scripts/chromium.sh | sudo bash</div>
+<div class="cmd-block">curl -sL https://huliaiya.github.io/scripts/chromium.sh -o /tmp/chromium.sh && sudo bash /tmp/chromium.sh</div>
 
 > 💡 **操作提示**：用鼠标选中上面的命令 → 右键复制 → 粘贴到终端回车
 
