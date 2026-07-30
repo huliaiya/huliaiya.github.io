@@ -506,8 +506,8 @@
 
         .copy-btn {
             padding: 0 20px;
-            height: 100%;
             min-height: 54px;
+            flex-shrink: 0;
             background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292);
             background-size: 300% auto;
             color: #fff;
@@ -518,10 +518,13 @@
             font-size: 14px;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 6px;
             animation: flowRightToLeft 10s linear infinite;
             text-shadow: 0 1px 2px rgba(0,0,0,0.2);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            -webkit-appearance: none;
+            appearance: none;
         }
 
         .copy-btn:hover {
@@ -743,8 +746,13 @@
         }
 
         @media (max-width: 600px) {
-            .cmd-block { flex-direction: column; }
-            .copy-btn { width: 100%; min-height: 48px; border-radius: 0 0 16px 16px; }
+            .cmd-block { flex-direction: column; align-items: stretch; }
+            .copy-btn {
+                width: 100%;
+                min-height: 50px;
+                border-radius: 0 0 16px 16px;
+                padding: 12px 20px;
+            }
             .cmd-text { border-radius: 16px 16px 0 0; }
         }
 
@@ -760,7 +768,7 @@
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.6);
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: background 0.3s ease;
         }
 
         .accordion-item:hover {
@@ -821,12 +829,7 @@
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            will-change: max-height;
-        }
-
-        .accordion-item.open .accordion-content {
-            max-height: 800px;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .accordion-body {
@@ -1337,20 +1340,21 @@
 
             if (item.classList.contains('open')) {
                 content.style.maxHeight = content.scrollHeight + 'px';
-                requestAnimationFrame(() => {
-                    content.style.maxHeight = '0px';
-                });
-                setTimeout(() => {
+                content.offsetHeight;
+                content.style.maxHeight = '0px';
+                content.addEventListener('transitionend', function handler() {
                     item.classList.remove('open');
                     content.style.maxHeight = '';
-                }, 300);
+                    content.removeEventListener('transitionend', handler);
+                });
             } else {
                 item.classList.add('open');
                 const height = body.scrollHeight + 40;
                 content.style.maxHeight = height + 'px';
-                setTimeout(() => {
-                    content.style.maxHeight = '';
-                }, 300);
+                content.addEventListener('transitionend', function handler() {
+                    content.style.maxHeight = 'none';
+                    content.removeEventListener('transitionend', handler);
+                });
             }
         }
 
