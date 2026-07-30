@@ -982,6 +982,15 @@
             for (let i = 0; i < count; i++) createSparkle(x, y);
         }
 
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.addEventListener('load', function() {
+            if (!window.location.hash) {
+                setTimeout(() => window.scrollTo(0, 0), 10);
+            }
+        });
+
         window.addEventListener('click', e => burstSparkles(e.clientX, e.clientY, 24));
 
         let isMouseDown = false;
