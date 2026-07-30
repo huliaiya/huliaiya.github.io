@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>📦 Huli 资源仓库</title>
+    <meta name="description" content="为手机容器 / Linux 环境准备的一键脚本与工具集合">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            min-height: 100vh;
+            color: #1e293b;
+            background: linear-gradient(135deg, #f0f4ff 0%, #f5f3ff 25%, #fef9e7 50%, #fce4ec 75%, #e8f5e9 100%);
+            overflow-x: hidden;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 1rem 0.75rem; }
+        }
+
+        .page-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle at 30% 40%, rgba(240, 98, 146, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(100, 181, 246, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(129, 199, 132, 0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 183, 77, 0.06) 0%, transparent 50%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(45px);
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .hero-card {
+            position: relative;
+            padding: 3rem 2rem;
+            text-align: center;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(45px);
+            -webkit-backdrop-filter: blur(45px);
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08),
+                        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-card { padding: 2.5rem 1.5rem; border-radius: 32px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-card { padding: 2rem 1.2rem; border-radius: 28px; }
+        }
+
+        .hero-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border: 3px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-title {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: flowRightToLeft 8s linear infinite;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
+
+        @keyframes flowRightToLeft {
+            0% { background-position: 0% center; }
+            100% { background-position: -300% center; }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(15px, 3vw, 18px);
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .hero-desc {
+            font-size: clamp(13px, 2.5vw, 15px);
+            color: #718096;
+            margin-bottom: 2rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            border: 2px solid transparent;
+            font-family: inherit;
+            font-size: 1rem;
+            line-height: 1.5;
+            white-space: nowrap;
+            outline: none;
+            font-weight: 700;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn:focus-visible {
+            outline: 3px solid rgba(186, 104, 200, 0.6);
+            outline-offset: 3px;
+        }
+
+        .btn-large {
+            padding: 0.9rem 2.2rem;
+            font-size: 1.05rem;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 480px) {
+            .btn-large { padding: 0.8rem 1.6rem; font-size: 0.95rem; }
+        }
+
+        .btn-round {
+            border-radius: 60px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292);
+            background-size: 300% auto;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.3) inset;
+            animation: flowRightToLeft 10s linear infinite;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 14px 32px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.5) inset;
+            animation-play-state: paused;
+        }
+
+        .btn-primary:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn-plain {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            color: #2d3748;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05), 0 0 0 1px rgba(255,255,255,0.3) inset;
+        }
+
+        .btn-plain:hover {
+            background: rgba(255, 255, 255, 0.5);
+            border-color: rgba(186, 104, 200, 0.5);
+            color: #ba68c8;
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.5) inset;
+        }
+
+        .btn-plain:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .section-card {
+            position: relative;
+            padding: 2.5rem 2rem;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(45px);
+            -webkit-backdrop-filter: blur(45px);
+            border-radius: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08),
+                        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .section-card { padding: 2rem 1.5rem; border-radius: 28px; }
+        }
+
+        @media (max-width: 480px) {
+            .section-card { padding: 1.5rem 1.2rem; border-radius: 24px; }
+        }
+
+        .section-title {
+            font-size: clamp(20px, 4vw, 28px);
+            font-weight: 700;
+            background: linear-gradient(135deg, #2c3e50, #ba68c8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .script-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+        }
+
+        .script-table th {
+            text-align: left;
+            padding: 12px 18px;
+            font-weight: 600;
+            color: #5a6a7e;
+            font-size: 14px;
+        }
+
+        .script-table td {
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.45);
+        }
+
+        .script-table tr td:first-child {
+            border-radius: 16px 0 0 16px;
+            font-size: 22px;
+            width: 50px;
+            text-align: center;
+        }
+
+        .script-table tr td:last-child {
+            border-radius: 0 16px 16px 0;
+        }
+
+        .script-table a {
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .script-table a:hover {
+            color: #ba68c8;
+        }
+
+        .cmd-wrapper {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .cmd-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 0.8rem;
+        }
+
+        .cmd-block {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            background: #0f172a;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.2);
+        }
+
+        .cmd-text {
+            flex: 1;
+            padding: 16px 20px;
+            color: #e2e8f0;
+            font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+            font-size: 13.5px;
+            line-height: 1.6;
+            word-break: break-all;
+            text-align: left;
+            overflow-x: auto;
+        }
+
+        .copy-btn {
+            padding: 0 20px;
+            height: 100%;
+            min-height: 54px;
+            background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292);
+            background-size: 300% auto;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            animation: flowRightToLeft 10s linear infinite;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            animation-play-state: paused;
+            filter: brightness(1.1);
+        }
+
+        .copy-btn:active {
+            transform: scale(0.97);
+        }
+
+        .copy-btn.copied {
+            background: linear-gradient(135deg, #10b981, #059669);
+            animation: none;
+        }
+
+        .hint {
+            margin-top: 0.8rem;
+            font-size: 13px;
+            color: #718096;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+            margin-top: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 12px;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.45);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .feature-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(186, 104, 200, 0.15), rgba(99, 102, 241, 0.15));
+            border-radius: 10px;
+        }
+
+        .feature-text h4 {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 2px;
+        }
+
+        .feature-text p {
+            font-size: 13px;
+            color: #718096;
+            line-height: 1.5;
+        }
+
+        .notice-box {
+            margin-top: 1.5rem;
+            padding: 16px 20px;
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 16px;
+        }
+
+        .notice-box h4 {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #b45309;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .notice-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .notice-box li {
+            font-size: 13.5px;
+            color: #78350f;
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .notice-box li::before {
+            content: "•";
+            position: absolute;
+            left: 6px;
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        .sponsor-section {
+            text-align: center;
+        }
+
+        .sponsor-title {
+            font-size: clamp(20px, 4vw, 28px);
+            font-weight: 700;
+            background: linear-gradient(135deg, #ec4899, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .sponsor-subtitle {
+            font-size: 15px;
+            color: #718096;
+            margin-bottom: 2rem;
+        }
+
+        .sponsor-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 1.5rem;
+        }
+
+        .sponsor-card {
+            width: 220px;
+            padding: 1.8rem 1rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06),
+                        0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+            transition: all 0.3s ease;
+        }
+
+        .sponsor-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1),
+                        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+        }
+
+        .sponsor-card-label {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .sponsor-card-label.alipay { color: #1677ff; }
+        .sponsor-card-label.wechat { color: #07c160; }
+        .sponsor-card-label.afdian { color: #a855f7; }
+
+        .sponsor-card img {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .sponsor-btn {
+            margin-top: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 20px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 13px;
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292);
+            background-size: 300% auto;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            animation: flowRightToLeft 10s linear infinite;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .sponsor-btn:hover {
+            transform: translateY(-2px) scale(1.04);
+            animation-play-state: paused;
+        }
+
+        .footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 13px;
+            margin-top: 2rem;
+            padding: 1rem;
+        }
+
+        .footer a {
+            color: #ba68c8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .cmd-block { flex-direction: column; }
+            .copy-btn { width: 100%; min-height: 48px; border-radius: 0 0 16px 16px; }
+            .cmd-text { border-radius: 16px 16px 0 0; }
+        }
+
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            animation: sparkleBurst 0.9s ease-out forwards;
+        }
+
+        @keyframes sparkleBurst {
+            0% { transform: translate(0, 0) scale(0) rotate(0deg); opacity: 0; }
+            20% { opacity: 1; }
+            100% { transform: translate(var(--dx), var(--dy)) scale(1.2) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-bg"></div>
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <div class="hero-card">
+            <img src="assets/logo.png" alt="Huli Logo" class="hero-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦊</text></svg>'">
+            <h1 class="hero-title">📦 Huli 资源仓库</h1>
+            <p class="hero-subtitle">为手机容器 / Linux 环境准备的一键脚本与工具集合</p>
+            <p class="hero-desc">无需复杂配置，复制命令即可使用</p>
+
+            <div class="hero-actions">
+                <a href="#scripts" class="btn btn-large btn-primary btn-round">
+                    <i class="fas fa-scroll"></i>
+                    浏览脚本
+                </a>
+                <a href="#sponsor" class="btn btn-large btn-plain btn-round">
+                    <i class="fas fa-heart"></i>
+                    赞助支持
+                </a>
+            </div>
+        </div>
+
+        <!-- Scripts List -->
+        <div id="scripts" class="section-card">
+            <h2 class="section-title">
+                <i class="fas fa-box-open"></i>
+                脚本列表
+            </h2>
+
+            <table class="script-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>脚本</th>
+                        <th>说明</th>
+                        <th>适用系统</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🌐</td>
+                        <td><a href="#chromium">chromium.sh</a></td>
+                        <td>Chromium 一键安装 / 更新 · 自动去 snap · 国内镜像 · 版本锁定</td>
+                        <td>Debian / Ubuntu</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Chromium Script Detail -->
+        <div id="chromium" class="section-card">
+            <h2 class="section-title">
+                <i class="fab fa-chrome"></i>
+                Chromium 一键安装脚本
+            </h2>
+
+            <div class="cmd-wrapper">
+                <div class="cmd-label">🚀 一键执行命令</div>
+                <div class="cmd-block">
+                    <div class="cmd-text" id="cmdText">curl -sL https://huliaiya.github.io/scripts/chromium.sh | sudo bash</div>
+                    <button class="copy-btn" id="copyBtn" onclick="copyCmd()">
+                        <i class="fas fa-copy"></i>
+                        <span id="copyText">复制</span>
+                    </button>
+                </div>
+                <div class="hint">💡 点击右侧按钮即可复制命令，粘贴到终端回车执行</div>
+            </div>
+
+            <h3 style="font-size:17px; font-weight:700; color:#2d3748; margin:1.5rem 0 1rem;">
+                <i class="fas fa-list-ol" style="color:#ba68c8;"></i>
+                &nbsp;使用步骤
+            </h3>
+
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">1️⃣</div>
+                    <div class="feature-text">
+                        <h4>环境准备</h4>
+                        <p>确保设备已安装 curl 和 sudo（手机容器请先进入 Debian/Ubuntu 环境）</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">2️⃣</div>
+                    <div class="feature-text">
+                        <h4>复制命令</h4>
+                        <p>点击上方按钮复制一键命令，或手动选中复制</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">3️⃣</div>
+                    <div class="feature-text">
+                        <h4>执行安装</h4>
+                        <p>粘贴到终端执行，根据提示选择 1.安装 或 2.更新（默认 1，30 秒自动确认）</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">4️⃣</div>
+                    <div class="feature-text">
+                        <h4>完成验证</h4>
+                        <p>脚本会自动验证版本、路径、运行状态并锁定版本，防止系统更新破坏</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="font-size:17px; font-weight:700; color:#2d3748; margin:1.5rem 0 1rem;">
+                <i class="fas fa-cogs" style="color:#6366f1;"></i>
+                &nbsp;脚本特性
+            </h3>
+
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">🌐</div>
+                    <div class="feature-text">
+                        <h4>智能镜像</h4>
+                        <p>自动检测国内/国外网络，国内走 USTC 镜像，国外走官方源</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🚫</div>
+                    <div class="feature-text">
+                        <h4>防 Snap</h4>
+                        <p>自动屏蔽 snap 版 chromium-browser，确保安装原生 deb 包</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔗</div>
+                    <div class="feature-text">
+                        <h4>依赖解析</h4>
+                        <p>递归解析所有依赖并设置高优先级，避免依赖冲突</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-text">
+                        <h4>进度显示</h4>
+                        <p>带进度条、旋转动画和实时状态，过程一目了然</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <div class="feature-text">
+                        <h4>失败重试</h4>
+                        <p>网络下载失败自动重试最多 3 次</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔒</div>
+                    <div class="feature-text">
+                        <h4>版本锁定</h4>
+                        <p>安装完成后自动 apt-mark hold，防止系统更新破坏</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notice-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> 注意事项</h4>
+                <ul>
+                    <li>此脚本仅支持 <b>Debian / Ubuntu</b> 系发行版</li>
+                    <li>需以 <b>root</b> 或 <b>sudo</b> 运行</li>
+                    <li>适用于：手机 proot 容器、Linux Deploy、Termux 的 proot-distro 等环境</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sponsor Section -->
+        <div id="sponsor" class="section-card sponsor-section">
+            <h2 class="sponsor-title">💖 赞助支持</h2>
+            <p class="sponsor-subtitle">
+                如果这些工具对你有帮助，欢迎请作者喝杯咖啡 ☕<br>
+                你的支持是持续更新的动力 ❤️
+            </p>
+
+            <div class="sponsor-cards">
+                <div class="sponsor-card">
+                    <div class="sponsor-card-label alipay">💙 支付宝</div>
+                    <a href="assets/alipay.png" target="_blank">
+                        <img src="assets/alipay.png" alt="支付宝收款码" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 160 160%22><rect width=%22160%22 height=%22160%22 fill=%22%23e6f4ff%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2260%22>💙</text></svg>'">
+                    </a>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-card-label wechat">💚 微信</div>
+                    <a href="assets/wechat.png" target="_blank">
+                        <img src="assets/wechat.png" alt="微信收款码" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 160 160%22><rect width=%22160%22 height=%22160%22 fill=%22%23e8f5e9%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2260%22>💚</text></svg>'">
+                    </a>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-card-label afdian">💖 爱发电</div>
+                    <a href="assets/afdian.png" target="_blank">
+                        <img src="assets/afdian.png" alt="爱发电主页码" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 160 160%22><rect width=%22160%22 height=%22160%22 fill=%22%23f3e8ff%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2260%22>💖</text></svg>'">
+                    </a>
+                    <br><br>
+                    <a href="https://www.ifdian.net/a/hulihulihuli" class="sponsor-btn" target="_blank">
+                        <i class="fas fa-heart"></i>
+                        前往主页
+                    </a>
+                </div>
+            </div>
+
+            <p style="color:#64748b; font-size:14px;">
+                扫码后请备注你的昵称，感谢支持 ❤️
+            </p>
+        </div>
+
+        <div class="footer">
+            Made with 🔥 and ❤️ by <a href="https://github.com/huliaiya" target="_blank">Huli</a>
+        </div>
+    </div>
+
+    <script>
+        function copyCmd() {
+            const text = document.getElementById('cmdText').textContent;
+            const btn = document.getElementById('copyBtn');
+            const btnText = document.getElementById('copyText');
+            const icon = btn.querySelector('i');
+
+            navigator.clipboard.writeText(text).then(() => {
+                btn.classList.add('copied');
+                btnText.textContent = '已复制';
+                icon.className = 'fas fa-check';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btnText.textContent = '复制';
+                    icon.className = 'fas fa-copy';
+                }, 2000);
+            }).catch(() => {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                btn.classList.add('copied');
+                btnText.textContent = '已复制';
+                icon.className = 'fas fa-check';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btnText.textContent = '复制';
+                    icon.className = 'fas fa-copy';
+                }, 2000);
+            });
+        }
+
+        const colors = ['#f06292', '#ba68c8', '#64b5f6', '#4fc3f7', '#4dd0e1', '#81c784', '#aed581', '#ffb74d', '#ff8a65', '#e57373'];
+        const symbols = ['✦', '✧', '⋆', '✶', '·', '✷', '❋', '✿', '❄', '❅', '❆', '✻', '✼', '❉', '⭐', '✨'];
+
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('span');
+            sparkle.className = 'sparkle';
+            const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            sparkle.textContent = symbol;
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            sparkle.style.color = color;
+            sparkle.style.fontSize = (10 + Math.random() * 18) + 'px';
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 40 + Math.random() * 80;
+            const dx = Math.cos(angle) * distance;
+            const dy = Math.sin(angle) * distance;
+            sparkle.style.setProperty('--dx', dx + 'px');
+            sparkle.style.setProperty('--dy', dy + 'px');
+            document.body.appendChild(sparkle);
+            sparkle.addEventListener('animationend', () => sparkle.remove());
+        }
+
+        function burstSparkles(x, y, count) {
+            for (let i = 0; i < count; i++) createSparkle(x, y);
+        }
+
+        window.addEventListener('click', e => burstSparkles(e.clientX, e.clientY, 24));
+
+        let isMouseDown = false;
+        let lastMoveTime = 0;
+        window.addEventListener('mousedown', () => isMouseDown = true);
+        window.addEventListener('mouseup', () => isMouseDown = false);
+        window.addEventListener('mouseleave', () => isMouseDown = false);
+        window.addEventListener('mousemove', function(e) {
+            if (!isMouseDown) return;
+            const now = Date.now();
+            if (now - lastMoveTime < 50) return;
+            lastMoveTime = now;
+            burstSparkles(e.clientX, e.clientY, 5);
+        });
+
+        window.addEventListener('touchmove', function(e) {
+            const now = Date.now();
+            if (now - lastMoveTime < 60) return;
+            lastMoveTime = now;
+            const touch = e.touches[0];
+            if (touch) burstSparkles(touch.clientX, touch.clientY, 5);
+        }, { passive: true });
+    </script>
+</body>
+</html>
