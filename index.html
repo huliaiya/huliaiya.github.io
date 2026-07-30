@@ -358,52 +358,116 @@
             gap: 0.6rem;
         }
 
-        .table-wrap {
+        .script-scroll {
+            display: flex;
+            gap: 16px;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            margin: 0 -8px;
-            padding: 0 8px;
+            padding: 8px 4px 16px;
+            margin: 0 -4px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(186, 104, 200, 0.4) transparent;
         }
 
-        .script-table {
-            width: 100%;
-            min-width: 560px;
-            border-collapse: separate;
-            border-spacing: 0 10px;
+        .script-scroll::-webkit-scrollbar {
+            height: 6px;
         }
 
-        .script-table th {
-            text-align: left;
-            padding: 12px 18px;
-            font-weight: 600;
-            color: #5a6a7e;
-            font-size: 14px;
+        .script-scroll::-webkit-scrollbar-track {
+            background: transparent;
         }
 
-        .script-table td {
-            padding: 16px 18px;
-            background: rgba(255, 255, 255, 0.45);
+        .script-scroll::-webkit-scrollbar-thumb {
+            background: rgba(186, 104, 200, 0.3);
+            border-radius: 3px;
         }
 
-        .script-table tr td:first-child {
-            border-radius: 16px 0 0 16px;
-            font-size: 22px;
-            width: 50px;
-            text-align: center;
+        .script-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(186, 104, 200, 0.5);
         }
 
-        .script-table tr td:last-child {
-            border-radius: 0 16px 16px 0;
+        .script-card {
+            flex: 0 0 280px;
+            min-width: 280px;
+            scroll-snap-align: start;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06),
+                        0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+            padding: 20px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            cursor: pointer;
         }
 
-        .script-table a {
+        .script-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1),
+                        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+        }
+
+        .script-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 14px;
+            background: linear-gradient(135deg, rgba(240, 98, 146, 0.15), rgba(99, 102, 241, 0.15));
+        }
+
+        .script-card-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .script-card-title a {
             color: #6366f1;
             text-decoration: none;
-            font-weight: 600;
+            transition: color 0.2s ease;
         }
 
-        .script-table a:hover {
+        .script-card-title a:hover {
             color: #ba68c8;
+        }
+
+        .script-card-arrow {
+            color: #94a3b8;
+            font-size: 13px;
+            transition: transform 0.3s ease, color 0.2s ease;
+        }
+
+        .script-card:hover .script-card-arrow {
+            transform: translateX(4px);
+            color: #6366f1;
+        }
+
+        .script-card-desc {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 14px;
+            min-height: 42px;
+        }
+
+        .script-card-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #6366f1;
+            background: rgba(99, 102, 241, 0.1);
         }
 
         .cmd-wrapper {
@@ -820,31 +884,26 @@
                 脚本列表
             </h2>
 
-            <div class="table-wrap">
-            <table class="script-table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>脚本</th>
-                        <th>说明</th>
-                        <th>适用系统</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>🌐</td>
-                        <td><a href="#chromium">chromium.sh</a></td>
-                        <td>Chromium 一键安装 / 更新 · 自动去 snap · 国内镜像 · 版本锁定</td>
-                        <td>Debian / Ubuntu</td>
-                    </tr>
-                    <tr>
-                        <td>🔄</td>
-                        <td><a href="#mirrors">change-mirrors.sh</a></td>
-                        <td>Linux 一键换源 · 支持 30+ 发行版 · 国内/教育/海外镜像 · 自动备份</td>
-                        <td>Debian/Ubuntu/CentOS/Arch 等</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="script-scroll">
+                <div class="script-card" onclick="location.href='#chromium'">
+                    <div class="script-card-icon">🌐</div>
+                    <div class="script-card-title">
+                        <a href="#chromium" onclick="event.stopPropagation()">chromium.sh</a>
+                        <i class="fas fa-chevron-right script-card-arrow"></i>
+                    </div>
+                    <div class="script-card-desc">Chromium 一键安装 / 更新 · 自动去 snap · 国内镜像 · 版本锁定</div>
+                    <span class="script-card-tag">Debian / Ubuntu</span>
+                </div>
+
+                <div class="script-card" onclick="location.href='#mirrors'">
+                    <div class="script-card-icon">🔄</div>
+                    <div class="script-card-title">
+                        <a href="#mirrors" onclick="event.stopPropagation()">change-mirrors.sh</a>
+                        <i class="fas fa-chevron-right script-card-arrow"></i>
+                    </div>
+                    <div class="script-card-desc">Linux 一键换源 · 支持 30+ 发行版 · 国内/教育/海外镜像 · 自动备份</div>
+                    <span class="script-card-tag">Debian/Ubuntu/CentOS/Arch 等</span>
+                </div>
             </div>
         </div>
 
