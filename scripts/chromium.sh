@@ -140,10 +140,21 @@ printf "  ${D}系统${N} %s (%s)\n" "$PRETTY_NAME" "$ARCH"
 printf "\n  ${B}请选择操作:${N}\n"
 printf "    ${C}1${N}) 安装  (卸载旧版 + 安装最新)\n"
 printf "    ${C}2${N}) 更新  (升级到最新版)\n"
-printf "  ${D}请输入 [1/2] (默认 1):${N} "
-if ! read -r -t 30 choice; then
+
+IS_PIPE=false
+if [ ! -t 0 ]; then
+  IS_PIPE=true
+  printf "  ${D}[检测到管道模式，默认执行安装]${N}\n"
+fi
+
+if $IS_PIPE; then
   choice=1
-  printf "1\n"
+else
+  printf "  ${D}请输入 [1/2] (默认 1):${N} "
+  if ! read -r -t 30 choice; then
+    choice=1
+    printf "1\n"
+  fi
 fi
 case "${choice:-1}" in
   1) MODE=install ;;
