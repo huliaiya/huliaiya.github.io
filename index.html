@@ -563,6 +563,8 @@
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.55);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            overflow: hidden;
+            word-break: break-word;
         }
 
         .feature-item:hover {
@@ -670,6 +672,7 @@
 
         .sponsor-card {
             width: 220px;
+            max-width: 100%;
             padding: 1.8rem 1rem;
             text-align: center;
             background: rgba(255, 255, 255, 0.5);
@@ -680,6 +683,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06),
                         0 0 0 1px rgba(255, 255, 255, 0.4) inset;
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            overflow: hidden;
         }
 
         .sponsor-card:hover {
@@ -699,11 +703,16 @@
         .sponsor-card-label.afdian { color: #a855f7; }
 
         .sponsor-card img {
-            width: 160px;
-            height: 160px;
-            object-fit: contain;
+            width: 100%;
+            max-width: 160px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
             border-radius: 12px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            background: #fff;
+            display: block;
+            margin: 0 auto;
         }
 
         .sponsor-btn {
@@ -834,6 +843,7 @@
 
         .accordion-body {
             padding: 0 20px 20px;
+            overflow: hidden;
         }
 
         .sparkle {

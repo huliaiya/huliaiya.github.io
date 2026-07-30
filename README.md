@@ -1,110 +1,17 @@
-<style>
-  @keyframes flowRainbow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: -300% 50%; }
-  }
-  @-webkit-keyframes flowRainbow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: -300% 50%; }
-  }
-  .rainbow-text {
-    background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292);
-    background-size: 300% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: flowRainbow 8s linear infinite;
-    -webkit-animation: flowRainbow 8s linear infinite;
-  }
-  .glass-card {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-    padding: 2rem;
-    margin: 1.5rem 0;
-  }
-  .btn-rainbow {
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 14.5px;
-    text-decoration: none;
-    color: #fff;
-    background: linear-gradient(135deg, #a855f7, #6366f1);
-    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.35);
-  }
-  .sponsor-card {
-    display: inline-block;
-    width: 30%;
-    min-width: 200px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    padding: 1.8rem 1rem;
-    margin: 0.5rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-    vertical-align: top;
-  }
-  .sponsor-card img {
-    width: 160px;
-    height: 160px;
-    object-fit: contain;
-    border-radius: 12px;
-  }
-  .cmd-block {
-    background: #0f172a;
-    border-radius: 12px;
-    padding: 18px 20px;
-    color: #e2e8f0;
-    font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
-    font-size: 13.5px;
-    line-height: 1.7;
-    word-break: break-all;
-    overflow-x: auto;
-  }
-  .feature-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 8px;
-  }
-  .feature-table td {
-    padding: 14px 18px;
-    background: rgba(255, 255, 255, 0.5);
-  }
-  .feature-table td:first-child {
-    border-radius: 12px 0 0 12px;
-    font-weight: 700;
-    width: 160px;
-  }
-  .feature-table td:last-child {
-    border-radius: 0 12px 12px 0;
-  }
-</style>
-
 <div align="center">
 
 <img src="assets/logo.png" width="120" height="120" style="border-radius: 50%;" />
 
-# <span class="rainbow-text">📦 Huli 资源仓库</span>
+# 📦 Huli 资源仓库
 
 **为手机容器 / Linux 环境准备的一键脚本与工具集合**
-<br>
+
 无需复杂配置，复制命令即可使用
 
 <br>
 
-<a href="https://huliaiya.github.io/" class="btn-rainbow">🌐 访问资源页面</a>
-&nbsp;&nbsp;
-<a href="https://github.com/huliaiya/huliaiya.github.io" style="display: inline-block; padding: 12px 28px; border-radius: 999px; font-weight: 700; font-size: 14.5px; text-decoration: none; color: #475569; background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.8);">
-  🐙 GitHub
-</a>
+[![访问资源页面](https://img.shields.io/badge/🌐_访问资源页面-6366f1?style=for-the-badge&logo=data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/%3E%3C/svg%3E)](https://huliaiya.github.io/)
+[![GitHub](https://img.shields.io/badge/GitHub-333?style=for-the-badge&logo=github&logoColor=white)](https://github.com/huliaiya/huliaiya.github.io)
 
 </div>
 
@@ -121,116 +28,88 @@
 
 ## 📦 脚本列表
 
-<div class="glass-card">
-
 | 图标 | 脚本 | 说明 | 适用系统 |
 |:---:|--------|------|---------|
 | 🌐 | [chromium.sh](scripts/chromium.sh) | Chromium 一键安装 / 更新 · 自动去 snap · 国内镜像 · 版本锁定 | Debian / Ubuntu |
 | 🔄 | [change-mirrors.sh](scripts/change-mirrors.sh) | Linux 一键换源 · 支持 30+ 发行版 · 国内/教育/海外镜像 · 自动备份 | Debian/Ubuntu/CentOS/RHEL/Fedora/Arch/Alpine/Gentoo/openSUSE 等 |
 
-</div>
-
 ---
 
 ## 🌐 Chromium 一键安装脚本
 
-<div class="glass-card">
-
-<div align="center">
-
 ### 🚀 一键执行命令
 
-</div>
-
-<div class="cmd-block">curl -sL https://huliaiya.github.io/scripts/chromium.sh -o /tmp/chromium.sh && sudo bash /tmp/chromium.sh</div>
+```bash
+curl -sL https://huliaiya.github.io/scripts/chromium.sh -o /tmp/chromium.sh && sudo bash /tmp/chromium.sh
+```
 
 > 💡 **操作提示**：用鼠标选中上面的命令 → 右键复制 → 粘贴到终端回车
 
----
-
 ### 📝 使用步骤
 
-<table class="feature-table">
-  <tr><td>**Step 1**</td><td>确保设备已安装 <b>curl</b> 和 <b>sudo</b>（手机容器请先进入 Debian/Ubuntu 环境）</td></tr>
-  <tr><td>**Step 2**</td><td>复制上面的一键命令，粘贴到终端执行</td></tr>
-  <tr><td>**Step 3**</td><td>根据提示选择 <b>1.安装</b> 或 <b>2.更新</b>（默认 1，30 秒自动确认）</td></tr>
-  <tr><td>**Step 4**</td><td>等待安装完成，脚本会自动验证版本、路径、运行状态并锁定版本</td></tr>
-</table>
-
----
+| 步骤 | 说明 |
+|------|------|
+| **Step 1** | 确保设备已安装 **curl** 和 **sudo**（手机容器请先进入 Debian/Ubuntu 环境） |
+| **Step 2** | 复制上面的一键命令，粘贴到终端执行 |
+| **Step 3** | 根据提示选择 **1.安装** 或 **2.更新**（默认 1，30 秒自动确认） |
+| **Step 4** | 等待安装完成，脚本会自动验证版本、路径、运行状态并锁定版本 |
 
 ### ⚙️ 脚本特性
 
-<table class="feature-table">
-  <tr><td>🌐 智能镜像</td><td>自动检测国内/国外网络，国内走 USTC 镜像，国外走官方源</td></tr>
-  <tr><td>🚫 防 snap</td><td>自动屏蔽 snap 版 chromium-browser，确保安装原生 deb 包</td></tr>
-  <tr><td>🔗 依赖解析</td><td>递归解析所有依赖并设置高优先级，避免依赖冲突</td></tr>
-  <tr><td>📊 进度显示</td><td>带进度条、旋转动画和实时状态，过程一目了然</td></tr>
-  <tr><td>🔄 失败重试</td><td>网络下载失败自动重试最多 3 次</td></tr>
-  <tr><td>🔒 版本锁定</td><td>安装完成后自动 apt-mark hold，防止系统更新破坏</td></tr>
-</table>
-
----
+| 特性 | 说明 |
+|------|------|
+| 🌐 智能镜像 | 自动检测国内/国外网络，国内走 USTC 镜像，国外走官方源 |
+| 🚫 防 snap | 自动屏蔽 snap 版 chromium-browser，确保安装原生 deb 包 |
+| 🔗 依赖解析 | 递归解析所有依赖并设置高优先级，避免依赖冲突 |
+| 📊 进度显示 | 带进度条、旋转动画和实时状态，过程一目了然 |
+| 🔄 失败重试 | 网络下载失败自动重试最多 3 次 |
+| 🔒 版本锁定 | 安装完成后自动 apt-mark hold，防止系统更新破坏 |
 
 ### ⚠️ 注意事项
 
-> - 此脚本仅支持 **Debian / Ubuntu** 系发行版
-> - 需以 **root** 或 **sudo** 运行
-> - 适用于：手机 proot 容器、Linux Deploy、Termux 的 proot-distro 等环境
-
-</div>
+- 此脚本仅支持 **Debian / Ubuntu** 系发行版
+- 需以 **root** 或 **sudo** 运行
+- 适用于：手机 proot 容器、Linux Deploy、Termux 的 proot-distro 等环境
 
 ---
 
 ## 🔄 Linux 一键换源脚本
 
-<div class="glass-card">
-
-<div align="center">
-
 ### 🚀 一键执行命令
 
-</div>
-
-<div class="cmd-block">curl -sL https://huliaiya.github.io/scripts/change-mirrors.sh -o /tmp/change-mirrors.sh && sudo bash /tmp/change-mirrors.sh</div>
+```bash
+curl -sL https://huliaiya.github.io/scripts/change-mirrors.sh -o /tmp/change-mirrors.sh && sudo bash /tmp/change-mirrors.sh
+```
 
 > 💡 **操作提示**：用鼠标选中上面的命令 → 右键复制 → 粘贴到终端回车
 
----
-
 ### 📝 使用步骤
 
-<table class="feature-table">
-  <tr><td>**Step 1**</td><td>确保设备已安装 <b>curl</b> 和 <b>sudo</b>，需以 root 或 sudo 权限运行</td></tr>
-  <tr><td>**Step 2**</td><td>复制上面的一键命令，粘贴到终端执行</td></tr>
-  <tr><td>**Step 3**</td><td>根据提示选择镜像类型（默认/教育网/海外）、协议（http/https）等</td></tr>
-  <tr><td>**Step 4**</td><td>脚本自动备份原配置、替换源、升级软件，完成后输出结果</td></tr>
-</table>
-
----
+| 步骤 | 说明 |
+|------|------|
+| **Step 1** | 确保设备已安装 **curl** 和 **sudo**，需以 root 或 sudo 权限运行 |
+| **Step 2** | 复制上面的一键命令，粘贴到终端执行 |
+| **Step 3** | 根据提示选择镜像类型（默认/教育网/海外）、协议（http/https）等 |
+| **Step 4** | 脚本自动备份原配置、替换源、升级软件，完成后输出结果 |
 
 ### ⚙️ 脚本特性
 
-<table class="feature-table">
-  <tr><td>🖥️ 多发行版</td><td>支持 Debian/Ubuntu/CentOS/RHEL/Fedora/Arch/Alpine/Gentoo/openSUSE 等 30+ 发行版</td></tr>
-  <tr><td>🌐 多镜像源</td><td>内置阿里云、腾讯云、华为云、清华、中科大、浙大等 18+ 国内主流镜像</td></tr>
-  <tr><td>🏫 教育网支持</td><td>支持教育网镜像（清华、北大、浙大、上交、华科等），校园网用户首选</td></tr>
-  <tr><td>🌍 海外镜像</td><td>支持海外官方源模式，适合境外服务器使用</td></tr>
-  <tr><td>🔐 协议选择</td><td>支持 http / https 协议自由切换</td></tr>
-  <tr><td>💾 自动备份</td><td>替换前自动备份原软件源配置，随时可恢复</td></tr>
-  <tr><td>📦 EPEL 支持</td><td>CentOS/RHEL 可选择安装 EPEL 扩展源</td></tr>
-  <tr><td>⬆️ 软件升级</td><td>换源完成后可选择是否一键升级全部软件包</td></tr>
-</table>
-
----
+| 特性 | 说明 |
+|------|------|
+| 🖥️ 多发行版 | 支持 Debian/Ubuntu/CentOS/RHEL/Fedora/Arch/Alpine/Gentoo/openSUSE 等 30+ 发行版 |
+| 🌐 多镜像源 | 内置阿里云、腾讯云、华为云、清华、中科大、浙大等 18+ 国内主流镜像 |
+| 🏫 教育网支持 | 支持教育网镜像（清华、北大、浙大、上交、华科等），校园网用户首选 |
+| 🌍 海外镜像 | 支持海外官方源模式，适合境外服务器使用 |
+| 🔐 协议选择 | 支持 http / https 协议自由切换 |
+| 💾 自动备份 | 替换前自动备份原软件源配置，随时可恢复 |
+| 📦 EPEL 支持 | CentOS/RHEL 可选择安装 EPEL 扩展源 |
+| ⬆️ 软件升级 | 换源完成后可选择是否一键升级全部软件包 |
 
 ### ⚠️ 注意事项
 
-> - 支持大多数主流 **Linux** 发行版（Debian/Ubuntu/CentOS/RHEL/Fedora/Arch/Alpine/Gentoo/openSUSE 等）
-> - 需以 **root** 或 **sudo** 运行
-> - 脚本会自动备份原始配置，如有问题可手动恢复备份文件
-
-</div>
+- 支持大多数主流 **Linux** 发行版（Debian/Ubuntu/CentOS/RHEL/Fedora/Arch/Alpine/Gentoo/openSUSE 等）
+- 需以 **root** 或 **sudo** 运行
+- 脚本会自动备份原始配置，如有问题可手动恢复备份文件
 
 ---
 
@@ -239,42 +118,31 @@
 ## 💖 赞助支持
 
 **如果这些工具对你有帮助，欢迎请作者喝杯咖啡 ☕**
-<br>
+
 你的支持是持续更新的动力 ❤️
 
 </div>
 
 <div align="center">
 
-<div class="sponsor-card">
-  <div style="font-size: 15px; font-weight: 700; color: #1677ff; margin-bottom: 10px;">💙 支付宝</div>
-  <img src="assets/alipay.png" alt="支付宝收款码" />
-</div>
-
-<div class="sponsor-card">
-  <div style="font-size: 15px; font-weight: 700; color: #07c160; margin-bottom: 10px;">💚 微信</div>
-  <img src="assets/wechat.png" alt="微信收款码" />
-</div>
-
-<div class="sponsor-card">
-  <div style="font-size: 15px; font-weight: 700; color: #a855f7; margin-bottom: 10px;">💖 爱发电</div>
-  <img src="assets/afdian.png" alt="爱发电主页码" />
-  <br><br>
-  <a href="https://www.ifdian.net/a/hulihulihuli" class="btn-rainbow" style="padding: 8px 20px; font-size: 13px;">💖 前往主页</a>
-</div>
+| 💙 支付宝 | 💚 微信 | 💖 爱发电 |
+|:---:|:---:|:---:|
+| <img src="assets/alipay.png" width="160" height="160" alt="支付宝收款码" /> | <img src="assets/wechat.png" width="160" height="160" alt="微信收款码" /> | <img src="assets/afdian.png" width="160" height="160" alt="爱发电主页码" /> |
 
 </div>
 
-<div align="center" style="margin-top: 1rem; color: #64748b; font-size: 14px; line-height: 1.8;">
+<div align="center">
 
-  扫码后请备注你的昵称，感谢支持 ❤️
+[![爱发电主页](https://img.shields.io/badge/💖_前往爱发电主页-ff69b4?style=for-the-badge)](https://www.ifdian.net/a/hulihulihuli)
+
+扫码后请备注你的昵称，感谢支持 ❤️
 
 </div>
 
 ---
 
-<div align="center" style="color: #94a3b8; font-size: 13px; margin-top: 2rem;">
+<div align="center">
 
-  Made with 🔥 and ❤️ by **Huli**
+Made with 🔥 and ❤️ by **Huli**
 
 </div>
