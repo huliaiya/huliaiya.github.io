@@ -84,52 +84,52 @@
         .blob {
             position: absolute;
             border-radius: 50%;
-            filter: blur(50px);
-            opacity: 0.35;
-            animation: floatBlob 20s ease-in-out infinite;
+            filter: blur(60px);
+            opacity: 0.18;
+            animation: floatBlob 25s ease-in-out infinite;
         }
 
         .blob-1 {
-            width: 380px;
-            height: 380px;
+            width: 260px;
+            height: 260px;
             background: linear-gradient(135deg, #f06292, #ec4899);
-            top: -120px;
-            left: -80px;
+            top: -80px;
+            left: -60px;
             animation-delay: 0s;
         }
 
         .blob-2 {
-            width: 320px;
-            height: 320px;
+            width: 220px;
+            height: 220px;
             background: linear-gradient(135deg, #64b5f6, #6366f1);
-            top: 40%;
-            right: -100px;
-            animation-delay: -5s;
+            top: 50%;
+            right: -70px;
+            animation-delay: -7s;
         }
 
         .blob-3 {
-            width: 280px;
-            height: 280px;
+            width: 200px;
+            height: 200px;
             background: linear-gradient(135deg, #81c784, #4dd0e1);
-            bottom: -80px;
-            left: 20%;
-            animation-delay: -10s;
+            bottom: -60px;
+            left: 30%;
+            animation-delay: -14s;
         }
 
         .blob-4 {
-            width: 240px;
-            height: 240px;
+            width: 180px;
+            height: 180px;
             background: linear-gradient(135deg, #ffb74d, #ff8a65);
-            top: 15%;
-            right: 25%;
-            animation-delay: -15s;
+            top: 20%;
+            right: 30%;
+            animation-delay: -20s;
         }
 
         @keyframes floatBlob {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(30px, -40px) scale(1.08); }
-            50% { transform: translate(-20px, 30px) scale(0.95); }
-            75% { transform: translate(40px, 20px) scale(1.05); }
+            25% { transform: translate(20px, -30px) scale(1.06); }
+            50% { transform: translate(-15px, 25px) scale(0.96); }
+            75% { transform: translate(25px, 15px) scale(1.03); }
         }
 
         .container {
@@ -197,13 +197,31 @@
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 1rem;
-            background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292);
-            background-size: 300% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            display: inline-block;
+            background: linear-gradient(270deg, #f06292, #ba68c8, #64b5f6, #4fc3f7, #4dd0e1, #81c784, #aed581, #ffb74d, #ff8a65, #e57373, #f06292) !important;
+            background-size: 300% auto !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            color: transparent !important;
             animation: flowRightToLeft 8s linear infinite;
+            -webkit-animation: flowRightToLeft 8s linear infinite;
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
+
+        .hero-title-icon {
+            display: inline-block;
+            -webkit-text-fill-color: #f06292;
+            background: none;
+            -webkit-background-clip: initial;
+            background-clip: initial;
+            animation: none;
+            margin-right: 6px;
+        }
+
+        @-webkit-keyframes flowRightToLeft {
+            0% { background-position: 0% center; }
+            100% { background-position: -300% center; }
         }
 
         @keyframes flowRightToLeft {
@@ -846,7 +864,7 @@
         <!-- Hero Section -->
         <div class="hero-card">
             <img src="assets/logo.png" alt="Huli Logo" class="hero-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦊</text></svg>'">
-            <h1 class="hero-title">📦 Huli 资源仓库</h1>
+            <h1 class="hero-title"><span class="hero-title-icon"><i class="fas fa-box-open"></i></span> Huli 资源仓库</h1>
             <p class="hero-subtitle">为手机容器 / Linux 环境准备的一键脚本与工具集合</p>
             <p class="hero-desc">无需复杂配置，复制命令即可使用</p>
 
