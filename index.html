@@ -10,21 +10,17 @@
 
     <script>
         if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-        window.scrollTo(0, 0);
-        document.documentElement.style.overflow = 'hidden';
-        document.body.style.overflow = 'hidden';
-        var _unlock = function() {
-            window.scrollTo(0, 0);
-            document.documentElement.style.overflow = '';
-            document.body.style.overflow = '';
+        var _topTimer = setInterval(function() {
+            if (!window.location.hash) window.scrollTo(0, 0);
+        }, 50);
+        var _clearTop = function() {
+            if (!window.location.hash) window.scrollTo(0, 0);
+            setTimeout(function() { clearInterval(_topTimer); }, 800);
         };
-        var _done = false;
-        window.addEventListener('load', function() {
-            if (!_done) { _done = true; setTimeout(_unlock, 300); }
-        });
-        setTimeout(function() {
-            if (!_done) { _done = true; _unlock(); }
-        }, 1500);
+        document.addEventListener('DOMContentLoaded', _clearTop);
+        window.addEventListener('load', _clearTop);
+        window.addEventListener('pageshow', _clearTop);
+        setTimeout(_clearTop, 500);
     </script>
 
     <style>
@@ -267,8 +263,16 @@
             gap: 0.6rem;
         }
 
+        .table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 0 -8px;
+            padding: 0 8px;
+        }
+
         .script-table {
             width: 100%;
+            min-width: 560px;
             border-collapse: separate;
             border-spacing: 0 10px;
         }
@@ -702,6 +706,7 @@
                 脚本列表
             </h2>
 
+            <div class="table-wrap">
             <table class="script-table">
                 <thead>
                     <tr>
@@ -720,6 +725,7 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
 
         <!-- Chromium Script Detail -->
