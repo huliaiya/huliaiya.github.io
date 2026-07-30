@@ -8,6 +8,13 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script>
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+        var _forceTop = setInterval(function() { window.scrollTo(0, 0); }, 10);
+        setTimeout(function() { clearInterval(_forceTop); }, 500);
+    </script>
+
     <style>
         *,
         *::before,
@@ -981,15 +988,6 @@
         function burstSparkles(x, y, count) {
             for (let i = 0; i < count; i++) createSparkle(x, y);
         }
-
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        window.addEventListener('load', function() {
-            if (!window.location.hash) {
-                setTimeout(() => window.scrollTo(0, 0), 10);
-            }
-        });
 
         window.addEventListener('click', e => burstSparkles(e.clientX, e.clientY, 24));
 
