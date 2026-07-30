@@ -691,7 +691,7 @@ function run_end() {
         echo ''
         return
     fi
-    echo -e "\n✨ $(msg "end.moreInfo") 👉 \033[3mhttps://linuxmirrors.cn\033[0m"
+    echo -e "\n✨ $(msg "end.moreInfo") 👉 \033[3mhttps://huliaiya.github.io\033[0m"
     if [[ "${#SPONSOR_ADS[@]}" -gt 0 ]]; then
         echo -e "\n\033[2m$(msg "end.sponsorAds")\033[0m"
         _str_width() {
