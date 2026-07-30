@@ -11,8 +11,20 @@
     <script>
         if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
         window.scrollTo(0, 0);
-        var _forceTop = setInterval(function() { window.scrollTo(0, 0); }, 10);
-        setTimeout(function() { clearInterval(_forceTop); }, 500);
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+        var _unlock = function() {
+            window.scrollTo(0, 0);
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+        };
+        var _done = false;
+        window.addEventListener('load', function() {
+            if (!_done) { _done = true; setTimeout(_unlock, 300); }
+        });
+        setTimeout(function() {
+            if (!_done) { _done = true; _unlock(); }
+        }, 1500);
     </script>
 
     <style>
