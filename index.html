@@ -173,7 +173,8 @@
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            margin-bottom: 1.5rem;
+            margin: 0 auto 1.5rem auto;
+            display: block;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
             border: 3px solid rgba(255, 255, 255, 0.8);
         }
@@ -836,6 +837,12 @@
                         <td>Chromium 一键安装 / 更新 · 自动去 snap · 国内镜像 · 版本锁定</td>
                         <td>Debian / Ubuntu</td>
                     </tr>
+                    <tr>
+                        <td>🔄</td>
+                        <td><a href="#mirrors">change-mirrors.sh</a></td>
+                        <td>Linux 一键换源 · 支持 30+ 发行版 · 国内/教育/海外镜像 · 自动备份</td>
+                        <td>Debian/Ubuntu/CentOS/Arch 等</td>
+                    </tr>
                 </tbody>
             </table>
             </div>
@@ -989,6 +996,168 @@
             </div>
         </div>
 
+        <!-- Change Mirrors Script Detail -->
+        <div id="mirrors" class="section-card">
+            <h2 class="section-title">
+                <i class="fas fa-sync-alt"></i>
+                Linux 一键换源脚本
+            </h2>
+
+            <div class="cmd-wrapper">
+                <div class="cmd-label">🚀 一键执行命令</div>
+                <div class="cmd-block">
+                    <div class="cmd-text" id="cmdText2">curl -sL https://huliaiya.github.io/scripts/change-mirrors.sh -o /tmp/change-mirrors.sh && sudo bash /tmp/change-mirrors.sh</div>
+                    <button class="copy-btn" id="copyBtn2" onclick="copyCmd2()">
+                        <i class="fas fa-copy"></i>
+                        <span id="copyText2">复制</span>
+                    </button>
+                </div>
+                <div class="hint">💡 点击右侧按钮即可复制命令，粘贴到终端回车执行</div>
+            </div>
+
+            <div class="accordion">
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon-wrap">
+                            <i class="fas fa-list-ol"></i>
+                        </div>
+                        <span class="accordion-title">使用步骤</span>
+                        <i class="fas fa-chevron-down accordion-arrow"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="feature-list">
+                                <div class="feature-item">
+                                    <div class="feature-icon">1️⃣</div>
+                                    <div class="feature-text">
+                                        <h4>环境准备</h4>
+                                        <p>确保设备已安装 curl 和 sudo，需以 root 或 sudo 权限运行</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">2️⃣</div>
+                                    <div class="feature-text">
+                                        <h4>复制命令</h4>
+                                        <p>点击上方按钮复制一键命令，或手动选中复制</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">3️⃣</div>
+                                    <div class="feature-text">
+                                        <h4>选择配置</h4>
+                                        <p>根据提示选择镜像类型（默认/教育网/海外）、协议（http/https）等</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">4️⃣</div>
+                                    <div class="feature-text">
+                                        <h4>完成换源</h4>
+                                        <p>脚本自动备份原配置、替换源、升级软件，完成后输出结果</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon-wrap">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <span class="accordion-title">脚本特性</span>
+                        <i class="fas fa-chevron-down accordion-arrow"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="feature-list">
+                                <div class="feature-item">
+                                    <div class="feature-icon">🖥️</div>
+                                    <div class="feature-text">
+                                        <h4>多发行版</h4>
+                                        <p>支持 Debian/Ubuntu/CentOS/RHEL/Fedora/Arch/Alpine/Gentoo/openSUSE 等 30+ 发行版</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">🌐</div>
+                                    <div class="feature-text">
+                                        <h4>多镜像源</h4>
+                                        <p>内置阿里云、腾讯云、华为云、清华、中科大、浙大等 18+ 国内主流镜像</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">🏫</div>
+                                    <div class="feature-text">
+                                        <h4>教育网支持</h4>
+                                        <p>支持教育网镜像（清华、北大、浙大、上交、华科等），校园网用户首选</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">🌍</div>
+                                    <div class="feature-text">
+                                        <h4>海外镜像</h4>
+                                        <p>支持海外官方源模式，适合境外服务器使用</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">🔐</div>
+                                    <div class="feature-text">
+                                        <h4>协议选择</h4>
+                                        <p>支持 http / https 协议自由切换</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">💾</div>
+                                    <div class="feature-text">
+                                        <h4>自动备份</h4>
+                                        <p>替换前自动备份原软件源配置，随时可恢复</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">📦</div>
+                                    <div class="feature-text">
+                                        <h4>EPEL 支持</h4>
+                                        <p>CentOS/RHEL 可选择安装 EPEL 扩展源</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">⬆️</div>
+                                    <div class="feature-text">
+                                        <h4>软件升级</h4>
+                                        <p>换源完成后可选择是否一键升级全部软件包</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon-wrap">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <span class="accordion-title">注意事项</span>
+                        <i class="fas fa-chevron-down accordion-arrow"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="notice-box" style="margin-top:0;">
+                                <h4><i class="fas fa-info-circle"></i> 请仔细阅读</h4>
+                                <ul>
+                                    <li>支持大多数主流 <b>Linux</b> 发行版（Debian/Ubuntu/CentOS/RHEL/Fedora/Arch/Alpine/Gentoo/openSUSE 等）</li>
+                                    <li>需以 <b>root</b> 或 <b>sudo</b> 运行</li>
+                                    <li>脚本会自动备份原始配置，如有问题可手动恢复备份文件</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
         <!-- Sponsor Section -->
         <div id="sponsor" class="section-card sponsor-section">
             <h2 class="sponsor-title">💖 赞助支持</h2>
@@ -1040,6 +1209,39 @@
             const text = document.getElementById('cmdText').textContent;
             const btn = document.getElementById('copyBtn');
             const btnText = document.getElementById('copyText');
+            const icon = btn.querySelector('i');
+
+            navigator.clipboard.writeText(text).then(() => {
+                btn.classList.add('copied');
+                btnText.textContent = '已复制';
+                icon.className = 'fas fa-check';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btnText.textContent = '复制';
+                    icon.className = 'fas fa-copy';
+                }, 2000);
+            }).catch(() => {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                btn.classList.add('copied');
+                btnText.textContent = '已复制';
+                icon.className = 'fas fa-check';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btnText.textContent = '复制';
+                    icon.className = 'fas fa-copy';
+                }, 2000);
+            });
+        }
+
+        function copyCmd2() {
+            const text = document.getElementById('cmdText2').textContent;
+            const btn = document.getElementById('copyBtn2');
+            const btnText = document.getElementById('copyText2');
             const icon = btn.querySelector('i');
 
             navigator.clipboard.writeText(text).then(() => {

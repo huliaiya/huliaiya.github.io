@@ -182,6 +182,58 @@
 
 ---
 
+## 🔄 Linux 一键换源脚本
+
+<div class="glass-card">
+
+<div align="center">
+
+### 🚀 一键执行命令
+
+</div>
+
+<div class="cmd-block">curl -sL https://huliaiya.github.io/scripts/change-mirrors.sh -o /tmp/change-mirrors.sh && sudo bash /tmp/change-mirrors.sh</div>
+
+> 💡 **操作提示**：用鼠标选中上面的命令 → 右键复制 → 粘贴到终端回车
+
+---
+
+### 📝 使用步骤
+
+<table class="feature-table">
+  <tr><td>**Step 1**</td><td>确保设备已安装 <b>curl</b> 和 <b>sudo</b>，需以 root 或 sudo 权限运行</td></tr>
+  <tr><td>**Step 2**</td><td>复制上面的一键命令，粘贴到终端执行</td></tr>
+  <tr><td>**Step 3**</td><td>根据提示选择镜像类型（默认/教育网/海外）、协议（http/https）等</td></tr>
+  <tr><td>**Step 4**</td><td>脚本自动备份原配置、替换源、升级软件，完成后输出结果</td></tr>
+</table>
+
+---
+
+### ⚙️ 脚本特性
+
+<table class="feature-table">
+  <tr><td>🖥️ 多发行版</td><td>支持 Debian/Ubuntu/CentOS/RHEL/Fedora/Arch/Alpine/Gentoo/openSUSE 等 30+ 发行版</td></tr>
+  <tr><td>🌐 多镜像源</td><td>内置阿里云、腾讯云、华为云、清华、中科大、浙大等 18+ 国内主流镜像</td></tr>
+  <tr><td>🏫 教育网支持</td><td>支持教育网镜像（清华、北大、浙大、上交、华科等），校园网用户首选</td></tr>
+  <tr><td>🌍 海外镜像</td><td>支持海外官方源模式，适合境外服务器使用</td></tr>
+  <tr><td>🔐 协议选择</td><td>支持 http / https 协议自由切换</td></tr>
+  <tr><td>💾 自动备份</td><td>替换前自动备份原软件源配置，随时可恢复</td></tr>
+  <tr><td>📦 EPEL 支持</td><td>CentOS/RHEL 可选择安装 EPEL 扩展源</td></tr>
+  <tr><td>⬆️ 软件升级</td><td>换源完成后可选择是否一键升级全部软件包</td></tr>
+</table>
+
+---
+
+### ⚠️ 注意事项
+
+> - 支持大多数主流 **Linux** 发行版（Debian/Ubuntu/CentOS/RHEL/Fedora/Arch/Alpine/Gentoo/openSUSE 等）
+> - 需以 **root** 或 **sudo** 运行
+> - 脚本会自动备份原始配置，如有问题可手动恢复备份文件
+
+</div>
+
+---
+
 <div align="center">
 
 ## 💖 赞助支持
