@@ -114,6 +114,7 @@
 
 - [📦 脚本列表](#-脚本列表)
 - [🌐 Chromium 一键安装脚本](#-chromium-一键安装脚本)
+- [🔄 Linux 一键换源脚本](#-linux-一键换源脚本)
 - [💖 赞助支持](#-赞助支持)
 
 ---
@@ -125,6 +126,7 @@
 | 图标 | 脚本 | 说明 | 适用系统 |
 |:---:|--------|------|---------|
 | 🌐 | [chromium.sh](scripts/chromium.sh) | Chromium 一键安装 / 更新 · 自动去 snap · 国内镜像 · 版本锁定 | Debian / Ubuntu |
+| 🔄 | [change-mirrors.sh](scripts/change-mirrors.sh) | Linux 一键换源 · 支持 30+ 发行版 · 国内/教育/海外镜像 · 自动备份 | Debian/Ubuntu/CentOS/RHEL/Fedora/Arch/Alpine/Gentoo/openSUSE 等 |
 
 </div>
 
