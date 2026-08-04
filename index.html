@@ -329,6 +329,7 @@
                         0 0 0 1px rgba(255, 255, 255, 0.5) inset;
             margin-bottom: 2rem;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
+            overflow: hidden;
         }
 
         .section-card:hover {
@@ -401,6 +402,7 @@
             padding: 20px;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
             cursor: pointer;
+            overflow: hidden;
         }
 
         .script-card:hover {
@@ -458,6 +460,8 @@
             line-height: 1.6;
             margin-bottom: 14px;
             min-height: 42px;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .script-card-tag {
@@ -468,6 +472,7 @@
             font-weight: 600;
             color: #6366f1;
             background: rgba(99, 102, 241, 0.1);
+            word-break: break-word;
         }
 
         .cmd-wrapper {
@@ -595,12 +600,15 @@
             font-weight: 700;
             color: #2d3748;
             margin-bottom: 2px;
+            word-break: break-word;
         }
 
         .feature-text p {
             font-size: 13px;
             color: #718096;
             line-height: 1.5;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .notice-box {
@@ -609,6 +617,8 @@
             background: rgba(251, 191, 36, 0.1);
             border: 1px solid rgba(251, 191, 36, 0.3);
             border-radius: 16px;
+            overflow: hidden;
+            word-break: break-word;
         }
 
         .notice-box h4 {
@@ -619,6 +629,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            word-break: break-word;
         }
 
         .notice-box ul {
@@ -632,6 +643,8 @@
             padding: 4px 0;
             padding-left: 20px;
             position: relative;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .notice-box li::before {
@@ -795,6 +808,7 @@
             font-weight: 700;
             color: #2d3748;
             transition: all 0.2s ease;
+            overflow: hidden;
         }
 
         .accordion-header:hover {
