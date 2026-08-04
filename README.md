@@ -26,12 +26,13 @@
 
 ---
 
-## 📦 脚本列表
+## 📦 资源列表
 
-| 图标 | 脚本 | 说明 | 适用系统 |
+| 图标 | 名称 | 说明 | 适用平台 |
 |:---:|--------|------|---------|
 | 🌐 | [chromium.sh](scripts/chromium.sh) | Chromium 一键安装 / 更新 · 自动去 snap · 国内镜像 · 版本锁定 | Debian / Ubuntu |
 | 🔄 | [change-mirrors.sh](scripts/change-mirrors.sh) | Linux 一键换源 · 支持 30+ 发行版 · 国内/教育/海外镜像 · 自动备份 | Debian/Ubuntu/CentOS/RHEL/Fedora/Arch/Alpine/Gentoo/openSUSE 等 |
+| 🦊 | [狐狸插件](https://github.com/huliaiya/1plugin) | AstrBot 消息记录插件 · 18 平台全覆盖 · MySQL 存储 · Web 管理面板 · 全文搜索 | AstrBot / Python |
 
 ---
 
