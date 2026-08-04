@@ -955,7 +955,9 @@
 
             <div class="script-scroll">
                 <div class="script-card" onclick="window.open('https://github.com/huliaiya/1plugin', '_blank')">
-                    <div class="script-card-icon">🦊</div>
+                    <div class="script-card-icon" style="padding: 0; overflow: hidden; background: #fff;">
+                        <img src="assets/fox-plugin.png" alt="狐狸插件" style="width: 100%; height: 100%; object-fit: cover; border-radius: 14px;" onerror="this.parentElement.innerHTML='🦊'; this.parentElement.style.padding=''; this.parentElement.style.background=''; this.parentElement.style.overflow='visible';">
+                    </div>
                     <div class="script-card-title">
                         <a href="https://github.com/huliaiya/1plugin" target="_blank" onclick="event.stopPropagation()">狐狸插件</a>
                         <i class="fas fa-external-link-alt script-card-arrow"></i>
