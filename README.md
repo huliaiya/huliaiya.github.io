@@ -19,20 +19,40 @@
 
 ## 📋 目录
 
-- [📦 脚本列表](#-脚本列表)
+- [ℹ️ 关于本站](#️-关于本站)
+- [🧩 插件列表](#-插件列表)
+- [📜 脚本列表](#-脚本列表)
 - [🌐 Chromium 一键安装脚本](#-chromium-一键安装脚本)
 - [🔄 Linux 一键换源脚本](#-linux-一键换源脚本)
 - [💖 赞助支持](#-赞助支持)
 
 ---
 
-## 📦 资源列表
+## ℹ️ 关于本站
+
+| 图标 | 说明 |
+|:---:|------|
+| 🧩 | **插件集合** — 精选实用的 AstrBot 插件与其他工具插件，开箱即用 |
+| 📜 | **脚本仓库** — 一键 Shell 脚本，手机容器、Linux 环境配置不求人 |
+| 🚀 | **简单易用** — 复制命令即可执行，无需复杂配置，新手友好 |
+| 🔧 | **持续更新** — 更多插件与脚本正在开发中，欢迎 Star 关注 |
+
+---
+
+## 🧩 插件列表
+
+| 图标 | 名称 | 说明 | 适用平台 |
+|:---:|--------|------|---------|
+| 🦊 | [狐狸插件](https://github.com/huliaiya/1plugin) | AstrBot 消息记录插件 · 18 平台全覆盖 · MySQL 存储 · Web 管理面板 · 全文搜索 | AstrBot / Python |
+
+---
+
+## 📜 脚本列表
 
 | 图标 | 名称 | 说明 | 适用平台 |
 |:---:|--------|------|---------|
 | 🌐 | [chromium.sh](scripts/chromium.sh) | Chromium 一键安装 / 更新 · 自动去 snap · 国内镜像 · 版本锁定 | Debian / Ubuntu |
 | 🔄 | [change-mirrors.sh](scripts/change-mirrors.sh) | Linux 一键换源 · 支持 30+ 发行版 · 国内/教育/海外镜像 · 自动备份 | Debian/Ubuntu/CentOS/RHEL/Fedora/Arch/Alpine/Gentoo/openSUSE 等 |
-| 🦊 | [狐狸插件](https://github.com/huliaiya/1plugin) | AstrBot 消息记录插件 · 18 平台全覆盖 · MySQL 存储 · Web 管理面板 · 全文搜索 | AstrBot / Python |
 
 ---
 

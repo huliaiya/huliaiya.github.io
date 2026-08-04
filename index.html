@@ -893,7 +893,11 @@
             <p class="hero-desc">无需复杂配置，复制命令即可使用</p>
 
             <div class="hero-actions">
-                <a href="#scripts" class="btn btn-large btn-primary btn-round">
+                <a href="#plugins" class="btn btn-large btn-primary btn-round">
+                    <i class="fas fa-puzzle-piece"></i>
+                    浏览插件
+                </a>
+                <a href="#scripts" class="btn btn-large btn-plain btn-round">
                     <i class="fas fa-scroll"></i>
                     浏览脚本
                 </a>
@@ -904,10 +908,68 @@
             </div>
         </div>
 
+        <!-- Description Card -->
+        <div class="section-card" style="background: linear-gradient(135deg, rgba(240, 98, 146, 0.08), rgba(99, 102, 241, 0.08), rgba(77, 208, 225, 0.08));">
+            <h2 class="section-title">
+                <i class="fas fa-info-circle"></i>
+                关于本站
+            </h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">🧩</div>
+                    <div class="feature-text">
+                        <h4>插件集合</h4>
+                        <p>精选实用的 AstrBot 插件与其他工具插件，开箱即用</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📜</div>
+                    <div class="feature-text">
+                        <h4>脚本仓库</h4>
+                        <p>一键 Shell 脚本，手机容器、Linux 环境配置不求人</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🚀</div>
+                    <div class="feature-text">
+                        <h4>简单易用</h4>
+                        <p>复制命令即可执行，无需复杂配置，新手友好</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔧</div>
+                    <div class="feature-text">
+                        <h4>持续更新</h4>
+                        <p>更多插件与脚本正在开发中，欢迎 Star 关注</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plugins List -->
+        <div id="plugins" class="section-card">
+            <h2 class="section-title">
+                <i class="fas fa-puzzle-piece"></i>
+                插件列表
+            </h2>
+
+            <div class="script-scroll">
+                <div class="script-card" onclick="window.open('https://github.com/huliaiya/1plugin', '_blank')">
+                    <div class="script-card-icon">🦊</div>
+                    <div class="script-card-title">
+                        <a href="https://github.com/huliaiya/1plugin" target="_blank" onclick="event.stopPropagation()">狐狸插件</a>
+                        <i class="fas fa-external-link-alt script-card-arrow"></i>
+                    </div>
+                    <div class="script-card-desc">AstrBot 消息记录插件 · 18 平台全覆盖 · MySQL 存储 · Web 管理面板 · 全文搜索</div>
+                    <span class="script-card-tag">AstrBot / Python</span>
+                </div>
+            </div>
+        </div>
+
         <!-- Scripts List -->
         <div id="scripts" class="section-card">
             <h2 class="section-title">
-                <i class="fas fa-box-open"></i>
+                <i class="fas fa-scroll"></i>
                 脚本列表
             </h2>
 
@@ -930,16 +992,6 @@
                     </div>
                     <div class="script-card-desc">Linux 一键换源 · 支持 30+ 发行版 · 国内/教育/海外镜像 · 自动备份</div>
                     <span class="script-card-tag">Debian/Ubuntu/CentOS/Arch 等</span>
-                </div>
-
-                <div class="script-card" onclick="window.open('https://github.com/huliaiya/1plugin', '_blank')">
-                    <div class="script-card-icon">🦊</div>
-                    <div class="script-card-title">
-                        <a href="https://github.com/huliaiya/1plugin" target="_blank" onclick="event.stopPropagation()">狐狸插件</a>
-                        <i class="fas fa-external-link-alt script-card-arrow"></i>
-                    </div>
-                    <div class="script-card-desc">AstrBot 消息记录插件 · 18 平台全覆盖 · MySQL 存储 · Web 管理面板 · 全文搜索</div>
-                    <span class="script-card-tag">AstrBot / Python</span>
                 </div>
             </div>
         </div>
