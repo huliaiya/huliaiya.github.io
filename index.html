@@ -716,6 +716,14 @@
             user-select: none;
         }
 
+        /* 命令语法高亮 */
+        .cmd-text .hl-cmd { color: #4dd0e1; font-weight: 600; }
+        .cmd-text .hl-url { color: #64b5f6; }
+        .cmd-text .hl-path { color: #ffd54f; }
+        .cmd-text .hl-flag { color: #ff8a65; }
+        .cmd-text .hl-op { color: #a78bfa; font-weight: 600; }
+        .cmd-text .hl-str { color: #aed581; }
+
         .copy-btn {
             padding: 0 20px;
             min-height: 54px;
@@ -1091,6 +1099,38 @@
         @media (max-width: 480px) {
             .back-to-top { right: 1rem; bottom: 1rem; width: 44px; height: 44px; }
         }
+
+        /* ===== 复制成功 Toast 提示 ===== */
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 2.5rem;
+            transform: translateX(-50%) translateY(20px);
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(12px);
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.35s var(--ease-bounce);
+            z-index: 10000;
+            pointer-events: none;
+        }
+
+        .toast.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast i { color: #34d399; }
 
         /* ===== 粒子特效 ===== */
         .sparkle {
@@ -1637,8 +1677,23 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- 复制成功 Toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>命令已复制到剪贴板</span>
+    </div>
+
     <script>
         // ===== 通用复制命令（替代原来重复的 copyCmd / copyCmd2）=====
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            toast.querySelector('span').textContent = msg;
+            toast.classList.add('show');
+            clearTimeout(toast._timer);
+            toast._timer = setTimeout(() => toast.classList.remove('show'), 1800);
+        }
+
         function copyCmd(btn) {
             const block = btn.closest('.cmd-block');
             const cmdTextEl = block.querySelector('[data-cmd]');
@@ -1650,6 +1705,7 @@
                 btn.classList.add('copied');
                 label.textContent = '已复制';
                 icon.className = 'fas fa-check';
+                showToast('命令已复制，粘贴到终端即可执行');
                 setTimeout(() => {
                     btn.classList.remove('copied');
                     label.textContent = '复制';
@@ -1777,6 +1833,30 @@
                 heroCard.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
             });
         }
+
+        // ===== 命令语法高亮 =====
+        function highlightCmd() {
+            const re = new RegExp(
+                '(https?:\\/\\/[^\\s]+)|(\\/[^\\s]+)|(\\-\\-?[a-zA-Z][a-zA-Z0-9-]*)|(&&)|(\\$\\{[^}]+\\}|\\b[a-zA-Z0-9.-]+\\.sh\\b)|(\\b(?:curl|sudo|bash|apt|apt-get|wget|mkdir|cd|rm|cp|mv|echo|chmod|source|systemctl)\\b)',
+                'g'
+            );
+            document.querySelectorAll('.cmd-text[data-cmd]').forEach(el => {
+                const prompt = el.querySelector('.cmd-prompt');
+                const textSpan = el.querySelector('span:not(.cmd-prompt)');
+                if (!textSpan) return;
+                const raw = textSpan.textContent;
+                textSpan.innerHTML = raw.replace(re, (match, url, path, flag, op, str, cmd) => {
+                    if (cmd) return '<span class="hl-cmd">' + cmd + '</span>';
+                    if (url) return '<span class="hl-url">' + url + '</span>';
+                    if (path) return '<span class="hl-path">' + path + '</span>';
+                    if (flag) return '<span class="hl-flag">' + flag + '</span>';
+                    if (op) return '<span class="hl-op">' + op + '</span>';
+                    if (str) return '<span class="hl-str">' + str + '</span>';
+                    return match;
+                });
+            });
+        }
+        highlightCmd();
 
         // ===== 粒子特效 =====
         const colors = ['#f06292', '#ba68c8', '#64b5f6', '#4fc3f7', '#4dd0e1', '#81c784', '#aed581', '#ffb74d', '#ff8a65', '#e57373'];
