@@ -1,4 +1,17 @@
 [
-  { "name": "song1.mp3", "title": "歌曲标题", "artist": "艺术家" },
-  { "name": "song2.mp3", "title": "歌曲标题", "artist": "艺术家" }
+  {
+    "name": "小鹿乱撞.mp3",
+    "title": "小鹿乱撞",
+    "artist": "永彬RyanB"
+  },
+  {
+    "name": "晴不了的雨天.mp3",
+    "title": "晴不了的雨天",
+    "artist": "未知创作者"
+  },
+  {
+    "name": "嘿嘿嘿.mp3",
+    "title": "嘿嘿嘿",
+    "artist": "抖音创作者"
+  }
 ]
